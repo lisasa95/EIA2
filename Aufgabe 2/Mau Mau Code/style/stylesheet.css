@@ -30,23 +30,19 @@ h1 { font-size: 40px;
 main { margin-top:250px;
 }
 
-p { margin-left:30px;
-    font-size: 32px;
-    margin-top:-25px;
+p { font-size: 32px;
 }
-
-
 
 /* Handkarten*/
 
-.handkartenfeld { margin-top:100px;
-                  position:absolute;
+#Handkartenstapel{ margin-top:100px;
+                   position:absolute;
 }
 
 
 /*Ablegestapel*/
 
-.ablegestapelfeld { margin-top: -230px;
+#Auflegestapel  { margin-top: -230px;
                     position: absolute;
 
 }
@@ -54,7 +50,27 @@ p { margin-left:30px;
 
 /*Nachziehstapel */
 
-.nachziehfeld { margin-left:615px;
-                margin-top:-230px;
+#Nachziehstapel { margin-left:600px;
+                margin-top:-120px;
                 position: absolute;
+}
+
+
+/*Kartenfarben */
+
+.rot{
+    color: red;
+}
+
+.schwarz{
+    color: black;
+}
+
+
+/*Kartenrücken Bild */
+.Kartenrücken{
+      width: 140px;
+      height: 200px;
+      margin: 30px;
+    
 }
