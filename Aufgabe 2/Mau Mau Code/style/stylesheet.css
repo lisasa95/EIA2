@@ -19,7 +19,7 @@ h1 { font-size: 40px;
 
 
 .CardBorder{
-    border: black solid 3px;
+    border: white solid 2px;
     width: 160px;
     height: 224px;
     margin: 25px;
@@ -29,11 +29,11 @@ h1 { font-size: 40px;
     text-align: center;
 }
 
-.red{
+.rot{
     color: red;
 }
 
-.black{
+.schwarz{
     color: black;
 }
 
@@ -43,9 +43,10 @@ h1 { font-size: 40px;
 }
 
 .CardBack{
-    width: 50px;
-    height: 80px;
+    width: 160px;
+    height: 224px;
     margin: 0px;
+    margin-left:220px;
 }
 
 #Pile {
