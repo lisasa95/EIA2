@@ -52,3 +52,15 @@ h1 { font-size: 40px;
 #Pile {
     margin-bottom: 70px;
 }
+
+#nachziehStapel {
+    border: white solid 2px;
+    width: 160px;
+    height: 224px;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 5rem;
+    display: inline-block;
+    text-align: center;
+    
+}
