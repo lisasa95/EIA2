@@ -1,0 +1,60 @@
+/* Aufgabe: Aufgabe Nummer 2 - Mau Mau Name: Lisa Sanchez y Bittner
+Matrikel: 260502 - Datum: 07.04.2019
+Der Code wurde in Zusammenarbeit mit Bastian Culig, Daniel Mainberger, Kathrin Wurz, Carlotta Reinders und Marvin Kübler erarbeitet.
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
+html {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    background-color:black;
+}
+
+
+div { border: white solid 2px;
+      width: 140px;
+      height: 200px;
+      margin: 30px;
+      font-size: 12px;
+      color: white;
+      text-align: center;
+      display: inline-block;
+}
+
+h1 { font-size: 40px;
+    margin-left: 10px;
+    color: whitesmoke;
+}
+
+
+main { margin-top:250px;
+}
+
+p { margin-left:30px;
+    font-size: 32px;
+    margin-top:-25px;
+}
+
+
+
+/* Handkarten*/
+
+.handkartenfeld { margin-top:100px;
+                  position:absolute;
+}
+
+
+/*Ablegestapel*/
+
+.ablegestapelfeld { margin-top: -230px;
+                    position: absolute;
+
+}
+
+
+/*Nachziehstapel */
+
+.nachziehfeld { margin-left:615px;
+                margin-top:-230px;
+                position: absolute;
+}
