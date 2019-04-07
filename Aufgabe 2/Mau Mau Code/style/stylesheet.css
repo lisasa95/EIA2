@@ -11,15 +11,6 @@ html {
 }
 
 
-div { border: white solid 2px;
-      width: 140px;
-      height: 200px;
-      margin: 30px;
-      font-size: 12px;
-      color: white;
-      text-align: center;
-      display: inline-block;
-}
 
 h1 { font-size: 40px;
     margin-left: 10px;
@@ -27,50 +18,36 @@ h1 { font-size: 40px;
 }
 
 
-main { margin-top:250px;
+.CardBorder{
+    border: black solid 3px;
+    width: 160px;
+    height: 224px;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 5rem;
+    display: inline-block;
+    text-align: center;
 }
 
-p { font-size: 32px;
-}
-
-/* Handkarten*/
-
-#Handkartenstapel{ margin-top:100px;
-                   position:absolute;
-}
-
-
-/*Ablegestapel*/
-
-#Auflegestapel  { margin-top: -230px;
-                    position: absolute;
-
-}
-
-
-/*Nachziehstapel */
-
-#Nachziehstapel { margin-left:600px;
-                margin-top:-120px;
-                position: absolute;
-}
-
-
-/*Kartenfarben */
-
-.rot{
+.red{
     color: red;
 }
 
-.schwarz{
+.black{
     color: black;
 }
 
+.Symbol{
+    height: 40px;
+    margin: 25px 25px 0px 25px;
+}
 
-/*Kartenrücken Bild */
-.Kartenrücken{
-      width: 140px;
-      height: 200px;
-      margin: 30px;
-    
+.CardBack{
+    width: 50px;
+    height: 80px;
+    margin: 0px;
+}
+
+#Pile {
+    margin-bottom: 70px;
 }

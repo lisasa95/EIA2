@@ -206,23 +206,23 @@ function AuflegestapelErzeugen() {
     write += `<div class="CardBorder">`;
     switch (ersteKarte.symbol) {
         case "♥":
-            write += `< ♥ class="Symbol" >
-                <div class="rot">`;
+            write += `<div class='rot' ♥ class='stylingSymbol'>♥";
+            <div class="rot">`;
             break;
         case "♦":
-            write += `< ♦ class="Symbol">
-                <div class="rot">`;
+            write += `<div class='rot' ♦ class='stylingSymbol'>♦";
+            <div class="rot">`;
             break;
         case "♣":
-            write += `<  class="Symbol">
-                <div class="schwarz">`;
+            write += `<div class='rot' ♣ class='stylingSymbol'>♣";
+            <div class="schwarz">`;
             break;
         case "♠":
-            write += `< ♠ class="Symbol">
-                <div class="schwarz">`;
+            write += `<div class='rot' ♠ class='stylingSymbol'>♠";
+            <div class="schwarz">`;
             break;
         default:
-            console.log("ERROR while loading Symbol");
+            console.log("Symbol konnte nicht geladen werden");
     }
     switch (ersteKarte.zahl) {
         case "Ass":
@@ -262,23 +262,23 @@ function HandkartenErzeugen() {
         write += `<div class="CardBorder">`;
         switch (Handkarten[i].symbol) {
             case "♥":
-                write += `< ♥ class="Symbol">
+                write += `<div class='rot' ♥ class='stylingSymbol'>♥";
                 <div class="rot">`;
                 break;
             case "♦":
-                write += `<♦ class="Symbol">
+                write += `<div class='rot' ♦ class='stylingSymbol'>♦";
                 <div class="rot">`;
                 break;
             case "♣":
-                write += `<♣ class="Symbol">
+                write += `<div class='rot' ♣ class='stylingSymbol'>♣";
                 <div class="schwarz">`;
                 break;
             case "♠":
-                write += `<♠ class="Symbol">
+                write += `<div class='rot' ♠ class='stylingSymbol'>♠";
                 <div class="schwarz">`;
                 break;
             default:
-                console.log("ERROR while loading Symbol");
+                console.log("Symbol konnte nicht geladen werden");
         }
         switch (Handkarten[i].zahl) {
             case "7":
