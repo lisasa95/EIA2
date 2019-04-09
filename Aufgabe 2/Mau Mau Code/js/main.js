@@ -192,7 +192,7 @@ function anzeigeKarten() {
 }
 function NachziehstapelErzeugen() {
     document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
-    <img src="img/Kartenrücken.jpeg" class="rueckseite">
+    <img src="img/Kartenrücken.jpeg" class="kartenrücken">
     </div>`;
 }
 function AuflegestapelErzeugen() {
@@ -206,35 +206,31 @@ function AuflegestapelErzeugen() {
     write += `<div class="CardBorder">`;
     switch (ersteKarte.symbol) {
         case "♥":
-            write += `<div class='rot' ♥ class='stylingSymbol'>♥";
-            <div class="rot">`;
+            write += "<div class='rot' class='stylingSymbol'>♥";
             break;
         case "♦":
-            write += `<div class='rot' ♦ class='stylingSymbol'>♦";
-            <div class="rot">`;
+            write += "<div class='rot' class='stylingSymbol'>♦";
             break;
         case "♣":
-            write += `<div class='rot' ♣ class='stylingSymbol'>♣";
-            <div class="schwarz">`;
+            write += "<div class='schwarz' class='stylingSymbol'>♣";
             break;
         case "♠":
-            write += `<div class='rot' ♠ class='stylingSymbol'>♠";
-            <div class="schwarz">`;
+            write += "<div class='schwarz' class='stylingSymbol'>♠";
             break;
         default:
             console.log("Symbol konnte nicht geladen werden");
     }
     switch (ersteKarte.zahl) {
-        case "Ass":
+        case "ass":
             write += `A</div>`;
             break;
-        case "Koenig":
+        case "könig":
             write += `K</div>`;
             break;
-        case "Dame":
+        case "dame":
             write += `D</div>`;
             break;
-        case "Bube":
+        case "bube":
             write += `B</div>`;
             break;
         case "10":
@@ -256,26 +252,22 @@ function AuflegestapelErzeugen() {
     document.getElementById("auflegeStapel").innerHTML = `${write}`;
 }
 function HandkartenErzeugen() {
-    document.getElementById("handKartenSpieler").innerHTML = "";
+    document.getElementById("Handkarten").innerHTML = "";
     for (var i = 0; i < Handkarten.length; i++) {
         let write = "";
         write += `<div class="CardBorder">`;
         switch (Handkarten[i].symbol) {
             case "♥":
-                write += `<div class='rot' ♥ class='stylingSymbol'>♥";
-                <div class="rot">`;
+                write += "<div class='rot' class='stylingSymbol'>♥";
                 break;
             case "♦":
-                write += `<div class='rot' ♦ class='stylingSymbol'>♦";
-                <div class="rot">`;
+                write += "<div class='rot' class='stylingSymbol'>♦";
                 break;
             case "♣":
-                write += `<div class='rot' ♣ class='stylingSymbol'>♣";
-                <div class="schwarz">`;
+                write += "<div class='schwarz' class='stylingSymbol'>♣";
                 break;
             case "♠":
-                write += `<div class='rot' ♠ class='stylingSymbol'>♠";
-                <div class="schwarz">`;
+                write += "<div class='schwarz' class='stylingSymbol'>♠";
                 break;
             default:
                 console.log("Symbol konnte nicht geladen werden");
@@ -309,7 +301,7 @@ function HandkartenErzeugen() {
                 console.log("Wert konnte nicht geladen werden");
         }
         write += `</div>`;
-        document.getElementById("handKartenSpieler").innerHTML += `${write}`;
+        document.getElementById("Handkarten").innerHTML += `${write}`;
     }
 }
 function init() {

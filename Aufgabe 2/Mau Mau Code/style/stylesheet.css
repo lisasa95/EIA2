@@ -6,20 +6,21 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 html {
     font-family: 'Amatic SC', cursive;
-    color: white;
-    background-color:black;
+    background-color: #C59688  ;
 }
 
 
 
-h1 { font-size: 40px;
-    margin-left: 10px;
-    color: whitesmoke;
+h1 { font-size: 70px;
+    margin-top:2px;
+    color: black;
+    text-align: center;
+    text-decoration: black;
 }
 
 
 .CardBorder{
-    border: white solid 2px;
+    border:white solid 3px;
     width: 160px;
     height: 224px;
     margin: 25px;
@@ -28,9 +29,46 @@ h1 { font-size: 40px;
     display: inline-block;
     text-align: center;
 }
+}
+
+#Handkarten { 
+    width: 160px;
+    height: 224px;
+    margin-top: 250px;
+    font-weight: bold;
+    font-size: 70px;
+    display: inline-block;
+    text-align: center;
+    float:left;
+    margin:25px;
+
+}
+
+
+#nachziehStapel {
+    width: 160px;
+    height: 224px;
+    font-weight: bold;
+    font-size: 70px;
+    display: inline-block;
+    text-align: center;
+
+    
+}
+
+.kartenrüecken { 
+    width: 160px;
+    height: 224px;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 5rem;
+    display: inline-block;
+    text-align: center;
+
+}
 
 .rot{
-    color: red;
+    color: #C22E2E  ;
 }
 
 .schwarz{
@@ -38,29 +76,18 @@ h1 { font-size: 40px;
 }
 
 .Symbol{
-    height: 40px;
-    margin: 25px 25px 0px 25px;
+    height: 50px;
+    margin: 25px 25px 25px 25px;
 }
 
-.CardBack{
+
+
+img { border: white solid 2px;
     width: 160px;
     height: 224px;
-    margin: 0px;
-    margin-left:220px;
-}
-
-#Pile {
-    margin-bottom: 70px;
-}
-
-#nachziehStapel {
-    border: white solid 2px;
-    width: 160px;
-    height: 224px;
-    margin: 25px;
     font-weight: bold;
     font-size: 5rem;
     display: inline-block;
     text-align: center;
-    
 }
+
