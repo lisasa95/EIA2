@@ -27,8 +27,8 @@ let herzDame = {
     zahl: "dame",
     symbol: "♥",
 };
-let herzKönig = {
-    zahl: "könig",
+let herzKoenig = {
+    zahl: "koenig",
     symbol: "♥",
 };
 let herzAss = {
@@ -59,8 +59,8 @@ let pikDame = {
     zahl: "dame",
     symbol: "♠",
 };
-let pikKönig = {
-    zahl: "könig",
+let pikKoenig = {
+    zahl: "koenig",
     symbol: "♠",
 };
 let pikAss = {
@@ -91,8 +91,8 @@ let kreuzDame = {
     zahl: "dame",
     symbol: "♣",
 };
-let kreuzKönig = {
-    zahl: "könig",
+let kreuzKoenig = {
+    zahl: "koenig",
     symbol: "♣",
 };
 let kreuzAss = {
@@ -123,8 +123,8 @@ let karoDame = {
     zahl: "dame",
     symbol: "♦",
 };
-let karoKönig = {
-    zahl: "könig",
+let karoKoenig = {
+    zahl: "koenig",
     symbol: "♦",
 };
 let karoAss = {
@@ -132,11 +132,11 @@ let karoAss = {
     symbol: "♦",
 };
 /*Array Karten*/
-let alleSpielkarten = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKönig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKönig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKönig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKönig, karoAss];
+let alleSpielkarten = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKoenig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKoenig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKoenig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKoenig, karoAss];
 let Handkarten = [];
 let ersteKarte;
 /*Abfrage für Anzahl der Handkarten*/
-function SpielAnfang() {
+function spielAnfang() {
     let HandkartenAnzahl = 0;
     do {
         HandkartenAnzahl = parseInt(prompt("Mit wievielen Karten möchtest du starten? Gib eine Zahl zwischen 3 und 8 ein."));
@@ -146,23 +146,23 @@ function SpielAnfang() {
         anzeigeKarten();
     }
     console.log(Handkarten);
-    NachziehstapelErzeugen();
-    AuflegestapelErzeugen();
-    HandkartenErzeugen();
+    nachziehstapelErzeugen();
+    auflegestapelErzeugen();
+    handkartenErzeugen();
 }
 function anzeigeKarten() {
     let n = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
     Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
     alleSpielkarten.splice(n, 1);
 }
-function NachziehstapelErzeugen() {
+function nachziehstapelErzeugen() {
     document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
     <img src="img/Kartenrücken.jpeg" class="kartenrücken">
     </div>`;
 }
-function AuflegestapelErzeugen() {
+function auflegestapelErzeugen() {
     let n = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
-    Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
+    ersteKarte = alleSpielkarten[n];
     alleSpielkarten.splice(n, 1);
     let write = "";
     write += `<div class="CardBorder">`;
@@ -213,7 +213,7 @@ function AuflegestapelErzeugen() {
     write += `</div>`;
     document.getElementById("auflegeStapel").innerHTML = `${write}`;
 }
-function HandkartenErzeugen() {
+function handkartenErzeugen() {
     document.getElementById("Handkarten").innerHTML = "";
     for (var i = 0; i < Handkarten.length; i++) {
         let write = "";
@@ -267,7 +267,7 @@ function HandkartenErzeugen() {
     }
 }
 function init() {
-    SpielAnfang();
+    spielAnfang();
 }
 document.addEventListener("DOMContentLoaded", init);
 //# sourceMappingURL=main.js.map

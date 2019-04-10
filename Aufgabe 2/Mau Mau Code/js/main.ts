@@ -41,8 +41,8 @@ let herzDame: Spielkarten = {
 
 }
 
-let herzKönig: Spielkarten = {
-    zahl: "könig",
+let herzKoenig: Spielkarten = {
+    zahl: "koenig",
     symbol: "♥",
 }
 
@@ -81,8 +81,8 @@ let pikDame: Spielkarten = {
     symbol: "♠",
 }
 
-let pikKönig: Spielkarten = {
-    zahl: "könig",
+let pikKoenig: Spielkarten = {
+    zahl: "koenig",
     symbol: "♠",
 }
 
@@ -121,8 +121,8 @@ let kreuzDame: Spielkarten = {
     symbol: "♣",
 }
 
-let kreuzKönig: Spielkarten = {
-    zahl: "könig",
+let kreuzKoenig: Spielkarten = {
+    zahl: "koenig",
     symbol: "♣",
 }
 
@@ -161,8 +161,8 @@ let karoDame: Spielkarten = {
     symbol: "♦",
 }
 
-let karoKönig: Spielkarten = {
-    zahl: "könig",
+let karoKoenig: Spielkarten = {
+    zahl: "koenig",
     symbol: "♦",
 }
 
@@ -174,59 +174,57 @@ let karoAss: Spielkarten = {
 
 /*Array Karten*/
 
-let alleSpielkarten: Spielkarten[] = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKönig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKönig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKönig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKönig, karoAss];
+let alleSpielkarten: Spielkarten[] = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKoenig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKoenig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKoenig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKoenig, karoAss];
 let Handkarten: Spielkarten[] = []
 let ersteKarte: Spielkarten;
 
 
 /*Abfrage für Anzahl der Handkarten*/
-function SpielAnfang() {
+function spielAnfang() {
     let HandkartenAnzahl: number = 0;
-    do  
-        {
+    do {
         HandkartenAnzahl = parseInt(prompt("Mit wievielen Karten möchtest du starten? Gib eine Zahl zwischen 3 und 8 ein."));
-        } 
-    while (isNaN(HandkartenAnzahl) || HandkartenAnzahl > 8 || HandkartenAnzahl < 3); 
+    }
+    while (isNaN(HandkartenAnzahl) || HandkartenAnzahl > 8 || HandkartenAnzahl < 3);
 
-    console.log("Handkarten: "+HandkartenAnzahl);
+    console.log("Handkarten: " + HandkartenAnzahl);
 
-    for(let i:number=0;i<HandkartenAnzahl;i++){
+    for (let i: number = 0; i < HandkartenAnzahl; i++) {
         anzeigeKarten();
     }
     console.log(Handkarten);
 
-    NachziehstapelErzeugen();
-    AuflegestapelErzeugen();
-    HandkartenErzeugen();
-    
+    nachziehstapelErzeugen();
+    auflegestapelErzeugen();
+    handkartenErzeugen();
+
 }
 
 
 function anzeigeKarten() {
-    let n: number = Math.floor(Math.random() * (alleSpielkarten.length-1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    let n: number = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
     Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
-    alleSpielkarten.splice(n,1);
+    alleSpielkarten.splice(n, 1)
 }
 
 
-function NachziehstapelErzeugen(){
+function nachziehstapelErzeugen() {
     document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
     <img src="img/Kartenrücken.jpeg" class="kartenrücken">
-    </div>`;     
+    </div>`;
 }
 
 
-function AuflegestapelErzeugen(){
-    let n: number = Math.floor(Math.random() * (alleSpielkarten.length-1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
-    Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
-    alleSpielkarten.splice(n,1);
+function auflegestapelErzeugen() {
+    let n: number = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    ersteKarte = alleSpielkarten[n]
+    alleSpielkarten.splice(n, 1);
 
-    
-    let write:string = "";
-        write += `<div class="CardBorder">`;
+    let write: string = "";
+    write += `<div class="CardBorder">`;
 
-        switch (ersteKarte.symbol){
-            case "♥":
+    switch (ersteKarte.symbol) {
+        case "♥":
             write += "<div class='rot' class='stylingSymbol'>♥";
             break;
         case "♦":
@@ -237,53 +235,53 @@ function AuflegestapelErzeugen(){
             break;
         case "♠":
             write += "<div class='schwarz' class='stylingSymbol'>♠";
-            break;        
+            break;
         default:
             console.log("Symbol konnte nicht geladen werden")
-        }
+    }
 
-        switch (ersteKarte.zahl){
-            case "ass":
-                write += `A</div>`;
-                break;
-            case "könig":
-                write += `K</div>`;
-                break;
-            case "dame":
-                write += `D</div>`;
-                break;
-            case "bube":
-                write += `B</div>`;
-                break;        
-            case "10":
-                write += `10</div>`; 
-                break;  
-            case "9":
-                write += `9</div>`; 
-                break;          
-            case "8":
-                write += `8</div>`; 
-                break;          
-            case "7":
-                write += `7</div>`; 
-                break;
-            default:
-                console.log("ERROR while loading Value")
-            }
-            write += `</div>`
-    document.getElementById("auflegeStapel").innerHTML = `${write}`;     
+    switch (ersteKarte.zahl) {
+        case "ass":
+            write += `A</div>`;
+            break;
+        case "könig":
+            write += `K</div>`;
+            break;
+        case "dame":
+            write += `D</div>`;
+            break;
+        case "bube":
+            write += `B</div>`;
+            break;
+        case "10":
+            write += `10</div>`;
+            break;
+        case "9":
+            write += `9</div>`;
+            break;
+        case "8":
+            write += `8</div>`;
+            break;
+        case "7":
+            write += `7</div>`;
+            break;
+        default:
+            console.log("ERROR while loading Value")
+    }
+    write += `</div>`
+    document.getElementById("auflegeStapel").innerHTML = `${write}`;
 }
 
 
-function HandkartenErzeugen(){
+function handkartenErzeugen() {
 
     document.getElementById("Handkarten").innerHTML = "";
 
-    for (var i: number = 0; i < Handkarten.length; i++){
-        let write:string = "";
+    for (var i: number = 0; i < Handkarten.length; i++) {
+        let write: string = "";
         write += `<div class="CardBorder">`;
 
-        switch (Handkarten[i].symbol){
+        switch (Handkarten[i].symbol) {
             case "♥":
                 write += "<div class='rot' class='stylingSymbol'>♥";
                 break;
@@ -295,12 +293,12 @@ function HandkartenErzeugen(){
                 break;
             case "♠":
                 write += "<div class='schwarz' class='stylingSymbol'>♠";
-                break;        
+                break;
             default:
                 console.log("Symbol konnte nicht geladen werden")
-            }
+        }
 
-        switch (Handkarten[i].zahl){
+        switch (Handkarten[i].zahl) {
             case "7":
                 write += `7</div>`;
                 break;
@@ -312,30 +310,30 @@ function HandkartenErzeugen(){
                 break;
             case "":
                 write += `10</div>`;
-                break;        
+                break;
             case "bube":
-                write += `B</div>`; 
-                break;  
+                write += `B</div>`;
+                break;
             case "dame":
-                write += `D</div>`; 
-                break;          
+                write += `D</div>`;
+                break;
             case "könig":
-                write += `K</div>`; 
-                break;          
+                write += `K</div>`;
+                break;
             case "ass":
-                write += `A</div>`; 
+                write += `A</div>`;
                 break;
             default:
                 console.log("Wert konnte nicht geladen werden")
-            }
-            write += `</div>`
+        }
+        write += `</div>`
         document.getElementById("Handkarten").innerHTML += `${write}`;
-    }       
+    }
 }
 
 
 function init() {
-    SpielAnfang();
+    spielAnfang();
 }
 
 document.addEventListener("DOMContentLoaded", init);
