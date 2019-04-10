@@ -180,7 +180,7 @@ let ersteKarte: Spielkarten;
 
 
 /*Abfrage für Anzahl der Handkarten*/
-function spielAnfang() {
+function spielAnfang():void {
     let HandkartenAnzahl: number = 0;
     do {
         HandkartenAnzahl = parseInt(prompt("Mit wievielen Karten möchtest du starten? Gib eine Zahl zwischen 3 und 8 ein."));
@@ -201,21 +201,21 @@ function spielAnfang() {
 }
 
 
-function anzeigeKarten() {
+function anzeigeKarten(): void {
     let n: number = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
     Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
     alleSpielkarten.splice(n, 1)
 }
 
 
-function nachziehstapelErzeugen() {
+function nachziehstapelErzeugen():void {
     document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
     <img src="img/Kartenrücken.jpeg" class="kartenrücken">
     </div>`;
 }
 
 
-function auflegestapelErzeugen() {
+function auflegestapelErzeugen():void {
     let n: number = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
     ersteKarte = alleSpielkarten[n]
     alleSpielkarten.splice(n, 1);
@@ -273,7 +273,7 @@ function auflegestapelErzeugen() {
 }
 
 
-function handkartenErzeugen() {
+function handkartenErzeugen():void {
 
     document.getElementById("Handkarten").innerHTML = "";
 
