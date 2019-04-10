@@ -7,195 +7,163 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 interface Spielkarten {
     zahl: string;
     symbol: string;
-    imDeck: boolean;
 }
 
 /* Interface für Spielkarten*/
 let herz7: Spielkarten = {
     zahl: "7",
     symbol: "♥",
-    imDeck: true,
 }
 
 let herz8: Spielkarten = {
     zahl: "8",
     symbol: "♥",
-    imDeck: true,
 }
 
 let herz9: Spielkarten = {
     zahl: "9",
     symbol: "♥",
-    imDeck: true,
 }
 
 let herz10: Spielkarten = {
     zahl: "10",
     symbol: "♥",
-    imDeck: true,
 }
 
 let herzBube: Spielkarten = {
     zahl: "bube",
     symbol: "♥",
-    imDeck: true,
 }
 
 let herzDame: Spielkarten = {
     zahl: "dame",
     symbol: "♥",
-    imDeck: true,
 
 }
 
 let herzKönig: Spielkarten = {
     zahl: "könig",
     symbol: "♥",
-    imDeck: true,
 }
 
 let herzAss: Spielkarten = {
     zahl: "ass",
     symbol: "♥",
-    imDeck: true,
 }
 
 let pik7: Spielkarten = {
     zahl: "7",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pik8: Spielkarten = {
     zahl: "8",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pik9: Spielkarten = {
     zahl: "9",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pik10: Spielkarten = {
     zahl: "10",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pikBube: Spielkarten = {
     zahl: "bube",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pikDame: Spielkarten = {
     zahl: "dame",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pikKönig: Spielkarten = {
     zahl: "könig",
     symbol: "♠",
-    imDeck: true,
 }
 
 let pikAss: Spielkarten = {
     zahl: "ass",
     symbol: "♠",
-    imDeck: true,
 }
 
 let kreuz7: Spielkarten = {
     zahl: "7",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuz8: Spielkarten = {
     zahl: "8",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuz9: Spielkarten = {
     zahl: "9",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuz10: Spielkarten = {
     zahl: "10",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuzBube: Spielkarten = {
     zahl: "bube",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuzDame: Spielkarten = {
     zahl: "dame",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuzKönig: Spielkarten = {
     zahl: "könig",
     symbol: "♣",
-    imDeck: true,
 }
 
 let kreuzAss: Spielkarten = {
     zahl: "ass",
     symbol: "♣",
-    imDeck: true,
 }
 
 let karo7: Spielkarten = {
     zahl: "7",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karo8: Spielkarten = {
     zahl: "8",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karo9: Spielkarten = {
     zahl: "9",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karo10: Spielkarten = {
     zahl: "10",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karoBube: Spielkarten = {
     zahl: "bube",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karoDame: Spielkarten = {
     zahl: "dame",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karoKönig: Spielkarten = {
     zahl: "könig",
     symbol: "♦",
-    imDeck: true,
 }
 
 let karoAss: Spielkarten = {
