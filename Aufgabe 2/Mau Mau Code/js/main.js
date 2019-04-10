@@ -6,162 +6,130 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 let herz7 = {
     zahl: "7",
     symbol: "♥",
-    imDeck: true,
 };
 let herz8 = {
     zahl: "8",
     symbol: "♥",
-    imDeck: true,
 };
 let herz9 = {
     zahl: "9",
     symbol: "♥",
-    imDeck: true,
 };
 let herz10 = {
     zahl: "10",
     symbol: "♥",
-    imDeck: true,
 };
 let herzBube = {
     zahl: "bube",
     symbol: "♥",
-    imDeck: true,
 };
 let herzDame = {
     zahl: "dame",
     symbol: "♥",
-    imDeck: true,
 };
 let herzKönig = {
     zahl: "könig",
     symbol: "♥",
-    imDeck: true,
 };
 let herzAss = {
     zahl: "ass",
     symbol: "♥",
-    imDeck: true,
 };
 let pik7 = {
     zahl: "7",
     symbol: "♠",
-    imDeck: true,
 };
 let pik8 = {
     zahl: "8",
     symbol: "♠",
-    imDeck: true,
 };
 let pik9 = {
     zahl: "9",
     symbol: "♠",
-    imDeck: true,
 };
 let pik10 = {
     zahl: "10",
     symbol: "♠",
-    imDeck: true,
 };
 let pikBube = {
     zahl: "bube",
     symbol: "♠",
-    imDeck: true,
 };
 let pikDame = {
     zahl: "dame",
     symbol: "♠",
-    imDeck: true,
 };
 let pikKönig = {
     zahl: "könig",
     symbol: "♠",
-    imDeck: true,
 };
 let pikAss = {
     zahl: "ass",
     symbol: "♠",
-    imDeck: true,
 };
 let kreuz7 = {
     zahl: "7",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuz8 = {
     zahl: "8",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuz9 = {
     zahl: "9",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuz10 = {
     zahl: "10",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuzBube = {
     zahl: "bube",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuzDame = {
     zahl: "dame",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuzKönig = {
     zahl: "könig",
     symbol: "♣",
-    imDeck: true,
 };
 let kreuzAss = {
     zahl: "ass",
     symbol: "♣",
-    imDeck: true,
 };
 let karo7 = {
     zahl: "7",
     symbol: "♦",
-    imDeck: true,
 };
 let karo8 = {
     zahl: "8",
     symbol: "♦",
-    imDeck: true,
 };
 let karo9 = {
     zahl: "9",
     symbol: "♦",
-    imDeck: true,
 };
 let karo10 = {
     zahl: "10",
     symbol: "♦",
-    imDeck: true,
 };
 let karoBube = {
     zahl: "bube",
     symbol: "♦",
-    imDeck: true,
 };
 let karoDame = {
     zahl: "dame",
     symbol: "♦",
-    imDeck: true,
 };
 let karoKönig = {
     zahl: "könig",
     symbol: "♦",
-    imDeck: true,
 };
 let karoAss = {
     zahl: "ass",
     symbol: "♦",
-    imDeck: true,
 };
 /*Array Karten*/
 let alleSpielkarten = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKönig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKönig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKönig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKönig, karoAss];
@@ -183,12 +151,9 @@ function SpielAnfang() {
     HandkartenErzeugen();
 }
 function anzeigeKarten() {
-    let aktuelleKarte = Math.floor(Math.random() * 31);
-    while (alleSpielkarten[aktuelleKarte].imDeck == false) {
-        aktuelleKarte = Math.floor(Math.random() * 31);
-    }
-    Handkarten[Handkarten.length] = alleSpielkarten[aktuelleKarte];
-    alleSpielkarten[aktuelleKarte].imDeck = false;
+    let n = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
+    alleSpielkarten.splice(n, 1);
 }
 function NachziehstapelErzeugen() {
     document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
@@ -196,12 +161,9 @@ function NachziehstapelErzeugen() {
     </div>`;
 }
 function AuflegestapelErzeugen() {
-    let n = Math.floor(Math.random() * 31);
-    while (alleSpielkarten[n].imDeck == false) {
-        n = Math.floor(Math.random() * 31);
-    }
-    ersteKarte = alleSpielkarten[n];
-    alleSpielkarten[n].imDeck = false;
+    let n = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
+    alleSpielkarten.splice(n, 1);
     let write = "";
     write += `<div class="CardBorder">`;
     switch (ersteKarte.symbol) {

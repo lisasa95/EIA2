@@ -169,7 +169,6 @@ let karoKönig: Spielkarten = {
 let karoAss: Spielkarten = {
     zahl: "ass",
     symbol: "♦",
-    imDeck: true,
 }
 
 
@@ -204,12 +203,9 @@ function SpielAnfang() {
 
 
 function anzeigeKarten() {
-    let aktuelleKarte: number = Math.floor(Math.random() * 31);
-    while (alleSpielkarten[aktuelleKarte].imDeck==false) {
-        aktuelleKarte = Math.floor(Math.random() * 31)
-    }
-    Handkarten[Handkarten.length]=alleSpielkarten[aktuelleKarte];
-    alleSpielkarten[aktuelleKarte].imDeck = false;
+    let n: number = Math.floor(Math.random() * (alleSpielkarten.length-1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
+    alleSpielkarten.splice(n,1);
 }
 
 
@@ -221,13 +217,10 @@ function NachziehstapelErzeugen(){
 
 
 function AuflegestapelErzeugen(){
-    let n:number = Math.floor(Math.random() * 31); 
-    while (alleSpielkarten[n].imDeck==false)   
-        {
-            n = Math.floor(Math.random() * 31);
-        }
-    ersteKarte=alleSpielkarten[n]; 
-    alleSpielkarten[n].imDeck = false;    
+    let n: number = Math.floor(Math.random() * (alleSpielkarten.length-1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
+    alleSpielkarten.splice(n,1);
+
     
     let write:string = "";
         write += `<div class="CardBorder">`;
