@@ -4,6 +4,9 @@ Der Code wurde in Zusammenarbeit mit Bastian Culig, Daniel Mainberger, Kathrin W
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 /* Interface für Spielkarten*/
+namespace a2 {
+
+
 interface Spielkarten {
     zahl: string;
     symbol: string;
@@ -202,23 +205,23 @@ function spielAnfang():void {
 
 
 function anzeigeKarten(): void {
-    let n: number = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+    let n: number = Math.floor(Math.random() * (alleSpielkarten.length)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
     Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
     alleSpielkarten.splice(n, 1)
 }
 
 
-function nachziehstapelErzeugen():void {
+function nachziehstapelErzeugen():void { // Nachziehstapel wird generiert, bzw Bild von Rückseite wird angezeigt mit der id
     document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
     <img src="img/Kartenrücken.jpeg" class="kartenrücken">
     </div>`;
 }
 
 
-function auflegestapelErzeugen():void {
-    let n: number = Math.floor(Math.random() * (alleSpielkarten.length - 1)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+function auflegestapelErzeugen():void { 
+    let n: number = Math.floor(Math.random() * (alleSpielkarten.length)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
     ersteKarte = alleSpielkarten[n]
-    alleSpielkarten.splice(n, 1);
+    alleSpielkarten.splice(n, 1); // Stelle, wieviel soll entfernt werden, was wird hinzugefügt, n - aktuelle karte
 
     let write: string = "";
     write += `<div class="CardBorder">`;
@@ -337,3 +340,5 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+}
