@@ -1,6 +1,7 @@
-/* Aufgabe: Aufgabe Nummer 2 - Mau Mau Name: Lisa Sanchez y Bittner
-Matrikel: 260502 - Datum: 07.04.2019
-Der Code wurde in Zusammenarbeit mit Bastian Culig, Daniel Mainberger, Kathrin Wurz, Carlotta Reinders und Marvin Kübler erarbeitet.
+/* <!--Aufgabe 3: /*
+Aufgabe: Aufgabe Nummer 3 - Events Interaktiv: Mau Mau Name: Lisa Sanchez y Bittner
+Matrikel: 260502 - Datum: 14.04.2019
+Der Code wurde in Zusammenarbeit mitKathrin Wurz und Carlotta Reinders erarbeitet.
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 /* Interface für Spielkarten*/
 var a2;
@@ -189,7 +190,7 @@ var a2;
             case "ass":
                 write += `A</div>`;
                 break;
-            case "könig":
+            case "koenig":
                 write += `K</div>`;
                 break;
             case "dame":
@@ -247,7 +248,7 @@ var a2;
                 case "9":
                     write += `9</div>`;
                     break;
-                case "":
+                case "10":
                     write += `10</div>`;
                     break;
                 case "bube":
@@ -256,7 +257,7 @@ var a2;
                 case "dame":
                     write += `D</div>`;
                     break;
-                case "könig":
+                case "koenig":
                     write += `K</div>`;
                     break;
                 case "ass":

@@ -312,7 +312,7 @@ function handkartenErzeugen():void {
             case "9":
                 write += `9</div>`;
                 break;
-            case "":
+            case "10":
                 write += `10</div>`;
                 break;
             case "bube":
