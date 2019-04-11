@@ -248,7 +248,7 @@ function auflegestapelErzeugen():void {
         case "ass":
             write += `A</div>`;
             break;
-        case "könig":
+        case "koenig":
             write += `K</div>`;
             break;
         case "dame":
@@ -321,7 +321,7 @@ function handkartenErzeugen():void {
             case "dame":
                 write += `D</div>`;
                 break;
-            case "könig":
+            case "koenig":
                 write += `K</div>`;
                 break;
             case "ass":
