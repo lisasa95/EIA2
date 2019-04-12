@@ -1,214 +1,258 @@
-/* <!--Aufgabe 3: /*
-Aufgabe: Aufgabe Nummer 3 - Events Interaktiv: Mau Mau Name: Lisa Sanchez y Bittner
+/* Aufgabe 3: /*
+Aufgabe: Aufgabe Nummer 3 - Events Interaktiv: Mau Mau
+Name: Lisa Sanchez y Bittner
 Matrikel: 260502 - Datum: 14.04.2019
-Der Code wurde in Zusammenarbeit mitKathrin Wurz und Carlotta Reinders erarbeitet.
+Der Code wurde in Zusammenarbeit mit Kathrin Wurz und Carlotta Reinders erarbeitet.
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
-/* Interface für Spielkarten*/
-var a2;
-(function (a2) {
-    /* Interface für Spielkarten*/
+var a3;
+(function (a3) {
     let herz7 = {
-        zahl: "7",
-        symbol: "♥",
+        zahl: 7,
+        symbol: 1,
+        rang: "nichts",
     };
     let herz8 = {
-        zahl: "8",
-        symbol: "♥",
+        zahl: 8,
+        symbol: 1,
+        rang: "nichts",
     };
     let herz9 = {
-        zahl: "9",
-        symbol: "♥",
+        zahl: 9,
+        symbol: 1,
+        rang: "nichts",
     };
     let herz10 = {
-        zahl: "10",
-        symbol: "♥",
+        zahl: 10,
+        symbol: 1,
+        rang: "nichts",
     };
     let herzBube = {
-        zahl: "bube",
-        symbol: "♥",
+        zahl: 11,
+        symbol: 1,
+        rang: "nichts",
     };
     let herzDame = {
-        zahl: "dame",
-        symbol: "♥",
+        zahl: 12,
+        symbol: 1,
+        rang: "nichts",
     };
     let herzKoenig = {
-        zahl: "koenig",
-        symbol: "♥",
+        zahl: 13,
+        symbol: 1,
+        rang: "nichts",
     };
     let herzAss = {
-        zahl: "ass",
-        symbol: "♥",
+        zahl: 14,
+        symbol: 1,
+        rang: "nichts",
     };
     let pik7 = {
-        zahl: "7",
-        symbol: "♠",
+        zahl: 7,
+        symbol: 2,
+        rang: "nichts",
     };
     let pik8 = {
-        zahl: "8",
-        symbol: "♠",
+        zahl: 8,
+        symbol: 2,
+        rang: "nichts",
     };
     let pik9 = {
-        zahl: "9",
-        symbol: "♠",
+        zahl: 9,
+        symbol: 2,
+        rang: "nichts",
     };
     let pik10 = {
-        zahl: "10",
-        symbol: "♠",
+        zahl: 10,
+        symbol: 2,
+        rang: "nichts",
     };
     let pikBube = {
-        zahl: "bube",
-        symbol: "♠",
+        zahl: 11,
+        symbol: 2,
+        rang: "nichts",
     };
     let pikDame = {
-        zahl: "dame",
-        symbol: "♠",
+        zahl: 12,
+        symbol: 2,
+        rang: "nichts",
     };
     let pikKoenig = {
-        zahl: "koenig",
-        symbol: "♠",
+        zahl: 13,
+        symbol: 2,
+        rang: "nichts",
     };
     let pikAss = {
-        zahl: "ass",
-        symbol: "♠",
+        zahl: 14,
+        symbol: 2,
+        rang: "nichts",
     };
     let kreuz7 = {
-        zahl: "7",
-        symbol: "♣",
+        zahl: 7,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuz8 = {
-        zahl: "8",
-        symbol: "♣",
+        zahl: 8,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuz9 = {
-        zahl: "9",
-        symbol: "♣",
+        zahl: 9,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuz10 = {
-        zahl: "10",
-        symbol: "♣",
+        zahl: 10,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuzBube = {
-        zahl: "bube",
-        symbol: "♣",
+        zahl: 11,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuzDame = {
-        zahl: "dame",
-        symbol: "♣",
+        zahl: 12,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuzKoenig = {
-        zahl: "koenig",
-        symbol: "♣",
+        zahl: 13,
+        symbol: 3,
+        rang: "nichts",
     };
     let kreuzAss = {
-        zahl: "ass",
-        symbol: "♣",
+        zahl: 14,
+        symbol: 3,
+        rang: "nichts",
     };
     let karo7 = {
-        zahl: "7",
-        symbol: "♦",
+        zahl: 7,
+        symbol: 4,
+        rang: "nichts",
     };
     let karo8 = {
-        zahl: "8",
-        symbol: "♦",
+        zahl: 8,
+        symbol: 4,
+        rang: "nichts",
     };
     let karo9 = {
-        zahl: "9",
-        symbol: "♦",
+        zahl: 9,
+        symbol: 4,
+        rang: "nichts",
     };
     let karo10 = {
-        zahl: "10",
-        symbol: "♦",
+        zahl: 10,
+        symbol: 4,
+        rang: "nichts",
     };
     let karoBube = {
-        zahl: "bube",
-        symbol: "♦",
+        zahl: 11,
+        symbol: 4,
+        rang: "nichts",
     };
     let karoDame = {
-        zahl: "dame",
-        symbol: "♦",
+        zahl: 12,
+        symbol: 4,
+        rang: "nichts",
     };
     let karoKoenig = {
-        zahl: "koenig",
-        symbol: "♦",
+        zahl: 13,
+        symbol: 4,
+        rang: "nichts",
     };
     let karoAss = {
-        zahl: "ass",
-        symbol: "♦",
+        zahl: 14,
+        symbol: 4,
+        rang: "nichts",
     };
     /*Array Karten*/
     let alleSpielkarten = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKoenig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKoenig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKoenig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKoenig, karoAss];
     let Handkarten = [];
+    let ablageStapel = [];
     let ersteKarte;
-    /*Abfrage für Anzahl der Handkarten*/
+    /*FUNKTION - Abfrage für Anzahl der Handkarten*/
     function spielAnfang() {
         let HandkartenAnzahl = 0;
         do {
             HandkartenAnzahl = parseInt(prompt("Mit wievielen Karten möchtest du starten? Gib eine Zahl zwischen 3 und 8 ein."));
-        } while (isNaN(HandkartenAnzahl) || HandkartenAnzahl > 8 || HandkartenAnzahl < 3);
+        } while (isNaN(HandkartenAnzahl) || HandkartenAnzahl > 8 || HandkartenAnzahl < 3); //Zwischen 8 und 3 auswählen
         console.log("Handkarten: " + HandkartenAnzahl);
         for (let i = 0; i < HandkartenAnzahl; i++) {
-            anzeigeKarten();
+            zieheKarte();
         }
         console.log(Handkarten);
+        /* Nachziehstapel wird erstellt durch die Eingabe der Zahl im Prompter*/
         nachziehstapelErzeugen();
-        auflegestapelErzeugen();
-        handkartenErzeugen();
-    }
-    function anzeigeKarten() {
-        let n = Math.floor(Math.random() * (alleSpielkarten.length)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
-        Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
-        alleSpielkarten.splice(n, 1);
-    }
-    function nachziehstapelErzeugen() {
-        document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
-    <img src="img/Kartenrücken.jpeg" class="kartenrücken">
-    </div>`;
-    }
-    function auflegestapelErzeugen() {
         let n = Math.floor(Math.random() * (alleSpielkarten.length)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
         ersteKarte = alleSpielkarten[n];
         alleSpielkarten.splice(n, 1); // Stelle, wieviel soll entfernt werden, was wird hinzugefügt, n - aktuelle karte
+        ablegestapelErzeugen();
+        document.getElementById("kartenSortieren").addEventListener("click", kartenSortieren);
+        handkartenErzeugen();
+    }
+    /* FUNKTION - Zufällige Karte wird gezogen*/
+    function zieheKarte() {
+        if (alleSpielkarten.length > 0) {
+            let n = Math.floor(Math.random() * (alleSpielkarten.length)); //Zufällige Karte zwischen 0 und Länge des Arrays wird erzeugt/generiert
+            Handkarten.push(alleSpielkarten[n]); //Karte wird dem Deck hinzugefügt
+            alleSpielkarten.splice(n, 1);
+            handkartenErzeugen();
+        }
+        else {
+            alert("Nachziehstapel ist leer");
+        }
+    }
+    /* FUNKTION - Zufällige Karten werdenin den */
+    function nachziehstapelErzeugen() {
+        document.getElementById("nachziehStapel").addEventListener("klick", zieheKarte); // fügt element eventlistener (klickelement) hinzu, (über ID) funktion nachziehStapel wird durchgeführt.
+        document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
+            <img src="img/Kartenrücken.jpeg" class="kartenrücken">
+            </div>`;
+    }
+    /* FUNKTION - Ablegestapel wird genertiert, nimmt zufälligen Wert und zufälliges Symbol*/
+    function ablegestapelErzeugen() {
         let write = "";
         write += `<div class="CardBorder">`;
         switch (ersteKarte.symbol) {
-            case "♥":
+            case 1:
                 write += "<div class='rot' class='stylingSymbol'>♥";
                 break;
-            case "♦":
+            case 4:
                 write += "<div class='rot' class='stylingSymbol'>♦";
                 break;
-            case "♣":
+            case 3:
                 write += "<div class='schwarz' class='stylingSymbol'>♣";
                 break;
-            case "♠":
+            case 2:
                 write += "<div class='schwarz' class='stylingSymbol'>♠";
                 break;
             default:
                 console.log("Symbol konnte nicht geladen werden");
         }
         switch (ersteKarte.zahl) {
-            case "ass":
+            case 14:
                 write += `A</div>`;
                 break;
-            case "koenig":
+            case 13:
                 write += `K</div>`;
                 break;
-            case "dame":
+            case 12:
                 write += `D</div>`;
                 break;
-            case "bube":
+            case 11:
                 write += `B</div>`;
                 break;
-            case "10":
+            case 10:
                 write += `10</div>`;
                 break;
-            case "9":
+            case 9:
                 write += `9</div>`;
                 break;
-            case "8":
+            case 8:
                 write += `8</div>`;
                 break;
-            case "7":
+            case 7:
                 write += `7</div>`;
                 break;
             default:
@@ -217,50 +261,53 @@ var a2;
         write += `</div>`;
         document.getElementById("auflegeStapel").innerHTML = `${write}`;
     }
+    /* FUNKTION - Handkarten werden erzeugt in dem darauf man Klicken kann*/
     function handkartenErzeugen() {
+        document.getElementById("Handkarten").addEventListener("klick", karteAusspielen); //dem div der Handkarten bekommt Klick Event
         document.getElementById("Handkarten").innerHTML = "";
-        for (var i = 0; i < Handkarten.length; i++) {
+        for (let i = 0; i < Handkarten.length; i++) {
+            Handkarten[i].rang = "Rang" + i; //  ins handarray gehen und der wert "rang" soll zu 0 werden - div bekommt ID mit selben Namen, sonst wüsste man nicht zu welchem punkt im array es gehört
             let write = "";
-            write += `<div class="CardBorder">`;
+            write += `<div class="CardBorder" id="Rang${i}">`;
             switch (Handkarten[i].symbol) {
-                case "♥":
+                case 1:
                     write += "<div class='rot' class='stylingSymbol'>♥";
                     break;
-                case "♦":
+                case 4:
                     write += "<div class='rot' class='stylingSymbol'>♦";
                     break;
-                case "♣":
+                case 3:
                     write += "<div class='schwarz' class='stylingSymbol'>♣";
                     break;
-                case "♠":
+                case 2:
                     write += "<div class='schwarz' class='stylingSymbol'>♠";
                     break;
                 default:
                     console.log("Symbol konnte nicht geladen werden");
             }
             switch (Handkarten[i].zahl) {
-                case "7":
+                case 7:
                     write += `7</div>`;
                     break;
-                case "8":
+                case 8:
                     write += `8</div>`;
                     break;
-                case "9":
+                case 9:
                     write += `9</div>`;
                     break;
-                case "10":
+                case 10:
                     write += `10</div>`;
                     break;
-                case "bube":
+                case 11:
                     write += `B</div>`;
                     break;
-                case "dame":
+                case 12:
                     write += `D</div>`;
                     break;
-                case "koenig":
+                case 13:
                     write += `K</div>`;
                     break;
-                case "ass":
+                case 14:
                     write += `A</div>`;
                     break;
                 default:
@@ -274,5 +321,58 @@ var a2;
         spielAnfang();
     }
     document.addEventListener("DOMContentLoaded", init);
-})(a2 || (a2 = {}));
+    /* FUNKTION - Karte wird ausgespielt durch ein Klick Event*/
+    function karteAusspielen() {
+        let ausgewählteKarte = event.target; //klick auf das DIV - Eventtarget, neue Variable ist dann das div
+        for (let i = 0; i < Handkarten.length; i++) {
+            if (String(ausgewählteKarte.getAttribute("id")) == Handkarten[i].rang) {
+                if (Handkarten[i].symbol == ersteKarte.symbol || Handkarten[i].zahl == ersteKarte.zahl) {
+                    ablageStapel.push(ersteKarte);
+                    ersteKarte = Handkarten[i];
+                    Handkarten[i].rang = "0";
+                    Handkarten.splice(i, 1);
+                    handkartenErzeugen();
+                    ablegestapelErzeugen();
+                }
+                else {
+                    alert("Karte kann nicht ausgespielt werden");
+                }
+            }
+        }
+    }
+    /* FUNKTION - Karten werden Sortiert, nach Wert und/oder Symbol, daraus werden dann die Handkarten generiert*/
+    function kartenSortieren() {
+        Handkarten.sort(nachWertSortieren);
+        Handkarten.sort(nachSymbolSortieren);
+        handkartenErzeugen();
+    }
+    /* FUNKTION - Karten werden sortiert, indem sie nach Wert verglichen werden und ggf. ausgetauscht werden*/
+    function nachWertSortieren(karte1, karte2) {
+        let wertKarte1 = karte1.zahl;
+        let wertKarte2 = karte2.zahl;
+        if (wertKarte1 < wertKarte2)
+            return -1; //Schiebt es um eins nach hinten
+        if (wertKarte1 > wertKarte2)
+            return 1; //Schiebt es um eins vor
+        if (wertKarte1 == wertKarte2)
+            return 0; // es wird nichts geändert
+    }
+    /* FUNKTION -Karten werden sortiert, indem sie nach Symbol verglichen werden und ggf. ausgetauscht werden*/
+    function nachSymbolSortieren(karte1, karte2) {
+        let symbolKarte1 = karte1.symbol;
+        let symbolKarte2 = karte2.symbol;
+        if (symbolKarte1 < symbolKarte2)
+            return -1; //Schiebt es um eins nach hinten
+        if (symbolKarte1 > symbolKarte2)
+            return 1; //Schiebt es um eins vor
+        if (symbolKarte1 == symbolKarte2)
+            return 0; // es wird nichts geändert
+    }
+    /* FUNKTION - Welche Taste wurde gedrückt, wenn Taste 32 = Leertaste wird eine Karte gezogen*/
+    function welcheTaste(event) {
+        if (event.keyCode == 32)
+            zieheKarte();
+    }
+    document.addEventListener("keydown", welcheTaste);
+})(a3 || (a3 = {}));
 //# sourceMappingURL=main.js.map
