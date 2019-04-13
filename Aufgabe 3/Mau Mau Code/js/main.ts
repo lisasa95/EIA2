@@ -263,8 +263,8 @@ namespace a3 {
 
     /* FUNKTION - Zufällige Karten werdenin den */
     function nachziehstapelErzeugen(): void { // Nachziehstapel wird generiert, bzw Bild von Rückseite wird angezeigt mit der id
-        document.getElementById("nachziehStapel").addEventListener("klick", zieheKarte)// fügt element eventlistener (klickelement) hinzu, (über ID) funktion nachziehStapel wird durchgeführt.
-        document.getElementById("nachziehStapel").innerHTML = `<div class="CardBorder">
+        document.getElementById("nachziehStapel").addEventListener("click", zieheKarte)// fügt element eventlistener (klickelement) hinzu, (über ID) funktion nachziehStapel wird durchgeführt.
+        document.getElementById("nachziehStapel").innerHTML = `<div class="styling">
             <img src="img/Kartenrücken.jpeg" class="kartenrücken">
             </div>`;
     }
@@ -272,7 +272,7 @@ namespace a3 {
     /* FUNKTION - Ablegestapel wird genertiert, nimmt zufälligen Wert und zufälliges Symbol*/
     function ablegestapelErzeugen(): void {
         let write: string = "";
-        write += `<div class="CardBorder">`;
+        write += `<div class="styling">`;
 
         switch (ersteKarte.symbol) {
             case 1:
@@ -325,13 +325,13 @@ namespace a3 {
 
     /* FUNKTION - Handkarten werden erzeugt in dem darauf man Klicken kann*/
     function handkartenErzeugen(): void {
-        document.getElementById("Handkarten").addEventListener("klick", karteAusspielen);//dem div der Handkarten bekommt Klick Event
+        document.getElementById("Handkarten").addEventListener("click", karteAusspielen);//dem div der Handkarten bekommt Klick Event
         document.getElementById("Handkarten").innerHTML = "";
 
         for (let i: number = 0; i < Handkarten.length; i++) {
             Handkarten[i].rang = "Rang" + i;//  ins handarray gehen und der wert "rang" soll zu 0 werden - div bekommt ID mit selben Namen, sonst wüsste man nicht zu welchem punkt im array es gehört
             let write: string = "";
-            write += `<div class="CardBorder" id="Rang${i}">`;
+            write += `<div class="styling" id="Rang${i}">`;
 
             switch (Handkarten[i].symbol) {
                 case 1:
@@ -393,6 +393,7 @@ namespace a3 {
 
     /* FUNKTION - Karte wird ausgespielt durch ein Klick Event*/
     function karteAusspielen(): void {
+        console.log("x");
         let ausgewählteKarte: HTMLElement = <HTMLElement>event.target; //klick auf das DIV - Eventtarget, neue Variable ist dann das div
         for (let i = 0; i < Handkarten.length; i++) {
             if (String(ausgewählteKarte.getAttribute("id")) == Handkarten[i].rang) {

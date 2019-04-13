@@ -1,27 +1,38 @@
 /* <!--Aufgabe 3: 
 Aufgabe: Aufgabe Nummer 3 - Events Interaktiv: Mau Mau Name: Lisa Sanchez y Bittner
 Matrikel: 260502 - Datum: 14.04.2019
-Der Code wurde in Zusammenarbeit mitKathrin Wurz und Carlotta Reinders erarbeitet.
+Der Code wurde in Zusammenarbeit mit Kathrin Wurz und Carlotta Reinders erarbeitet.
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 
-html {
-    font-family: 'Amatic SC', cursive;
+
+html {font-family: 'Amatic SC', cursive;
     background-color: #C59688  ;
 }
 
 
 
-h1 { font-size: 70px;
-    margin-top:2px;
-    color: black;
+h1 {color:black;
     text-align: center;
-    text-decoration: black;
+    font-size: 4rem;
 }
 
 
-.CardBorder{
-    border:white solid 3px;
+.kartenrücken{
+    width: 160px;
+    height: 224px;
+    margin: 0px;
+}
+
+
+.rot{ color:#D24949;
+}
+
+.schwarz{ color: black;
+}
+
+
+.styling{ border: black solid 2px;
     width: 160px;
     height: 224px;
     margin: 25px;
@@ -31,69 +42,11 @@ h1 { font-size: 70px;
     text-align: center;
 }
 
-
-#Handkarten { 
-    width: 160px;
-    height: 224px;
-    margin-top: 250px;
-    font-weight: bold;
-    font-size: 70px;
-    display: inline-block;
-    text-align: center;
-    margin:25px;
-
+.Symbol{ height: 50px;
+         margin: 25px 25px 25px 25px;
 }
 
-
-#nachziehStapel {
-    width: 160px;
-    height: 224px;
-    font-weight: bold;
-    font-size: 70px;
-    display: inline-block;
-    text-align: center;
-
-    
+.stylingSymbol { height: 50px;
+                 margin: 25px 25px 25px 25px;
 }
 
-.kartenrüecken { 
-    width: 160px;
-    height: 224px;
-    margin: 25px;
-    font-weight: bold;
-    font-size: 5rem;
-    display: inline-block;
-    text-align: center;
-
-}
-
-.rot{
-    color: #C22E2E  ;
-}
-
-.schwarz{
-    color: black;
-}
-
-.Symbol{
-    height: 50px;
-    margin: 25px 25px 25px 25px;
-}
-
-
-
-img { border: white solid 2px;
-    width: 160px;
-    height: 224px;
-    font-weight: bold;
-    font-size: 5rem;
-    display: inline-block;
-    text-align: center;
-}
-
-button { border:black;
-        color: black;
-        width:150px;
-        height:40px;
-        border-style: double;
-}
