@@ -13,203 +13,204 @@ namespace a3 {
     interface Spielkarten {
         zahl: number;
         symbol: number;
-        rang: string;
+        position: string;
 
     }
 
     let herz7: Spielkarten = {
         zahl: 7,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     }
 
     let herz8: Spielkarten = {
         zahl: 8,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     }
 
     let herz9: Spielkarten = {
         zahl: 9,
         symbol: 1,
-        rang: "nichts",
+        position: "",
 
     }
 
     let herz10: Spielkarten = {
         zahl: 10,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     }
 
     let herzBube: Spielkarten = {
         zahl: 11,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     }
 
     let herzDame: Spielkarten = {
         zahl: 12,
         symbol: 1,
-        rang: "nichts",
+        position: "",
 
     }
 
     let herzKoenig: Spielkarten = {
         zahl: 13,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     }
 
     let herzAss: Spielkarten = {
         zahl: 14,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     }
 
     let pik7: Spielkarten = {
         zahl: 7,
         symbol: 2,
-        rang: "nichts",
+        position: "",
 
     }
 
     let pik8: Spielkarten = {
         zahl: 8,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     }
 
     let pik9: Spielkarten = {
         zahl: 9,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     }
 
     let pik10: Spielkarten = {
         zahl: 10,
         symbol: 2,
-        rang: "nichts",
+        position: "",
+       
     }
 
     let pikBube: Spielkarten = {
         zahl: 11,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     }
 
     let pikDame: Spielkarten = {
         zahl: 12,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     }
 
     let pikKoenig: Spielkarten = {
         zahl: 13,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     }
 
     let pikAss: Spielkarten = {
         zahl: 14,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuz7: Spielkarten = {
         zahl: 7,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuz8: Spielkarten = {
         zahl: 8,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuz9: Spielkarten = {
         zahl: 9,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuz10: Spielkarten = {
         zahl: 10,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuzBube: Spielkarten = {
         zahl: 11,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuzDame: Spielkarten = {
         zahl: 12,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuzKoenig: Spielkarten = {
         zahl: 13,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let kreuzAss: Spielkarten = {
         zahl: 14,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     }
 
     let karo7: Spielkarten = {
         zahl: 7,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karo8: Spielkarten = {
         zahl: 8,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karo9: Spielkarten = {
         zahl: 9,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karo10: Spielkarten = {
         zahl: 10,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karoBube: Spielkarten = {
         zahl: 11,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karoDame: Spielkarten = {
         zahl: 12,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karoKoenig: Spielkarten = {
         zahl: 13,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
     let karoAss: Spielkarten = {
         zahl: 14,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     }
 
 
@@ -329,7 +330,7 @@ namespace a3 {
         document.getElementById("Handkarten").innerHTML = "";
 
         for (let i: number = 0; i < Handkarten.length; i++) {
-            Handkarten[i].rang = "Rang" + i;//  ins handarray gehen und der wert "rang" soll zu 0 werden - div bekommt ID mit selben Namen, sonst wüsste man nicht zu welchem punkt im array es gehört
+            Handkarten[i].position = "Rang" + i;//  ins handarray gehen und der wert "rang" soll zu 0 werden - div bekommt ID mit selben Namen, sonst wüsste man nicht zu welchem punkt im array es gehört
             let write: string = "";
             write += `<div class="styling" id="Rang${i}">`;
 
@@ -396,11 +397,11 @@ namespace a3 {
         console.log("x");
         let ausgewählteKarte: HTMLElement = <HTMLElement>event.target; //klick auf das DIV - Eventtarget, neue Variable ist dann das div
         for (let i = 0; i < Handkarten.length; i++) {
-            if (String(ausgewählteKarte.getAttribute("id")) == Handkarten[i].rang) {
+            if (String(ausgewählteKarte.getAttribute("id")) == Handkarten[i].position) {
                 if (Handkarten[i].symbol == ersteKarte.symbol || Handkarten[i].zahl == ersteKarte.zahl) {
                     ablageStapel.push(ersteKarte);
                     ersteKarte = Handkarten[i];
-                    Handkarten[i].rang = "0";
+                    Handkarten[i].position = "0";
                     Handkarten.splice(i, 1);
                     handkartenErzeugen();
                     ablegestapelErzeugen();

@@ -9,162 +9,162 @@ var a3;
     let herz7 = {
         zahl: 7,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herz8 = {
         zahl: 8,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herz9 = {
         zahl: 9,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herz10 = {
         zahl: 10,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herzBube = {
         zahl: 11,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herzDame = {
         zahl: 12,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herzKoenig = {
         zahl: 13,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let herzAss = {
         zahl: 14,
         symbol: 1,
-        rang: "nichts",
+        position: "",
     };
     let pik7 = {
         zahl: 7,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pik8 = {
         zahl: 8,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pik9 = {
         zahl: 9,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pik10 = {
         zahl: 10,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pikBube = {
         zahl: 11,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pikDame = {
         zahl: 12,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pikKoenig = {
         zahl: 13,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let pikAss = {
         zahl: 14,
         symbol: 2,
-        rang: "nichts",
+        position: "",
     };
     let kreuz7 = {
         zahl: 7,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuz8 = {
         zahl: 8,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuz9 = {
         zahl: 9,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuz10 = {
         zahl: 10,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuzBube = {
         zahl: 11,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuzDame = {
         zahl: 12,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuzKoenig = {
         zahl: 13,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let kreuzAss = {
         zahl: 14,
         symbol: 3,
-        rang: "nichts",
+        position: "",
     };
     let karo7 = {
         zahl: 7,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karo8 = {
         zahl: 8,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karo9 = {
         zahl: 9,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karo10 = {
         zahl: 10,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karoBube = {
         zahl: 11,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karoDame = {
         zahl: 12,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karoKoenig = {
         zahl: 13,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     let karoAss = {
         zahl: 14,
         symbol: 4,
-        rang: "nichts",
+        position: "",
     };
     /*Array Karten*/
     let alleSpielkarten = [herz7, herz8, herz9, herz10, herzBube, herzDame, herzKoenig, herzAss, pik7, pik8, pik9, pik10, pikBube, pikDame, pikKoenig, pikAss, kreuz7, kreuz8, kreuz9, kreuz10, kreuzBube, kreuzDame, kreuzKoenig, kreuzAss, karo7, karo8, karo9, karo10, karoBube, karoDame, karoKoenig, karoAss];
@@ -266,7 +266,7 @@ var a3;
         document.getElementById("Handkarten").addEventListener("click", karteAusspielen); //dem div der Handkarten bekommt Klick Event
         document.getElementById("Handkarten").innerHTML = "";
         for (let i = 0; i < Handkarten.length; i++) {
-            Handkarten[i].rang = "Rang" + i; //  ins handarray gehen und der wert "rang" soll zu 0 werden - div bekommt ID mit selben Namen, sonst wüsste man nicht zu welchem punkt im array es gehört
+            Handkarten[i].position = "Rang" + i; //  ins handarray gehen und der wert "rang" soll zu 0 werden - div bekommt ID mit selben Namen, sonst wüsste man nicht zu welchem punkt im array es gehört
             let write = "";
             write += `<div class="styling" id="Rang${i}">`;
             switch (Handkarten[i].symbol) {
@@ -326,11 +326,11 @@ var a3;
         console.log("x");
         let ausgewählteKarte = event.target; //klick auf das DIV - Eventtarget, neue Variable ist dann das div
         for (let i = 0; i < Handkarten.length; i++) {
-            if (String(ausgewählteKarte.getAttribute("id")) == Handkarten[i].rang) {
+            if (String(ausgewählteKarte.getAttribute("id")) == Handkarten[i].position) {
                 if (Handkarten[i].symbol == ersteKarte.symbol || Handkarten[i].zahl == ersteKarte.zahl) {
                     ablageStapel.push(ersteKarte);
                     ersteKarte = Handkarten[i];
-                    Handkarten[i].rang = "0";
+                    Handkarten[i].position = "0";
                     Handkarten.splice(i, 1);
                     handkartenErzeugen();
                     ablegestapelErzeugen();

@@ -1,0 +1,124 @@
+<!--Aufgabe 4:
+Aufgabe: Aufgabe Nummer 4 - Eisdealer
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 21.04.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */-->
+
+<!--Definierung und Kopfelement-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 4 -Eisdealer</title>
+    <link rel="stylesheet" type="text/css" href="style/stylesheet.css"/>
+    <script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+
+<!-- Headbereich/Kopfinfos - Navigation -->
+<header>
+<nav>
+<h1>Eisdealer</h1>
+</nav>
+</header>
+
+
+
+<!-- Hauptbereich -->
+<main>
+  <fieldset id="eissorten">
+		<legend> Eissorten </legend>
+		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<label for="radio1">Schokolade</label><br>
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<label for="radio2">Vanille</label><br>
+		<input type="radio" name="Radiogroup2" value="radio3" id="radio3"/>
+		<label for="radio3">Himbeere</label><br>
+		<input type="radio" name="Radiogroup2" value="radio4" id="radio4"/>
+		<label for="radio4">Joguhrt</label>
+	</fieldset>
+
+  <fieldset id="toppings">
+		<legend> Toppings </legend>
+		<input type="checkbox" name="Checkbox1" value="check1" id="check1"/>
+		<label for="check1">Bunte Streusel</label><br>
+		<input type="checkbox" name="Checkbox2" value="check2" id="check2"/>
+		<label for="check2">Krokant</label><br>
+		<input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
+        <label for="check3">Schokosauce</label><br>
+        <input type="checkbox" name="Checkbox4" value="check4" id="check4"/>
+		<label for="check4">Schlagsahne</label>
+  </fieldset>
+
+
+  <fieldset id="behälter">
+		<legend> Behälter </legend>
+		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<label for="radio1">Waffel</label><br>
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<label for="radio2">Becher</label><br>
+	</fieldset>
+
+
+	<fieldset id="lieferoptionen">
+		<legend> Lieferoptionen </legend>
+		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<label for="radio1">Nach Hause</label><br>
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<label for="radio2">Abholung</label><br>
+	</fieldset>
+
+	<fieldset id="adresse">
+		<legend> Adresse</legend>
+		Name
+				<input type="text" name="name" placeholder="Name hier eingeben" required/>
+		<hr/>
+		Adresse
+		<input type="adresse" name="adresse" placeholder="Adresse hier eingeben"/>
+		<hr/>
+		Hausnummer
+		<input type="hausnummer" name="hausnummer" placeholder="Hausnummer hier eingeben"/>
+		<hr/>
+		Postleihzahl
+		<input type="plz" name="plz" placeholder="Postleihzahl hier eingeben"/>
+		<hr/>
+		Stadt
+		<input type="stadt" name="stadt" placeholder="Stadt hier eingeben"/>
+		<hr/>
+		Telefonummer
+		<input type="telefonnummer" name="telefonnummer" placeholder="Telefonnummer hier eingeben"/>
+		<hr/>
+		Anmerkungen
+		<textarea name="anmerkungen" cols="20" rows="2" placeholder="Anmerkungen hier eingeben"></textarea>
+	</fieldset>
+
+	<div id="bestellUebersicht">
+	<h2>Bestellübersicht</h2>
+	<button id="bestellungPrüfen">Bestellung prüfen</button>
+	</div>
+
+</main>
+
+
+      
+<!--Fußbereich/Kontakt und Navigation -->
+<footer>
+</footer> 
+
+
+
+</body>
+</html>
