@@ -39,70 +39,72 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 <!-- Hauptbereich -->
 <main>
-  <fieldset id="eissorten">
-		<legend> Eissorten </legend>
-		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
-		<label for="radio1">Schokolade</label><br>
-		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
-		<label for="radio2">Vanille</label><br>
-		<input type="radio" name="Radiogroup2" value="radio3" id="radio3"/>
-		<label for="radio3">Himbeere</label><br>
-		<input type="radio" name="Radiogroup2" value="radio4" id="radio4"/>
-		<label for="radio4">Joguhrt</label>
-	</fieldset>
+  
+  <fieldset id="kugeln">
+		<legend> Eissorten 1€ pro Kugel</legend>
+		<label for="stepper1">Schokolade</label>
+		<input type="number" name="schokolade" step="1" min="0" max="10" value="0"/><br>
+		<label for="stepper2">Vanille</label>
+		<input type="number" name="vanille" step="1" min="0" max="10" value="0"/><br>
+    <label for="stepper3">Himbeer</label>
+    <input type="number" name="himbeere" step="1" min="0" max="10" value="0"/><br>
+		<label for="stepper4">Joghurt</label>
+		<input type="number" name="joghurt" step="1" min="0" max="10" value="0"/><br>
+
+  </fieldset>
 
   <fieldset id="toppings">
-		<legend> Toppings </legend>
-		<input type="checkbox" name="Checkbox1" value="check1" id="check1"/>
+		<legend> Toppings 0.80€</legend>
+		<input type="checkbox" name="streusel" value="0.80"/>
 		<label for="check1">Bunte Streusel</label><br>
-		<input type="checkbox" name="Checkbox2" value="check2" id="check2"/>
+		<input type="checkbox" name="krokant" value="0.80"/>
 		<label for="check2">Krokant</label><br>
-		<input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
-        <label for="check3">Schokosauce</label><br>
-        <input type="checkbox" name="Checkbox4" value="check4" id="check4"/>
+		<input type="checkbox" name="schokosauce" value="0.80"/>
+    <label for="check3">Schokosauce</label><br>
+    <input type="checkbox" name="schlagsahne" value="0.80"/>
 		<label for="check4">Schlagsahne</label>
   </fieldset>
 
 
-  <fieldset id="behälter">
-		<legend> Behälter </legend>
-		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+  <fieldset id="behaelter">
+		<legend> Behälter</legend>
+		<input type="radio" name="waffel" value="0" id="radio1" />
 		<label for="radio1">Waffel</label><br>
-		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<input type="radio" name="becher" value="0" id="radio2"/>
 		<label for="radio2">Becher</label><br>
 	</fieldset>
 
 
 	<fieldset id="lieferoptionen">
 		<legend> Lieferoptionen </legend>
-		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<input type="radio" name="daheim" value="2,0" id="radio3" />
 		<label for="radio1">Nach Hause</label><br>
-		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<input type="radio" name="abholung" value="0" id="radio4"/>
 		<label for="radio2">Abholung</label><br>
 	</fieldset>
 
-	<fieldset id="adresse">
+	<fieldset id="info">
 		<legend> Adresse</legend>
 		Name
-				<input type="text" name="name" placeholder="Name hier eingeben" required/>
+		<input type="text" name="name" placeholder="Name hier eingeben" required/>
 		<hr/>
 		Adresse
-		<input type="adresse" name="adresse" placeholder="Adresse hier eingeben"/>
+		<input type="adresse" name="adresse" placeholder="Adresse hier eingeben" required/>
 		<hr/>
 		Hausnummer
-		<input type="hausnummer" name="hausnummer" placeholder="Hausnummer hier eingeben"/>
+		<input type="hausnummer" name="hausnummer" placeholder="Hausnummer hier eingeben" required/>
 		<hr/>
 		Postleihzahl
-		<input type="plz" name="plz" placeholder="Postleihzahl hier eingeben"/>
+		<input type="plz" name="plz" placeholder="Postleihzahl hier eingeben" required/>
 		<hr/>
 		Stadt
-		<input type="stadt" name="stadt" placeholder="Stadt hier eingeben"/>
+		<input type="stadt" name="stadt" placeholder="Stadt hier eingeben" required/>
 		<hr/>
 		Telefonummer
-		<input type="telefonnummer" name="telefonnummer" placeholder="Telefonnummer hier eingeben"/>
+		<input type="telefonnummer" name="telefonnummer" placeholder="Telefonnummer hier eingeben" required/>
 		<hr/>
 		Anmerkungen
-		<textarea name="anmerkungen" cols="20" rows="2" placeholder="Anmerkungen hier eingeben"></textarea>
+		<textarea name="anmerkungen" cols="20" rows="2" placeholder="Anmerkungen hier eingeben" required></textarea>
 	</fieldset>
 
 	<div id="bestellUebersicht">
