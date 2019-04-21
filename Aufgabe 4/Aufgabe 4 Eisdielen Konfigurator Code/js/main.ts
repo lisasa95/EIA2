@@ -3,7 +3,7 @@ Aufgabe: Aufgabe Nummer 4 - Eisdealer
 Name: Lisa Sanchez y Bittner
 Matrikel: 260502 
 Datum: 21.04.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 
 namespace a4 {
 
@@ -57,21 +57,23 @@ namespace a4 {
         }
     }
 
-    function preisberechnung(_event: Event): void {
+    function preisberechnung (_event: Event): void {
         let startSumme: number = 0;
-        let bestellung: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-        document.getElementById("bestellUebersicht").innerHTML = "";
-        for (let i: number = 0; i < bestellung.length; i++) {
-            if (bestellung[i].checked == true) {
-                let gesamtPreis: number = Number(bestellung[i].value)
+        let bestellEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+        document.getElementById("uebersicht").innerHTML = "";
+        for (let i: number = 0; i < bestellEingabe.length; i++) {
+            if (bestellEingabe[i].checked == true) {
+                let gesamtPreis: number = Number(bestellEingabe[i].value)
                 startSumme += gesamtPreis;
                 document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let bestellUebersicht = document.createElement("li");
-                bestellUebersicht.innerHTML = `${bestellung[i].id}`
-                document.getElementById("bestellUebersicht").appendChild(bestellUebersicht)
+                bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`
+                document.getElementById("uebersicht").appendChild(bestellUebersicht)
             }
         }
     }
 }
+    
+
         
     

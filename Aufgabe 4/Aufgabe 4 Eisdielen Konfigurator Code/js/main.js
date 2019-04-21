@@ -3,7 +3,7 @@ Aufgabe: Aufgabe Nummer 4 - Eisdealer
 Name: Lisa Sanchez y Bittner
 Matrikel: 260502
 Datum: 21.04.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 var a4;
 (function (a4) {
     document.addEventListener("load", init);
@@ -47,16 +47,16 @@ var a4;
     }
     function preisberechnung(_event) {
         let startSumme = 0;
-        let bestellung = document.getElementsByTagName("input");
-        document.getElementById("bestellUebersicht").innerHTML = "";
-        for (let i = 0; i < bestellung.length; i++) {
-            if (bestellung[i].checked == true) {
-                let gesamtPreis = Number(bestellung[i].value);
+        let bestellEingabe = document.getElementsByTagName("input");
+        document.getElementById("uebersicht").innerHTML = "";
+        for (let i = 0; i < bestellEingabe.length; i++) {
+            if (bestellEingabe[i].checked == true) {
+                let gesamtPreis = Number(bestellEingabe[i].value);
                 startSumme += gesamtPreis;
                 document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let bestellUebersicht = document.createElement("li");
-                bestellUebersicht.innerHTML = `${bestellung[i].id}`;
-                document.getElementById("bestellUebersicht").appendChild(bestellUebersicht);
+                bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`;
+                document.getElementById("uebersicht").appendChild(bestellUebersicht);
             }
         }
     }
