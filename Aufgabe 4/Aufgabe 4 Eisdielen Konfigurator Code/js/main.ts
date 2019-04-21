@@ -18,9 +18,6 @@ namespace a4 {
             let fieldset: HTMLFieldSetElement = fieldsets[i];
             fieldset.addEventListener("change", preisberechnung);
 
-            function preisberechnung(){
-
-            }
             //fieldset.addEventListener("change", zusammenfassung);*//
         }
     }
@@ -59,4 +56,22 @@ namespace a4 {
 
         }
     }
+
+    function preisberechnung(_event: Event): void {
+        let startSumme: number = 0;
+        let bestellung: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+        document.getElementById("bestellUebersicht").innerHTML = "";
+        for (let i: number = 0; i < bestellung.length; i++) {
+            if (bestellung[i].checked == true) {
+                let gesamtPreis: number = Number(bestellung[i].value)
+                startSumme += gesamtPreis;
+                document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
+                let bestellUebersicht = document.createElement("li");
+                bestellUebersicht.innerHTML = `${bestellung[i].id}`
+                document.getElementById("bestellUebersicht").appendChild(bestellUebersicht)
+            }
+        }
+    }
 }
+        
+    

@@ -13,8 +13,6 @@ var a4;
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
             fieldset.addEventListener("change", preisberechnung);
-            function preisberechnung() {
-            }
             //fieldset.addEventListener("change", zusammenfassung);*//
         }
     }
@@ -45,6 +43,21 @@ var a4;
         if (eissorte1.value == "" || eissorte2.value == "" || eissorte3.value == "" || eissorte4.value == "" || eissorte4.value == "" || topping1.value == "" || topping2.value == "" || topping3.value == "" || topping4.value == "" || behaelter1.value == "" || behaelter2.value == "" || name.value == "" || adresse.value == "" || hausnummer.value == "" || plz.value == "" || stadt.value == "" || telefon.value == "" || anmerkungen.value == "") {
             allesausfuellen == 0;
             alert("Bitte fehlenden Felder ergänzen!");
+        }
+    }
+    function preisberechnung(_event) {
+        let startSumme = 0;
+        let bestellung = document.getElementsByTagName("input");
+        document.getElementById("bestellUebersicht").innerHTML = "";
+        for (let i = 0; i < bestellung.length; i++) {
+            if (bestellung[i].checked == true) {
+                let gesamtPreis = Number(bestellung[i].value);
+                startSumme += gesamtPreis;
+                document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
+                let bestellUebersicht = document.createElement("li");
+                bestellUebersicht.innerHTML = `${bestellung[i].id}`;
+                document.getElementById("bestellUebersicht").appendChild(bestellUebersicht);
+            }
         }
     }
 })(a4 || (a4 = {}));
