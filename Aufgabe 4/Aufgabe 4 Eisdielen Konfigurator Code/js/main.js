@@ -7,7 +7,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var a4;
 (function (a4) {
     document.addEventListener("load", init);
-    document.getElementById("pruefen").addEventListener("click", orderComplete);
+    document.getElementById("button").addEventListener("click", orderComplete);
     function init(_event) {
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {

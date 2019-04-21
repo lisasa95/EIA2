@@ -8,7 +8,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 namespace a4 {
 
     document.addEventListener("load", init);
-    document.getElementById("pruefen").addEventListener("click", orderComplete);
+    document.getElementById("button").addEventListener("click", orderComplete);
 
     function init(_event: Event): void {
 
