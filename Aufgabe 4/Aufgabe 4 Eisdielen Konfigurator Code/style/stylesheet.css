@@ -55,7 +55,7 @@ main { font-family: 'Thasadith', sans-serif;
     margin: 10px;
 }
 
-#lieferoptionen { position: absolute;
+#lieferung { position: absolute;
     top: 1180px;
     width: 130px;
     height: 80px;
@@ -92,17 +92,13 @@ button { background-color: rgb(221, 174, 207);
          border: 2px black solid;
          width:90px;
          height:50px;
-         margin-top:310px;
          margin-left:210px;
-         margin-top:350px;
+         margin-top:1700px;
+         z-index: 1;
 }
 
 h2 {padding-left:20px;
 }
-
-
-
-
 
 
 
@@ -113,7 +109,7 @@ h2 {padding-left:20px;
 fieldset { float: left;
 }
 
-#lieferoptionen { margin-left: 800px;
+#lieferung { margin-left: 800px;
                   margin-top: -1050px;
 }
 
@@ -130,8 +126,8 @@ fieldset { float: left;
     
 }
 
-button { margin-left:30px;
-    margin-top:350px;
+button { margin-left:450px;
+    margin-top:540px;
     height:40px;
     width:240px;
 
@@ -145,6 +141,7 @@ h1 { font-size: 50px;
 
 #behaelter { margin-top:20px;
 }
+
 
 }
 

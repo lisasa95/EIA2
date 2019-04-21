@@ -13,7 +13,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     <meta charset="UTF-8">
     <title>Aufgabe 4 -Eisdealer</title>
     <link rel="stylesheet" type="text/css" href="style/stylesheet.css"/>
-    <script src="js/main.js"></script>
+    
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
@@ -41,76 +41,79 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 <main>
   
   <fieldset id="kugeln">
-		<legend> Eissorten 1€ pro Kugel</legend>
-		<label for="stepper1">Schokolade</label>
-		<input type="number" name="schokolade" step="1" min="0" max="10" value="0"/><br>
-		<label for="stepper2">Vanille</label>
-		<input type="number" name="vanille" step="1" min="0" max="10" value="0"/><br>
-    <label for="stepper3">Himbeer</label>
-    <input type="number" name="himbeere" step="1" min="0" max="10" value="0"/><br>
-		<label for="stepper4">Joghurt</label>
-		<input type="number" name="joghurt" step="1" min="0" max="10" value="0"/><br>
-
+		<legend>Je Kugel 1€</legend>
+		<input type="number" name="schokolade" step="1" min="0" max="10" value="0" id="schokolade"/>
+		<label for="schokolade">Schokolade</label>
+		<input type="number" name="vanille" step="1" min="0" max="10" value="0" id="vanille"/>
+		<label for="vanille">Vanille</label>
+		<input type="number" name="himbeere" step="1" min="0" max="10" value="0" id="himbeere"/>
+		<label for="himbeere">Himbeere</label>
+		<input type="number" name="joghurt" step="1" min="0" max="10" value="0" id="joghurt"/>
+		<label for="joghurt">Joghurt</label>
   </fieldset>
 
   <fieldset id="toppings">
 		<legend> Toppings 0.80€</legend>
-		<input type="checkbox" name="streusel" value="0.80"/>
+		<input type="checkbox" name="streusel" value="0.80" id="streusel"/>
 		<label for="check1">Bunte Streusel</label><br>
-		<input type="checkbox" name="krokant" value="0.80"/>
+		<input type="checkbox" name="krokant" value="0.80" id="krokant"/>
 		<label for="check2">Krokant</label><br>
-		<input type="checkbox" name="schokosauce" value="0.80"/>
+		<input type="checkbox" name="schokosauce" value="0.80" id="schokosauce"/>
     <label for="check3">Schokosauce</label><br>
-    <input type="checkbox" name="schlagsahne" value="0.80"/>
+    <input type="checkbox" name="schlagsahne" value="0.80" id="schlagsahne"/>
 		<label for="check4">Schlagsahne</label>
   </fieldset>
 
 
   <fieldset id="behaelter">
 		<legend> Behälter</legend>
-		<input type="radio" name="waffel" value="0" id="radio1" />
-		<label for="radio1">Waffel</label><br>
-		<input type="radio" name="becher" value="0" id="radio2"/>
-		<label for="radio2">Becher</label><br>
+		<input type="radio" name="behaelter" value="3" id="waffel" />
+			<label for="radio3">Waffel</label><br>
+			<input type="radio" name="behaelter" value="0" id="becher" />
+			<label for="radio4">Becher</label><br>
 	</fieldset>
 
 
-	<fieldset id="lieferoptionen">
-		<legend> Lieferoptionen </legend>
-		<input type="radio" name="daheim" value="2,0" id="radio3" />
-		<label for="radio1">Nach Hause</label><br>
-		<input type="radio" name="abholung" value="0" id="radio4"/>
-		<label for="radio2">Abholung</label><br>
+	<fieldset id="lieferung">
+		<legend>Lieferung</legend>
+			<input type="radio" name="lieferung" value="3" id="nachHause" />
+			<label for="radio3">Lieferung</label><br>
+			<input type="radio" name="lieferung" value="0" id="abholung" />
+			<label for="radio4">Abholung</label><br>
 	</fieldset>
 
 	<fieldset id="info">
 		<legend> Adresse</legend>
 		Name
-		<input type="text" name="name" placeholder="Name hier eingeben" required/>
+		<input type="text" name="name" placeholder="Name hier eingeben" id="name" required/>
 		<hr/>
 		Adresse
-		<input type="adresse" name="adresse" placeholder="Adresse hier eingeben" required/>
+		<input type="adresse" name="adresse" placeholder="Adresse hier eingeben" id="adresse"required/>
 		<hr/>
 		Hausnummer
-		<input type="hausnummer" name="hausnummer" placeholder="Hausnummer hier eingeben" required/>
+		<input type="hausnummer" name="hausnummer" placeholder="Hausnummer hier eingeben" id="hausnummer" required/>
 		<hr/>
 		Postleihzahl
-		<input type="plz" name="plz" placeholder="Postleihzahl hier eingeben" required/>
+		<input type="plz" name="plz" placeholder="Postleihzahl hier eingeben" id="plz"required/>
 		<hr/>
 		Stadt
-		<input type="stadt" name="stadt" placeholder="Stadt hier eingeben" required/>
+		<input type="stadt" name="stadt" placeholder="Stadt hier eingeben" id="stadt"required/>
 		<hr/>
 		Telefonummer
-		<input type="telefonnummer" name="telefonnummer" placeholder="Telefonnummer hier eingeben" required/>
+		<input type="telefonnummer" name="telefonnummer" placeholder="Telefonnummer hier eingeben" id="telefon"required/>
 		<hr/>
 		Anmerkungen
-		<textarea name="anmerkungen" cols="20" rows="2" placeholder="Anmerkungen hier eingeben" required></textarea>
+		<textarea name="anmerkungen" cols="20" rows="2" placeholder="Anmerkungen hier eingeben" id="anmerkungen" required></textarea>
 	</fieldset>
 
 	<div id="bestellUebersicht">
 	<h2>Bestellübersicht</h2>
-	<button id="bestellungPrüfen">Bestellung prüfen</button>
+	<p id="summe">0€</p>
 	</div>
+	
+	
+	<button id="pruefen">Bestellung prüfen</button>
+
 
 </main>
 
@@ -121,6 +124,6 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 </footer> 
 
 
-
+<script src="js/main.js" defer></script>
 </body>
 </html>

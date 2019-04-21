@@ -7,58 +7,56 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace a4 {
 
-    window.addEventListener("load", init);
-    
+    document.addEventListener("load", init);
+    document.getElementById("pruefen").addEventListener("click", orderComplete);
 
-let summe: number= 0;
-let schokolade: number = 0;
-let vanille: number = 0;
-let himbeere: number= 0;
-let joghurt: number = 0;
-let streusel: number = 0;
-let krokant: number= 0;
-let schokosauce: number = 0;
-let schlagsahne: number = 0;
-let waffel: boolean = false;
-let becher: boolean = false;
-let daheim: boolean = false;
-let abholen: boolean = false;
-let name: string = undefined;
-let adresse: string = undefined;
-let hausnummer: string = undefined;
-let plz: string = undefined;
-let stadt: string = undefined;
-let telefonnummer: string = undefined;
-let anmerkungen: string = undefined;
-}
+    function init(_event: Event): void {
 
-function init(_event: Event): void {
-    console.log("init");
-    let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
+        let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
-    for (let i = 0; i < fieldsets.length; i++) {
-        let fieldset: HTMLElement = fieldsets[i];
-        fieldset.addEventListener("change", anders);
+        for (let i: number = 0; i < fieldsets.length; i++) {
+            let fieldset: HTMLFieldSetElement = fieldsets[i];
+            fieldset.addEventListener("change", preisberechnung);
+
+            function preisberechnung(){
+
+            }
+            //fieldset.addEventListener("change", zusammenfassung);*//
+        }
     }
 
-}
+    function orderComplete(): void {
+        let allesausfuellen: number = 0;
 
-function anders(_event: Event): void {
-    console.log(_event);
-    
-}
+        let eissorte1: HTMLInputElement = <HTMLInputElement>document.getElementById("schokolade");
+        let eissorte2: HTMLInputElement = <HTMLInputElement>document.getElementById("vanille");
+        let eissorte3: HTMLInputElement = <HTMLInputElement>document.getElementById("himbeere");
+        let eissorte4: HTMLInputElement = <HTMLInputElement>document.getElementById("joghurt");
+        let topping1: HTMLInputElement = <HTMLInputElement>document.getElementById("streusel");
+        let topping2: HTMLInputElement = <HTMLInputElement>document.getElementById("krokant");
+        let topping3: HTMLInputElement = <HTMLInputElement>document.getElementById("schokosauce");
+        let topping4: HTMLInputElement = <HTMLInputElement>document.getElementById("schlagsahne");
+        let behaelter1: HTMLInputElement = <HTMLInputElement>document.getElementById("waffel");
+        let behaelter2: HTMLInputElement = <HTMLInputElement>document.getElementById("becher");
+        let lieferung1: HTMLInputElement = <HTMLInputElement>document.getElementById("nachHause");
+        let lieferung2: HTMLInputElement = <HTMLInputElement>document.getElementById("abholung");
+        let name: HTMLInputElement = <HTMLInputElement>document.getElementById("name");
+        let adresse: HTMLInputElement = <HTMLInputElement>document.getElementById("adresse");
+        let hausnummer: HTMLInputElement = <HTMLInputElement>document.getElementById("hausnummer");
+        let plz: HTMLInputElement = <HTMLInputElement>document.getElementById("plz");
+        let stadt: HTMLInputElement = <HTMLInputElement>document.getElementById("stadt");
+        let telefon: HTMLInputElement = <HTMLInputElement>document.getElementById("telefon");
+        let anmerkungen: HTMLInputElement = <HTMLInputElement>document.getElementById("anmerkungen");
 
 
-function eingabecheck(): void {
+        if (lieferung1.checked == true || lieferung2.checked == true) {
+            allesausfuellen = 1; 
+        }
 
-}
+        if (eissorte1.value == "" || eissorte2.value == "" || eissorte3.value == "" || eissorte4.value == "" || eissorte4.value == ""|| topping1.value == "" || topping2.value == ""|| topping3.value == "" || topping4.value == ""|| behaelter1.value == "" || behaelter2.value == "" || name.value == "" || adresse.value == "" || hausnummer.value == "" || plz.value == ""|| stadt.value == "" || telefon.value == ""|| anmerkungen.value == "" ) {
+            allesausfuellen == 0;
+            alert("Bitte fehlenden Felder ergänzen!");
 
-
-
-function preis():void {
-
-document.getElementById("zusammenfassung").innerHTML = "";
-let input: HTMLCollectionOf<HTMLInputElement> = document.getElementById("input");
-for (let: i =0);
-
+        }
+    }
 }
