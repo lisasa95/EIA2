@@ -33,8 +33,10 @@ namespace a4 {
         let bestellEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
 
         document.getElementById("zusammenfassung").innerHTML = "";
+
     // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
         for (let i: number = 0; i < bestellEingabe.length; i++) {
+            
             if ((bestellEingabe[i].name == "schokolade" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "vanille" && Number(bestellEingabe[i].value) > 0 || (bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0 || bestellEingabe[i].name == "joghurt" && Number(bestellEingabe[i].value) > 0) {
                 preis = Number(bestellEingabe[i].value);
                 summe += preis;
