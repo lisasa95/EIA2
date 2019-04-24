@@ -33,7 +33,7 @@ namespace a4 {
         let bestellEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
 
         document.getElementById("zusammenfassung").innerHTML = "";
-    // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
+
         for (let i: number = 0; i < bestellEingabe.length; i++) {
             if ((bestellEingabe[i].name == "schokolade" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "vanille" && Number(bestellEingabe[i].value) > 0 || (bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0 || bestellEingabe[i].name == "joghurt" && Number(bestellEingabe[i].value) > 0) {
                 preis = Number(bestellEingabe[i].value);
@@ -43,8 +43,7 @@ namespace a4 {
                 ziel.innerHTML = `${bestellEingabe[i].value} Kugel ${bestellEingabe[i].name}, `;
                 document.getElementById("zusammenfassung").appendChild(ziel);
             }
-            
-            
+
             if (bestellEingabe[i].checked == true) {
                 let gesamtPreis: number = Number(bestellEingabe[i].value)
                 summe += gesamtPreis;
@@ -54,7 +53,7 @@ namespace a4 {
                 bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`
                 document.getElementById("zusammenfassung").appendChild(bestellUebersicht)
             }
-            
+            // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
 
             document.getElementById("summe").innerHTML = `Gesamtpreis:   ${summe} €`;
         }
@@ -65,7 +64,6 @@ namespace a4 {
         let kundenDaten: string[] = [];
         let kundenEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         for (let i: number = 0; i < kundenEingabe.length; i++) {
-            
             if (kundenEingabe[i].value == "") {
                 let benoetigteDaten: string = kundenEingabe[i].name;
                 kundenDaten.push(benoetigteDaten);

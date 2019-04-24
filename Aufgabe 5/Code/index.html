@@ -1,0 +1,131 @@
+<!--Aufgabe 4:
+Aufgabe: Aufgabe Nummer 4 - Eisdealer
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 21.04.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */-->
+
+<!--Definierung und Kopfelement-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 4 -Eisdealer</title>
+		<link rel="stylesheet" type="text/css" href="style/stylesheet.css"/>
+		<script src="js/main.js" defer></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+
+<!-- Headbereich/Kopfinfos - Navigation -->
+<header>
+<nav>
+<h1>Eisdealer</h1>
+</nav>
+</header>
+
+
+
+<!-- Hauptbereich -->
+<main>
+  
+  <fieldset id="kugeln">
+		<legend>Je Kugel 1€</legend>
+		<input type="number" name="schokolade" step="1" min="0" max="5" value="0" id="1x Schokolade"/>
+		<label for="schokolade">Schokolade</label>
+		<input type="number" name="vanille" step="1" min="0" max="5" value="0" id="1x Vanille"/>
+		<label for="vanille">Vanille</label>
+		<input type="number" name="himbeere" step="1" min="0" max="5" value="0" id="1x Himbeere"/>
+		<label for="himbeere">Himbeere</label>
+		<input type="number" name="joghurt" step="1" min="0" max="5" value="0" id="1x Joghurt"/>
+		<label for="joghurt">Joghurt</label>
+  </fieldset>
+
+  <fieldset id="toppings">
+		<legend> Toppings 0.80€</legend>
+		<input type="checkbox" name="streusel" value="0.80" id="1x Streusel"/>
+		<label for="check1">Bunte Streusel</label><br>
+		<input type="checkbox" name="krokant" value="0.80" id="1x Krokant"/>
+		<label for="check2">Krokant</label><br>
+		<input type="checkbox" name="schokosauce" value="0.80" id="1 x Schokosauce"/>
+    <label for="check3">Schokosauce</label><br>
+    <input type="checkbox" name="schlagsahne" value="0.80" id="1 x Schlagsahne"/>
+		<label for="check4">Schlagsahne</label>
+  </fieldset>
+
+
+  <fieldset id="behaelter">
+		<legend> Behälter</legend>
+		<input type="radio" name="behaelter" value="0" id="in der Waffel" />
+			<label for="radio3">Waffel</label><br>
+			<input type="radio" name="behaelter" value="1" id="im Becher" />
+			<label for="radio4">Becher 1€</label><br>
+	</fieldset>
+
+
+	<fieldset id="lieferung">
+		<legend>Lieferung</legend>
+			<input type="radio" name="lieferung" value="3" id="1x Lieferung nach Hause" />
+			<label for="radio3">Lieferung 3€</label><br>
+			<input type="radio" name="lieferung" value="0" id="1x Abholung im Laden" />
+			<label for="radio4">Abholung</label><br>
+	</fieldset>
+
+	<fieldset id="info">
+		<legend> Adresse</legend>
+		Name
+		<input type="text" name="name" placeholder="Name hier eingeben" id="Name" required/>
+		<hr/>
+		Adresse
+		<input type="adresse" name="adresse" placeholder="Adresse hier eingeben" id="Adresse"required/>
+		<hr/>
+		Hausnummer
+		<input type="hausnummer" name="hausnummer" placeholder="Hausnummer hier eingeben" id="Hausnummer" required/>
+		<hr/>
+		Postleihzahl
+		<input type="plz" name="plz" placeholder="Postleihzahl hier eingeben" id="Plz"required/>
+		<hr/>
+		Stadt<br>
+		<input type="stadt" name="stadt" placeholder="Stadt hier eingeben" id="Stadt"required/>
+		<hr/>
+		Telefonummer
+		<input type="telefonnummer" name="telefonnummer" placeholder="Telefonnummer hier eingeben" id="Telefonnummer"required/>
+		<hr/>
+		Anmerkungen
+		<textarea name="anmerkungen" cols="20" rows="2" placeholder="Anmerkungen hier eingeben" id="Anmerkungen"></textarea>
+	</fieldset>
+
+	<fieldset id="bestellUebersicht">
+		<legend>Bestellübersicht</legend>
+		<div id="zusammenfassung"> </div>
+		<div id="summe"> </div>
+</fieldset>
+
+<button id="pruefen">Bestellung prüfen</button>
+
+
+
+</main>
+
+
+      
+<!--Fußbereich/Kontakt und Navigation -->
+<footer>
+</footer> 
+
+
+
+</body>
+</html>
