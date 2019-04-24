@@ -7,73 +7,85 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace a4 {
 
-    document.addEventListener("load", init);
-    document.getElementById("button").addEventListener("click", orderComplete);
+    window.addEventListener("load", init);
 
     function init(_event: Event): void {
+
+        document.getElementById("pruefen").addEventListener("click", bestellungUeberpruefen);
 
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
         for (let i: number = 0; i < fieldsets.length; i++) {
-            let fieldset: HTMLFieldSetElement = fieldsets[i];
-            fieldset.addEventListener("change", preisberechnung);
-
-            //fieldset.addEventListener("change", zusammenfassung);*//
+            let fieldset: HTMLFieldSetElement = fieldsets[i];{ 
+            fieldset.addEventListener("change", bestellUebersicht);
         }
     }
 
-    function orderComplete(): void {
-        let allesausfuellen: number = 0;
-
-        let eissorte1: HTMLInputElement = <HTMLInputElement>document.getElementById("schokolade");
-        let eissorte2: HTMLInputElement = <HTMLInputElement>document.getElementById("vanille");
-        let eissorte3: HTMLInputElement = <HTMLInputElement>document.getElementById("himbeere");
-        let eissorte4: HTMLInputElement = <HTMLInputElement>document.getElementById("joghurt");
-        let topping1: HTMLInputElement = <HTMLInputElement>document.getElementById("streusel");
-        let topping2: HTMLInputElement = <HTMLInputElement>document.getElementById("krokant");
-        let topping3: HTMLInputElement = <HTMLInputElement>document.getElementById("schokosauce");
-        let topping4: HTMLInputElement = <HTMLInputElement>document.getElementById("schlagsahne");
-        let behaelter1: HTMLInputElement = <HTMLInputElement>document.getElementById("waffel");
-        let behaelter2: HTMLInputElement = <HTMLInputElement>document.getElementById("becher");
-        let lieferung1: HTMLInputElement = <HTMLInputElement>document.getElementById("nachHause");
-        let lieferung2: HTMLInputElement = <HTMLInputElement>document.getElementById("abholung");
-        let name: HTMLInputElement = <HTMLInputElement>document.getElementById("name");
-        let adresse: HTMLInputElement = <HTMLInputElement>document.getElementById("adresse");
-        let hausnummer: HTMLInputElement = <HTMLInputElement>document.getElementById("hausnummer");
-        let plz: HTMLInputElement = <HTMLInputElement>document.getElementById("plz");
-        let stadt: HTMLInputElement = <HTMLInputElement>document.getElementById("stadt");
-        let telefon: HTMLInputElement = <HTMLInputElement>document.getElementById("telefon");
-        let anmerkungen: HTMLInputElement = <HTMLInputElement>document.getElementById("anmerkungen");
 
 
-        if (lieferung1.checked == true || lieferung2.checked == true) {
-            allesausfuellen = 1; 
-        }
+    /*FUNKTION listet angewähltes auf und rechnet die Summe zusammen */
 
-        if (eissorte1.value == "" || eissorte2.value == "" || eissorte3.value == "" || eissorte4.value == "" || eissorte4.value == ""|| topping1.value == "" || topping2.value == ""|| topping3.value == "" || topping4.value == ""|| behaelter1.value == "" || behaelter2.value == "" || name.value == "" || adresse.value == "" || hausnummer.value == "" || plz.value == ""|| stadt.value == "" || telefon.value == ""|| anmerkungen.value == "" ) {
-            allesausfuellen == 0;
-            alert("Bitte fehlenden Felder ergänzen!");
-
-        }
-    }
-
-    function preisberechnung (_event: Event): void {
+    function bestellUebersicht(_event: Event): void {
         let startSumme: number = 0;
+        let summe: number = 0;
+        let preis: number = 0;
         let bestellEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-        document.getElementById("uebersicht").innerHTML = "";
+        document.getElementById("zusammenfassung").innerHTML = "";
         for (let i: number = 0; i < bestellEingabe.length; i++) {
+        
+
             if (bestellEingabe[i].checked == true) {
                 let gesamtPreis: number = Number(bestellEingabe[i].value)
                 startSumme += gesamtPreis;
-                document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
+                document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let bestellUebersicht = document.createElement("li");
                 bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`
-                document.getElementById("uebersicht").appendChild(bestellUebersicht)
+                document.getElementById("zusammenfassung").appendChild(bestellUebersicht)
             }
         }
+        
+        for (let i: number = 0; i < bestellEingabe.length; i++)
+        
+            // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
+            if ((bestellEingabe[i].name == "schokolade" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "vanille" && Number(bestellEingabe[i].value) > 0 || (bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0 || bestellEingabe[i].name == "joghurt" && Number (bestellEingabe[i].value) > 0) {
+            preis = Number(bestellEingabe[i].value);
+            summe += preis;
+            console.log(summe);
+            let ziel = document.createElement("li");
+            ziel.innerHTML = `${bestellEingabe[i].value} Kugel ${bestellEingabe[i].name}, `;
+            document.getElementById("zusammenfassung").appendChild(ziel);
+        }
+        document.getElementById("summe").innerHTML = `Gesamtpreis:   ${summe} €`;
     }
 }
-    
 
-        
-    
+
+
+
+
+
+/* FUNKTION überprüft fehlende Angaben und gibt sie als Prompter aus*/
+
+function bestellungUeberpruefen(_event: Event): void {
+    let kundenDaten: string[] = [];
+    let kundenEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+    for (let i: number = 0; i < kundenEingabe.length; i++) {
+        if (kundenEingabe[i].value == "") {
+            let benoetigteDaten: string = kundenEingabe[i].name;
+            kundenDaten.push(benoetigteDaten);
+
+        }
+    }
+
+    if (kundenDaten.length == 0) {
+        alert("Vielen Dank für deine Bestellung");
+    }
+    else {
+        alert(`${kundenDaten} fehlt. Bitte noch ergänzen!`);
+    }
+
+}
+
+}
+
+

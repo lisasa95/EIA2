@@ -6,58 +6,61 @@ Datum: 21.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 var a4;
 (function (a4) {
-    document.addEventListener("load", init);
-    document.getElementById("button").addEventListener("click", orderComplete);
+    window.addEventListener("load", init);
     function init(_event) {
+        document.getElementById("pruefen").addEventListener("click", bestellungUeberpruefen);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
-            fieldset.addEventListener("change", preisberechnung);
-            //fieldset.addEventListener("change", zusammenfassung);*//
-        }
-    }
-    function orderComplete() {
-        let allesausfuellen = 0;
-        let eissorte1 = document.getElementById("schokolade");
-        let eissorte2 = document.getElementById("vanille");
-        let eissorte3 = document.getElementById("himbeere");
-        let eissorte4 = document.getElementById("joghurt");
-        let topping1 = document.getElementById("streusel");
-        let topping2 = document.getElementById("krokant");
-        let topping3 = document.getElementById("schokosauce");
-        let topping4 = document.getElementById("schlagsahne");
-        let behaelter1 = document.getElementById("waffel");
-        let behaelter2 = document.getElementById("becher");
-        let lieferung1 = document.getElementById("nachHause");
-        let lieferung2 = document.getElementById("abholung");
-        let name = document.getElementById("name");
-        let adresse = document.getElementById("adresse");
-        let hausnummer = document.getElementById("hausnummer");
-        let plz = document.getElementById("plz");
-        let stadt = document.getElementById("stadt");
-        let telefon = document.getElementById("telefon");
-        let anmerkungen = document.getElementById("anmerkungen");
-        if (lieferung1.checked == true || lieferung2.checked == true) {
-            allesausfuellen = 1;
-        }
-        if (eissorte1.value == "" || eissorte2.value == "" || eissorte3.value == "" || eissorte4.value == "" || eissorte4.value == "" || topping1.value == "" || topping2.value == "" || topping3.value == "" || topping4.value == "" || behaelter1.value == "" || behaelter2.value == "" || name.value == "" || adresse.value == "" || hausnummer.value == "" || plz.value == "" || stadt.value == "" || telefon.value == "" || anmerkungen.value == "") {
-            allesausfuellen == 0;
-            alert("Bitte fehlenden Felder ergänzen!");
-        }
-    }
-    function preisberechnung(_event) {
-        let startSumme = 0;
-        let bestellEingabe = document.getElementsByTagName("input");
-        document.getElementById("uebersicht").innerHTML = "";
-        for (let i = 0; i < bestellEingabe.length; i++) {
-            if (bestellEingabe[i].checked == true) {
-                let gesamtPreis = Number(bestellEingabe[i].value);
-                startSumme += gesamtPreis;
-                document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
-                let bestellUebersicht = document.createElement("li");
-                bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`;
-                document.getElementById("uebersicht").appendChild(bestellUebersicht);
+            {
+                fieldset.addEventListener("change", bestellUebersicht);
             }
+        }
+        /*FUNKTION listet angewähltes auf und rechnet die Summe zusammen */
+        function bestellUebersicht(_event) {
+            let startSumme = 0;
+            let summe = 0;
+            let preis = 0;
+            let bestellEingabe = document.getElementsByTagName("input");
+            document.getElementById("zusammenfassung").innerHTML = "";
+            for (let i = 0; i < bestellEingabe.length; i++) {
+                if (bestellEingabe[i].checked == true) {
+                    let gesamtPreis = Number(bestellEingabe[i].value);
+                    startSumme += gesamtPreis;
+                    document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
+                    let bestellUebersicht = document.createElement("li");
+                    bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`;
+                    document.getElementById("zusammenfassung").appendChild(bestellUebersicht);
+                }
+            }
+            for (let i = 0; i < bestellEingabe.length; i++)
+                // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
+                if ((bestellEingabe[i].name == "schokolade" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "vanille" && Number(bestellEingabe[i].value) > 0 || (bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0 || bestellEingabe[i].name == "joghurt" && Number(bestellEingabe[i].value) > 0) {
+                    preis = Number(bestellEingabe[i].value);
+                    summe += preis;
+                    console.log(summe);
+                    let ziel = document.createElement("li");
+                    ziel.innerHTML = `${bestellEingabe[i].value} Kugel ${bestellEingabe[i].name}, `;
+                    document.getElementById("zusammenfassung").appendChild(ziel);
+                }
+            document.getElementById("summe").innerHTML = `Gesamtpreis:   ${summe} €`;
+        }
+    }
+    /* FUNKTION überprüft fehlende Angaben und gibt sie als Prompter aus*/
+    function bestellungUeberpruefen(_event) {
+        let kundenDaten = [];
+        let kundenEingabe = document.getElementsByTagName("input");
+        for (let i = 0; i < kundenEingabe.length; i++) {
+            if (kundenEingabe[i].value == "") {
+                let benoetigteDaten = kundenEingabe[i].name;
+                kundenDaten.push(benoetigteDaten);
+            }
+        }
+        if (kundenDaten.length == 0) {
+            alert("Vielen Dank für deine Bestellung");
+        }
+        else {
+            alert(`${kundenDaten} fehlt. Bitte noch ergänzen!`);
         }
     }
 })(a4 || (a4 = {}));
