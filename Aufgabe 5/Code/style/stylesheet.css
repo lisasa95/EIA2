@@ -7,10 +7,13 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 
 
-/* ANGEPASST FÜR SMARTPHONE MAXIMALE WEITE:480px*/
-
 html { background-color: rgb(185, 206, 214);
+    font-family: 'Thasadith', sans-serif;
+    text-align: left;
+    font-size:17px;
+    color:black;
 }
+
 
 h1 { font-family: 'Prata', serif;
      color:white;
@@ -19,142 +22,16 @@ h1 { font-family: 'Prata', serif;
      text-transform: uppercase;
 }
 
-main { font-family: 'Thasadith', sans-serif;
-    text-align: left;
-    font-size:17px;
+fieldset { border: 1px solid black;
+            width: 1150px;
+            height:80px;
+            margin-left:50px;
+            margin-top:20px;
 }
 
-#kugeln { position: absolute;
-    top: 120px;
-    width: 100px;
-    height: 240px;
-    border: 1px solid black;
-    padding-bottom: 10px;
-    padding-right: 180px;
-    margin: 10px;
+#bestellbutton{ 
+    height:140px;
+    margin-left:1250px;
+    margin-top:-10px;        
 }
-
-#toppings { position: absolute;
-    top: 380px;
-    width: 130px;
-    height: 130px;
-    border: 1px solid black;
-    padding-bottom: 10px;
-    padding-right: 180px;
-    margin: 10px;   
-}
-
-
-#behaelter { position: absolute;
-    top: 540px;
-    width: 130px;
-    height: 80px;
-    border: 1px solid black;
-    padding-bottom: 10px;
-    padding-right: 180px;
-    margin: 10px;
-}
-
-#lieferung { position: absolute;
-    top: 1180px;
-    width: 130px;
-    height: 80px;
-    border: 1px solid black;
-    padding-bottom: 10px;
-    padding-right: 180px;
-    margin: 10px;
-}
-
-#info { position: absolute;
-    top: 650px;
-    width: 130px;
-    height: 500px;
-    border: 1px solid black;
-    padding-bottom: 10px;
-    padding-right:140px;
-    margin: 10px;
-}
-
-#bestellUebersicht { position: absolute;
-    top: 1300px;
-    width: 130px;
-    height: 500px;
-    border: 1px solid black;
-    padding-right: 190px;
-    background-color: rgb(221, 174, 207);
-    margin: 10px;
-}
-
-
-button { background-color: rgb(221, 174, 207);
-         color:black;
-         border: 2px black solid;
-         width:90px;
-         height:50px;
-         margin-left:210px;
-         margin-top:1700px;
-         z-index: 1;
-}
-
-h2 {padding-left:20px;
-}
-
-li {
-    list-style-type: none;
-}
-
-li::before  {
-    font-size: 24px;
-  }
-
-#summe {
-    margin-top: 100px;
-    font-size: 28px;
-    font-style: bold;
-}
-
-
-/*MEDIAQUERY*/
-/*FÜR DESKTOP MINIMALE WEITE: 1025px*/
-@media(min-width:1025px) { 
-
-fieldset { float: left;
-}
-
-#lieferung { margin-left: 800px;
-                  margin-top: -1050px;
-}
-
-#info { margin-top: -520px;
-           margin-left: 410px;
-
-}
-
-#bestellUebersicht { margin-top: -1030px;
-                    margin-left: 800px;
-}
-
-#toppings { margin-top: 20px;
-    
-}
-
-button { margin-left:450px;
-    margin-top:540px;
-    height:40px;
-    width:240px;
-
-}
-
-main { margin-left:310px;
-}
-
-h1 { font-size: 50px;
-}
-
-#behaelter { margin-top:20px;
-}
-
-
-}
-
 
