@@ -26,53 +26,44 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 
 <!-- Headbereich/Kopfinfos - Navigation -->
-<header>
-<nav>
-<h1>Eisdealer</h1>
-</nav>
-</header>
+<body>
 
-<!-- Hauptbereich -->
-<fieldset id="eissorte">
-	<legend>Eissorten je 1€</legend>
-	<div></div>
-</fieldset>
+	<header>
+	<h1>Eisdealer</h1>
+	</header>
 
+<main>
 
-<fieldset id="toppings">
-	<legend>Topping je 0,80€</legend>
-	<div></div>
-</fieldset>
+	<fieldset>
+		<legend>Lieferoptionen</legend>
+		<input type="radio" name="lieferung" id="Abholung" value="0" />
+		<label for="lieferung">Abholung</label>
+		<br>
+		<input type="radio" name="lieferung" id="Lieferung" value="5" />
+		<label for="lieferung">Lieferung 5€</label>
+	</fieldset>
 
-
-<fieldset id="behaelter">
-	<legend>Behälter</legend>
-	<div></div>
-</fieldset>
-
-
-<fieldset id="lieferung">
-	<legend>Lieferart</legend>
-	<div></div>
-</fieldset>
+	<fieldset id="adressdaten">
+		<legend>Adressdaten</legend>
+		<input type="text" name="Name" placeholder="Name" required />
+		<input type="text" name=" Straße" placeholder="Straße und Hausnummer" required />
+		<input type="text" name=" Postleitzahl" placeholder="Postleitzahl" pattern="[0-9]{5}" required />
+		<input type="text" name=" Stadt" placeholder="Stadt" required />
+		<input type="text" name=" Telefonnummer" placeholder="Telefonnummer" pattern="[0-9]{5}" required />
+	</fieldset>
 
 
-<fieldset id="adressdaten">
-	<legend>Adresse</legend>
-	<div id="adressdaten"></div>
-</fieldset>
+	<fieldset id="bestellUebersicht">
+		<legend>Bestellübersicht</legend>
+		<div id="eistopping"></div>
+		<div id="behaelter"></div>
+		<div id="lieferoption"></div>
+		<p>Gesamtpreis:</p>
+		<div id="summe"></div>
+		<button id="bestellbutton">Bestellung prüfen</button>
+	</fieldset>
 
-<div id="bestellbutton"></div>
-
-<div id="uebersichtscontainer"></div>
-
-
-      
-<!--Fußbereich/Kontakt und Navigation -->
-<footer>
-</footer> 
-
-
+</main>
 
 </body>
 </html>

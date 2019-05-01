@@ -8,37 +8,41 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace a5 {
 
-    export interface Daten {
-        typ: string;
+    export interface Eisdaten {
         name: string;
         preis: number;
+        typ: string;
+
     }
         
+
+
+    export interface Fieldsetarray {
+        [datenArray: string]: Eisdaten[];
+    }
+
+    export let sortimentArray: Fieldsetarray = {
+        "Eissorten": [
+            { name: "Schokolade", preis: 1, typ: "number" },
+            { name:"Vanille", preis: 1, typ: "number" },
+            { name: "Himbeere", preis: 1, typ: "number" },
+            { name:"Joghurt", preis: 1, typ: "number" },
+
+        ],
+
+        "Behaelter": [
+            { name: "Waffel", preis: 0, typ: "radio" },
+            { name: "Becher", preis: 1, typ: "radio" }
+        ],
+
+        "Toppings": [
+            { name: "Streusel", preis: 1, typ: "number" },
+            { name: "Krokant", preis: 1, typ: "number" },
+            { name: "Schokosauce", preis: 1, typ: "number" },
+            { name: "Schlagsahne", preis: 1, typ: "number" }
+        ],
+
+
+    };
+}
     
-    export let eissortenarray: Daten[] = [ //multidimensionales heterogenes Array
-        {typ: "eissorte", name: "Schokolade", preis: 1},
-        {typ: "eissorte", name: "Vanille", preis: 1},
-        {typ: "eissorte", name: "Himbeere", preis: 1},
-        {typ: "eissorte", name: "Joghurt", preis: 1}
-    ];
-       
-    export let toppingarray: Daten[] = [
-        {typ: "topping", name: "Streusel", preis: 0.80},
-        {typ: "topping", name: "Krokant", preis: 0.80},
-        {typ: "topping", name: "Schokosauce", preis: 0.80},
-        {typ: "topping", name: "Sahne", preis: 0.80}
-    ];
-        
-        
-    export let behalterarray: Daten[] = [
-        {typ: "behaelter", name: "Waffel", preis: 0},
-        {typ: "behaelter", name: "Becher", preis: 1}
-    ];    
-        
-        
-    export let lieferoptionenarray: Daten[] = [
-        {typ: "lieferoption", name: "Lieferung", preis: 3},
-        {typ: "lieferoption", name: "Abholung", preis: 0}
-    ]; 
-           
-    }
