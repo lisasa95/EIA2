@@ -1,0 +1,37 @@
+/* Aufgabe 4: 
+Aufgabe: Aufgabe Nummer 4 - Eisdealer
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 21.04.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
+
+html { background-color: rgb(185, 206, 214);
+    font-family: 'Thasadith', sans-serif;
+    text-align: left;
+    font-size:17px;
+    color:black;
+}
+
+
+h1 { font-family: 'Prata', serif;
+     color:white;
+     font-size: 45px;
+     text-align: center;
+     text-transform: uppercase;
+}
+
+fieldset { border: 1px solid black;
+            width: 1150px;
+            height:80px;
+            margin-left:50px;
+            margin-top:20px;
+}
+
+#bestellbutton{ 
+    height:140px;
+    margin-left:1250px;
+    margin-top:-10px;        
+}
+
