@@ -24,6 +24,7 @@ var a4;
         let preis = 0;
         let bestellEingabe = document.getElementsByTagName("input");
         document.getElementById("zusammenfassung").innerHTML = "";
+        // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
         for (let i = 0; i < bestellEingabe.length; i++) {
             if ((bestellEingabe[i].name == "schokolade" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "vanille" && Number(bestellEingabe[i].value) > 0 || (bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "himbeere" && Number(bestellEingabe[i].value) > 0 || bestellEingabe[i].name == "joghurt" && Number(bestellEingabe[i].value) > 0) {
                 preis = Number(bestellEingabe[i].value);
@@ -42,7 +43,6 @@ var a4;
                 bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`;
                 document.getElementById("zusammenfassung").appendChild(bestellUebersicht);
             }
-            // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
             document.getElementById("summe").innerHTML = `Gesamtpreis:   ${summe} €`;
         }
     }
