@@ -39,9 +39,10 @@ var a6;
         label.innerHTML = sortimentAuswahl.name;
         if (sortimentAuswahl.typ == "radio") {
             input.setAttribute("type", sortimentAuswahl.typ);
-            input.setAttribute("name", "radiobutton");
+            input.setAttribute("name", "Behaelter");
             input.setAttribute("preis", sortimentAuswahl.preis.toString());
             input.setAttribute("id", sortimentAuswahl.name);
+            input.setAttribute("value", sortimentAuswahl.name);
         }
         if (sortimentAuswahl.typ == "number") {
             input.setAttribute("type", sortimentAuswahl.typ);
