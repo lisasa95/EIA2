@@ -4,9 +4,9 @@ Name: Lisa Sanchez y Bittner
 Matrikel: 260502
 Datum: 05.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
-var a5;
-(function (a5) {
-    a5.sortimentArray = {
+var a6;
+(function (a6) {
+    a6.sortimentArray = {
         "Eissorten": [
             { name: "Schokolade", preis: 1, typ: "number" },
             { name: "Vanille", preis: 1, typ: "number" },
@@ -24,5 +24,5 @@ var a5;
             { name: "Schlagsahne", preis: 1, typ: "number" }
         ],
     };
-})(a5 || (a5 = {}));
+})(a6 || (a6 = {}));
 //# sourceMappingURL=verkäufer.js.map

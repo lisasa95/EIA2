@@ -5,7 +5,7 @@ Matrikel: 260502
 Datum: 05.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 
-namespace a5 {
+namespace a6 {
 
     window.addEventListener("load", init);
 
@@ -30,7 +30,7 @@ namespace a5 {
     /* FUNKTION - Elemente werden mit Fieldsets bzw. darin erstellt - Eiszusammenstellung */
 
     function eiselemente(daten: Fieldsetarray): void {
-        document.body.appendChild(fieldset);
+        document.getElementById("form").appendChild(fieldset);
         legend.innerHTML = "Hier Eis zusammenstellen";
         fieldset.appendChild(legend);
         for (let datenArray in daten) {
@@ -108,7 +108,7 @@ namespace a5 {
             }
 
             if (bestellAuswahl[i].checked == true && bestellAuswahl[i].name == "lieferung") {
-                let gesamtPreis: number = Number(bestellAuswahl[i].getAttribute("value"));
+                let gesamtPreis: number = Number(bestellAuswahl[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let lieferWahl: HTMLElement = document.createElement("li");
@@ -135,7 +135,7 @@ namespace a5 {
                 let benoetigteDaten: string = kundenEingabe[i].name;
                 kundenAdresse.push(benoetigteDaten);
             }
-            if (kundenEingabe[i].type == "checkbox" && kundenEingabe[i].checked == true) {
+            if (kundenEingabe[i].type == "radio" && kundenEingabe[i].checked == true) {
                 lieferoptionLeer = 1;
             }
 

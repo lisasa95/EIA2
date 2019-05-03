@@ -28,6 +28,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 <!-- Headbereich/Kopfinfos - Navigation -->
 <body>
 
+	<form id="form"action="https://eia2lisa.herokuapp.com/" target="_blank" method="get">
+
 	<header>
 	<h1>Eisdealer</h1>
 	</header>
@@ -36,20 +38,20 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 	<fieldset>
 		<legend>Lieferoptionen</legend>
-		<input type="radio" name="lieferung" id="Abholung" value="0" />
+		<input type="radio" name="lieferung" id="Abholung" preis="0" value="Abholung" />
 		<label for="Abholung">Abholung</label>
 		<br>
-		<input type="radio" name="lieferung" id="Lieferung" value="5" />
+		<input type="radio" name="lieferung" id="Lieferung" preis="5" value="Lieferunng nach Hause" />
 		<label for="Lieferung">Lieferung 5€</label>
 	</fieldset>
 
 	<fieldset id="adressdaten">
 		<legend>Adressdaten</legend>
-		<input type="text" name="Name" placeholder="Name" required />
-		<input type="text" name=" Straße" placeholder="Straße und Hausnummer" required />
-		<input type="text" name=" Postleitzahl" placeholder="Postleitzahl" pattern="[0-9]{5}" required />
+		<input type="text" name=" Name" placeholder="Name" required />
+		<input type="text" name=" Strasse" placeholder="Strasse und Hausnummer" required />
+		<input type="text" name=" Postleitzahl" placeholder="Postleitzahl" required />
 		<input type="text" name=" Stadt" placeholder="Stadt" required />
-		<input type="text" name=" Telefonnummer" placeholder="Telefonnummer" pattern="[0-9]{5}" required />
+		<input type="text" name=" Telefonnummer" placeholder="Telefonnummer" required />
 	</fieldset>
 
 
@@ -60,10 +62,12 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 		<div id="lieferoption"></div>
 		<p>Gesamtpreis:</p>
 		<div id="summe"></div>
-		<button id="bestellbutton">Bestellung prüfen</button>
+		<button id="bestellbutton" type="submit">Bestellung prüfen</button>
 	</fieldset>
 
 </main>
+
+</form>
 
 </body>
 </html>

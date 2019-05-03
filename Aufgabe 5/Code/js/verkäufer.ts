@@ -6,7 +6,7 @@ Datum: 28.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 
 
-namespace a6 {
+namespace a5 {
 
     export interface Eisdaten {
         name: string;

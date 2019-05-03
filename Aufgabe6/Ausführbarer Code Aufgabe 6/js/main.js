@@ -4,13 +4,13 @@ Name: Lisa Sanchez y Bittner
 Matrikel: 260502
 Datum: 05.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
-var a5;
-(function (a5) {
+var a6;
+(function (a6) {
     window.addEventListener("load", init);
     let fieldset = document.createElement("fieldset");
     let legend = document.createElement("legend");
     function init(_event) {
-        eiselemente(a5.sortimentArray);
+        eiselemente(a6.sortimentArray);
         document.getElementById("bestellbutton").addEventListener("click", bestellungUeberpruefen);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
@@ -20,7 +20,7 @@ var a5;
     }
     /* FUNKTION - Elemente werden mit Fieldsets bzw. darin erstellt - Eiszusammenstellung */
     function eiselemente(daten) {
-        document.body.appendChild(fieldset);
+        document.getElementById("form").appendChild(fieldset);
         legend.innerHTML = "Hier Eis zusammenstellen";
         fieldset.appendChild(legend);
         for (let datenArray in daten) {
@@ -81,7 +81,7 @@ var a5;
                 document.getElementById("behaelter").appendChild(behaelterWahl);
             }
             if (bestellAuswahl[i].checked == true && bestellAuswahl[i].name == "lieferung") {
-                let gesamtPreis = Number(bestellAuswahl[i].getAttribute("value"));
+                let gesamtPreis = Number(bestellAuswahl[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let lieferWahl = document.createElement("li");
@@ -102,7 +102,7 @@ var a5;
                 let benoetigteDaten = kundenEingabe[i].name;
                 kundenAdresse.push(benoetigteDaten);
             }
-            if (kundenEingabe[i].type == "checkbox" && kundenEingabe[i].checked == true) {
+            if (kundenEingabe[i].type == "radio" && kundenEingabe[i].checked == true) {
                 lieferoptionLeer = 1;
             }
             if (kundenEingabe[i].type == "number" && Number(kundenEingabe[i].value) > 0) {
@@ -128,5 +128,5 @@ var a5;
             alert(`${kundenAdresse} ist noch nicht ausgefüllt. Bitte vervollständigen!`);
         }
     }
-})(a5 || (a5 = {}));
+})(a6 || (a6 = {}));
 //# sourceMappingURL=main.js.map

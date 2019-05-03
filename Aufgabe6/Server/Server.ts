@@ -1,6 +1,6 @@
 import * as Http from "http"; // http Objekt wird importiert aus "http" = Typescript wird vermittelt das Node verwendet wird
 
- // Namespace mit dem Namen "L05_Server" wird erstellt - gelöscht, da Fehler aufkam
+ 	// Namespace mit dem Namen "L05_Server" wird erstellt - gelöscht, da Fehler aufkamen mit Serververbindung
 	console.log("Starting server"); // in der Konsole wird zu Beginn "Starting Server" ausgegeben
 	let port: number = Number(process.env.PORT); // neue Variable mit Namen "port" wird erstellt, vom Typ number auf die Server hören soll
 	if (!port) // wenn Port nicht richtig/anders ist, soll nächste Zeile ausgelesen werden
@@ -24,7 +24,7 @@ import * as Http from "http"; // http Objekt wird importiert aus "http" = Typesc
 		_response.write(_request.url); // _request.url wird in _responce.write in der URL geschrieben,vom Server so empfangen. Was hinter den Schrägstrich in der URL geschrieben wird, steht dann auch im Browser hinter dem Schrägstrich
 		console.log(_request.url); // gibt die eingabe von _response.write /(hinter dem Schrägstrich in Browser) auch im Terminal aus
 
-		_response.end(); // _responce wird geschlossen/beendet, Server bekommt Nachricht das request nun fertig ist, mit STRG-C kann der lokale Server beendet werden
+		_response.end(); // _responce wird geschlossen/beendet, Server bekommt Nachricht das request nun fertig ist, mit STRG + C kann der lokale Server beendet werden
 	} // Funktion handleRequest wird geschlossen
  // namespace L05_Server wird geschlossen
 	

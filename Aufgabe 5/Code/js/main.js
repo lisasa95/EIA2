@@ -4,13 +4,13 @@ Name: Lisa Sanchez y Bittner
 Matrikel: 260502
 Datum: 28.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
-var a6;
-(function (a6) {
+var a5;
+(function (a5) {
     window.addEventListener("load", init);
     let fieldset = document.createElement("fieldset");
     let legend = document.createElement("legend");
     function init(_event) {
-        eiselemente(a6.sortimentArray);
+        eiselemente(a5.sortimentArray);
         document.getElementById("bestellbutton").addEventListener("click", bestellungUeberpruefen);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
@@ -128,5 +128,5 @@ var a6;
             alert(`${kundenAdresse} ist noch nicht ausgefüllt. Bitte vervollständigen!`);
         }
     }
-})(a6 || (a6 = {}));
+})(a5 || (a5 = {}));
 //# sourceMappingURL=main.js.map
