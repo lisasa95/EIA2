@@ -1,12 +1,12 @@
-/* Aufgabe 6: 
-Aufgabe: Aufgabe Nummer 6 - Server: Erster Node Server
+/* Aufgabe 7:
+Aufgabe: Aufgabe Nummer 7 - Serverseitige Verarbeitung
 Name: Lisa Sanchez y Bittner
 Matrikel: 260502 
-Datum: 05.05.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
+Datum: 12.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 
-namespace a6 {
+namespace a7 {
 
     export interface Eisdaten {
         name: string;

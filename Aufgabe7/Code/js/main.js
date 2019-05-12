@@ -1,17 +1,18 @@
-/* Aufgabe 6:
-Aufgabe: Aufgabe Nummer 6 - Server: Erster Node Server
+/* Aufgabe 7:
+Aufgabe: Aufgabe Nummer 7 - Serverseitige Verarbeitung
 Name: Lisa Sanchez y Bittner
 Matrikel: 260502
-Datum: 05.05.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
-var a6;
-(function (a6) {
+Datum: 12.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+var a7;
+(function (a7) {
     window.addEventListener("load", init);
     let fieldset = document.createElement("fieldset");
     let legend = document.createElement("legend");
     function init(_event) {
-        eiselemente(a6.sortimentArray);
+        eiselemente(a7.sortimentArray);
         document.getElementById("bestellbutton").addEventListener("click", bestellungUeberpruefen);
+        document.getElementById("bestellbutton").addEventListener("click", urlGenerieren);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
@@ -20,7 +21,7 @@ var a6;
     }
     /* FUNKTION - Elemente werden mit Fieldsets bzw. darin erstellt - Eiszusammenstellung */
     function eiselemente(daten) {
-        document.getElementById("form").appendChild(fieldset);
+        document.body.appendChild(fieldset);
         legend.innerHTML = "Hier Eis zusammenstellen";
         fieldset.appendChild(legend);
         for (let datenArray in daten) {
@@ -73,7 +74,7 @@ var a6;
                 auswahl.innerHTML = `${bestellAuswahl[i].value} x ${bestellAuswahl[i].name}`;
                 document.getElementById("eistopping").appendChild(auswahl);
             }
-            if (bestellAuswahl[i].checked == true && bestellAuswahl[i].getAttribute("name") == "radiobutton") {
+            if (bestellAuswahl[i].checked == true && bestellAuswahl[i].getAttribute("name") == "Behaelter") {
                 let gesamtPreis = Number(bestellAuswahl[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
@@ -129,5 +130,37 @@ var a6;
             alert(`${kundenAdresse} ist noch nicht ausgefüllt. Bitte vervollständigen!`);
         }
     }
-})(a6 || (a6 = {}));
+    // FUNKTION - urlGenerieren - GETURL
+    function urlGenerieren() {
+        let kundenBestellung = document.getElementsByTagName("input");
+        let url = "https://eia2lisa.herokuapp.com/?";
+        for (let i = 0; i < kundenBestellung.length; i++) {
+            if (kundenBestellung[i].name == "lieferung" && kundenBestellung[i].checked == true) {
+                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+            }
+            if (kundenBestellung[i].name == "Behaelter" && kundenBestellung[i].checked == true) {
+                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+            }
+            if (kundenBestellung[i].type == "number" && Number(kundenBestellung[i].value) > 0) {
+                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+            }
+            if (kundenBestellung[i].type == "checkbox" && kundenBestellung[i].checked == true) {
+                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+            }
+        }
+        sendRequestWithCustomData(url);
+    }
+    function sendRequestWithCustomData(_url) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", _url, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+    function handleStateChange(_event) {
+        let xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            document.getElementById("urlRueckgabe").innerHTML = xhr.response;
+        }
+    }
+})(a7 || (a7 = {}));
 //# sourceMappingURL=main.js.map

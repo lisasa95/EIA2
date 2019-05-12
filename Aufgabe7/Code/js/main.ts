@@ -1,11 +1,12 @@
-/* Aufgabe 6: 
-Aufgabe: Aufgabe Nummer 6 - Server: Erster Node Server
+/* Aufgabe 7:
+Aufgabe: Aufgabe Nummer 7 - Serverseitige Verarbeitung
 Name: Lisa Sanchez y Bittner
 Matrikel: 260502 
-Datum: 05.05.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
+Datum: 12.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
-namespace a6 {
+
+namespace a7 {
 
     window.addEventListener("load", init);
 
@@ -17,6 +18,7 @@ namespace a6 {
         eiselemente(sortimentArray);
 
         document.getElementById("bestellbutton").addEventListener("click", bestellungUeberpruefen);
+        document.getElementById("bestellbutton").addEventListener("click", urlGenerieren);
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
         for (let i: number = 0; i < fieldsets.length; i++) {
@@ -30,7 +32,7 @@ namespace a6 {
     /* FUNKTION - Elemente werden mit Fieldsets bzw. darin erstellt - Eiszusammenstellung */
 
     function eiselemente(daten: Fieldsetarray): void {
-        document.getElementById("form").appendChild(fieldset);
+        document.body.appendChild(fieldset);
         legend.innerHTML = "Hier Eis zusammenstellen";
         fieldset.appendChild(legend);
         for (let datenArray in daten) {
@@ -53,7 +55,7 @@ namespace a6 {
         if (sortimentAuswahl.typ == "radio") {
             input.setAttribute("type", sortimentAuswahl.typ);
             input.setAttribute("name", "Behaelter");
-            input.setAttribute("preis", sortimentAuswahl.preis.toString());       
+            input.setAttribute("preis", sortimentAuswahl.preis.toString());
             input.setAttribute("id", sortimentAuswahl.name);
             input.setAttribute("value", sortimentAuswahl.name);
         }
@@ -99,7 +101,7 @@ namespace a6 {
                 document.getElementById("eistopping").appendChild(auswahl);
             }
 
-            if (bestellAuswahl[i].checked == true && bestellAuswahl[i].getAttribute("name") == "radiobutton") {
+            if (bestellAuswahl[i].checked == true && bestellAuswahl[i].getAttribute("name") == "Behaelter") {
                 let gesamtPreis: number = Number(bestellAuswahl[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
@@ -165,5 +167,51 @@ namespace a6 {
             alert(`${kundenAdresse} ist noch nicht ausgefüllt. Bitte vervollständigen!`);
         }
     }
+
+
+
+    // FUNKTION - urlGenerieren - GETURL
+
+    function urlGenerieren(): void {
+    let kundenBestellung: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+    let url: string = "https://eia2lisa.herokuapp.com/?";
+    for (let i: number = 0; i < kundenBestellung.length; i++) {
+
+        if (kundenBestellung[i].name == "lieferung" && kundenBestellung[i].checked == true) {
+            url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+        }
+
+        if (kundenBestellung[i].name == "Behaelter" && kundenBestellung[i].checked == true) {
+            url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+        }
+
+        if (kundenBestellung[i].type == "number" && Number(kundenBestellung[i].value) > 0) {
+            url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+        }
+
+        if (kundenBestellung[i].type == "checkbox" && kundenBestellung[i].checked == true) {
+            url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+        }
+
+    }
+
+    sendRequestWithCustomData(url);
+}
+
+
+function sendRequestWithCustomData(_url: string): void {
+    let xhr: XMLHttpRequest = new XMLHttpRequest();
+    xhr.open("GET", _url, true);
+    xhr.addEventListener("readystatechange", handleStateChange);
+    xhr.send();
+}
+
+function handleStateChange(_event: ProgressEvent): void {
+    let xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        document.getElementById("urlRueckgabe").innerHTML = xhr.response;
+    }
+}
+
 
 }

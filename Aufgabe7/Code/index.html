@@ -1,8 +1,8 @@
-<!--Aufgabe 6:
-Aufgabe: Aufgabe Nummer 6 - Server: Erster Node Server
+<!--Aufgabe 7:
+Aufgabe: Aufgabe Nummer 7 - Serverseitige Verarbeitung
 Name: Lisa Sanchez y Bittner
 Matrikel: 260502 
-Datum: 05.05.2019
+Datum: 12.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */-->
 
 <!--Definierung und Kopfelement-->
@@ -11,7 +11,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 <head>
     <meta charset="UTF-8">
-    <title>Aufgabe 6 - Eisdealer Erster Node Server </title>
+    <title>Aufgabe 7 - Serverseitige Verabeitung </title>
 		<link rel="stylesheet" type="text/css" href="style/stylesheet.css"/>
 		<script src="js/main.js" defer></script>
 		<script src="js/verkäufer.js" defer></script>
@@ -28,14 +28,16 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 <!-- Headbereich/Kopfinfos - Navigation -->
 <body>
 
-	<form id="form"action="https://eia2lisa.herokuapp.com/" target="_blank" method="get">
-
 	<header>
 	<h1>Eisdealer</h1>
 	</header>
 
 <main>
+	<div id="urlRueckgabe">
 
+		
+	</div>
+	
 	<fieldset>
 		<legend>Lieferoptionen</legend>
 		<input type="radio" name="lieferung" id="Abholung" preis="0" value="Abholung" />
@@ -54,6 +56,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 		<input type="text" name=" Telefonnummer" placeholder="Telefonnummer" required />
 	</fieldset>
 
+	
 
 	<fieldset id="bestellUebersicht">
 		<legend>Bestellübersicht</legend>
@@ -65,9 +68,11 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 		<button id="bestellbutton" type="submit">Bestellung prüfen</button>
 	</fieldset>
 
+
+	
+
 </main>
 
-</form>
 
 </body>
 </html>
