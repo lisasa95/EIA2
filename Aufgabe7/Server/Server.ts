@@ -24,7 +24,8 @@ import * as Url from "url";
 
 		//_response.write(_request.url); // _request.url wird in _responce.write in der URL geschrieben,vom Server so empfangen. Was hinter den Schrägstrich in der URL geschrieben wird, steht dann auch im Browser hinter dem Schrägstrich
 		//console.log(_request.url); // gibt die eingabe von _response.write /(hinter dem Schrägstrich in Browser) auch im Terminal aus
-		_response.write("<h2> Ihr soeben bestellter Auftrag:<h2>");
+
+		_response.write("<h2> Ihr soeben bestellter Auftrag:</h2>");
 		let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true); // Url wird übergeben als p in das HTML Dokument 
 		for (let key in url.query) { 
 			_response.write("<p>" + key + url.query[key] + "</p> <br>");

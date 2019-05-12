@@ -135,7 +135,7 @@ var a7;
         let kundenBestellung = document.getElementsByTagName("input");
         let url = "https://eia2lisa.herokuapp.com/?";
         for (let i = 0; i < kundenBestellung.length; i++) {
-            if (kundenBestellung[i].name == "b" && kundenBestellung[i].checked == true) {
+            if (kundenBestellung[i].name == "Lieferung" && kundenBestellung[i].checked == true) {
                 url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
             }
             if (kundenBestellung[i].name == "Behaelter" && kundenBestellung[i].checked == true) {

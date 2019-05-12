@@ -177,7 +177,7 @@ namespace a7 {
     let url: string = "https://eia2lisa.herokuapp.com/?";
     for (let i: number = 0; i < kundenBestellung.length; i++) {
 
-        if (kundenBestellung[i].name == "b" && kundenBestellung[i].checked == true) {
+        if (kundenBestellung[i].name == "Lieferung" && kundenBestellung[i].checked == true) {
             url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
         }
 
