@@ -2,7 +2,7 @@
 	"name": "miniserver",
 	"version": "1.0.0",
 	"description": "Minimal server just bouncing the URL",
-	"author": "Jirka, adapted by Lukas",
+	"author": "Lisa",
 	"main": "Server.js",
 	"scripts": {
 		"start": "node Aufgabe7/Server/Server.js"
