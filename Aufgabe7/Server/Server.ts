@@ -22,12 +22,12 @@ import * as Url from "url";
 		_response.setHeader("content-type", "text/html; charset=utf-8"); // Header Werte für Header Objekt werden definiert. Die Contentart, die Art des Dokuments "text/html", und die Unicode-Codierung "charset=utf-8" werden vorgegeben
 		_response.setHeader("Access-Control-Allow-Origin", "*"); // "Acess-Control-Allow-Origin" wird zusätzlich als Header Wert festgelegt - erlaubt Webbrowsern oder Clients Zugriff über einen anderen Server oder andere Domain
 
-		_response.write(_request.url); // _request.url wird in _responce.write in der URL geschrieben,vom Server so empfangen. Was hinter den Schrägstrich in der URL geschrieben wird, steht dann auch im Browser hinter dem Schrägstrich
-		console.log(_request.url); // gibt die eingabe von _response.write /(hinter dem Schrägstrich in Browser) auch im Terminal aus
-
+		//_response.write(_request.url); // _request.url wird in _responce.write in der URL geschrieben,vom Server so empfangen. Was hinter den Schrägstrich in der URL geschrieben wird, steht dann auch im Browser hinter dem Schrägstrich
+		//console.log(_request.url); // gibt die eingabe von _response.write /(hinter dem Schrägstrich in Browser) auch im Terminal aus
+		_response.write("<h2> Ihr soeben bestellter Auftrag:<h2>");
 		let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true); // Url wird übergeben als p in das HTML Dokument 
 		for (let key in url.query) { 
-			_response.write("<p>" + key + ":" + url.query[key] + "<p/>");
+			_response.write("<p>" + key + url.query[key] + "</p> <br>");
 
 		}
 		_response.end(); // _responce wird geschlossen/beendet, Server bekommt Nachricht das request nun fertig ist, mit STRG + C kann der lokale Server beendet werden

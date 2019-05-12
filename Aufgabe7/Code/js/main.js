@@ -82,7 +82,7 @@ var a7;
                 behaelterWahl.innerHTML = `${bestellAuswahl[i].getAttribute("id")}`;
                 document.getElementById("behaelter").appendChild(behaelterWahl);
             }
-            if (bestellAuswahl[i].checked == true && bestellAuswahl[i].name == "lieferung") {
+            if (bestellAuswahl[i].checked == true && bestellAuswahl[i].name == "Lieferung") {
                 let gesamtPreis = Number(bestellAuswahl[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("summe").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
@@ -135,7 +135,7 @@ var a7;
         let kundenBestellung = document.getElementsByTagName("input");
         let url = "https://eia2lisa.herokuapp.com/?";
         for (let i = 0; i < kundenBestellung.length; i++) {
-            if (kundenBestellung[i].name == "lieferung" && kundenBestellung[i].checked == true) {
+            if (kundenBestellung[i].name == "b" && kundenBestellung[i].checked == true) {
                 url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
             }
             if (kundenBestellung[i].name == "Behaelter" && kundenBestellung[i].checked == true) {
