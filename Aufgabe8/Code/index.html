@@ -1,0 +1,77 @@
+<!--Aufgabe 8:
+Aufgabe: Aufgabe Nummer 8 - Database: Installation und Experimente
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 19.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */-->
+
+<!--Definierung und Kopfelement-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 7 - Serverseitige Verabeitung </title>
+		<link rel="stylesheet" type="text/css" href="style/stylesheet.css"/>
+		<script src="js/main.js" defer></script>
+		<script src="js/verkäufer.js" defer></script>
+		<link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+
+<!-- Headbereich/Kopfinfos - Navigation -->
+<body>
+
+	<header>
+	<h1>Eisdealer</h1>
+	<a href="https://mongodbnetbrowser.herokuapp.com/?u=userforlisa&p=lisasdatenbank&a=cluster0-i3oyz.mongodb.net&n=sample_mflix&c=movies">Mein Datenbank-Link</a>
+	</header>
+
+<main>
+	
+<div id="urlRueckgabe"></div>
+
+
+	<fieldset>
+		<legend>Lieferoptionen</legend>
+		<input type="radio" name="Lieferung" id="Abholung" preis="0" value="Abholung" />
+		<label for="Abholung">Abholung</label>
+		<br>
+		<input type="radio" name="Lieferung" id="Lieferung" preis="5" value="Lieferung nach Hause" />
+		<label for="Lieferung">Lieferung 5€</label>
+	</fieldset>
+
+	<fieldset id="adressdaten">
+		<legend>Adressdaten</legend>
+		<input type="text" name=" Name" placeholder="Name" required />
+		<input type="text" name=" Strasse" placeholder="Strasse und Hausnummer" required />
+		<input type="text" name=" Postleitzahl" placeholder="Postleitzahl" required />
+		<input type="text" name=" Stadt" placeholder="Stadt" required />
+		<input type="text" name=" Telefonnummer" placeholder="Telefonnummer" required />
+	</fieldset>
+
+	
+
+	<fieldset id="bestellUebersicht">
+		<legend>Bestellübersicht</legend>
+		<div id="eistopping"></div>
+		<div id="behaelter"></div>
+		<div id="lieferoption"></div>
+		<p>Gesamtpreis:</p>
+		<div id="summe"></div>
+		<button id="bestellbutton" type="submit">Bestellung prüfen</button>
+	</fieldset>
+
+
+
+</main>
+
+</body>
+
+</html>

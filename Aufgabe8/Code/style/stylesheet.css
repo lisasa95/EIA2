@@ -1,0 +1,88 @@
+/* Aufgabe 8:
+Aufgabe: Aufgabe Nummer 8 - Database: Installation und Experimente
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 19.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
+
+
+html { background-color: rgb(185, 206, 214);
+    font-family: 'Thasadith', sans-serif;
+    text-align: left;
+    font-size:20px;
+    color:black;
+    bottom:50px;
+}
+
+
+h1 { font-family: 'Prata', serif;
+     color:white;
+     font-size: 45px;
+     text-align: center;
+     text-transform: uppercase;
+}
+
+h2 { color:white;
+    font-size: 22px;
+}
+
+fieldset { border: 1px solid black;
+            width: 1000px;
+            margin-left:60px;
+            margin-top:25px;        
+            
+}
+
+
+
+#bestellUebersicht{ border: 1px solid black;
+    width: 300px;
+    height:600px;
+    margin-left:1500px;
+    top:200px;
+    right:200px;
+    margin-top:-100px;
+    background-color:rgb(232, 233, 165);
+    font-size:22px;
+    position: fixed;
+}
+
+
+div { margin-top: 20px;
+}
+
+
+#adressdaten {height:90px;
+}
+
+
+#bestellbutton { margin-left:-10px;
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+                height:50px;
+                width:150px;
+                position:absolute;
+}
+
+li {list-style-type:none;
+}
+
+
+#summe {text-decoration: overline;
+}
+
+
+#urlRueckgabe {border: 1px solid black;
+                width: 500px;
+                height:280px;
+                margin-left:60px;
+                margin-top:25px;
+                font-size: 20px;
+                line-height: 20%;
+                
+}
+
+
