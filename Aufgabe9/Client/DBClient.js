@@ -9,6 +9,14 @@ var DBClient;
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        document.getElementById("mSucheMatrikel").addEventListener("click", suchen);
+    }
+    function suchen(_event) {
+        let inputs = document.getElementsByTagName("input");
+        let query = "command=search";
+        query += "&matrikel=" + inputs[3].value;
+        console.log(query);
+        sendRequest(query, handleFindResponse);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");
