@@ -15,7 +15,7 @@ let students: Mongo.Collection;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://userforlisa:<password>@cluster0-i3oyz.mongodb.net/Hochschuldatenbank";
+    databaseURL = "mongodb+srv://userforlisa:lisasdatenbank@cluster0-i3oyz.mongodb.net/Hochschuldatenbank";
     databaseName = "Hochschuldatenbank";
 }
 
