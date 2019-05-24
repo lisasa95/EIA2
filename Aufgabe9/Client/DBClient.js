@@ -9,9 +9,9 @@ var DBClient;
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        document.getElementById("SucheMatrikel").addEventListener("click", suchen);
+        document.getElementById("SucheMatrikel").addEventListener("click", search);
     }
-    function suchen(_event) {
+    function search(_event) {
         let inputs = document.getElementsByTagName("input");
         let query = "command=search";
         query += "&matrikel=" + inputs[3].value;
