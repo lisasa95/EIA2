@@ -17,8 +17,8 @@ function init() {
     pflanze(100, 600);
     pinkerfisch(300, 400);
     gelberfisch(400, 190);
-    aal(250, 200);
-    for (let i = 0; i < 15; i++) {
+    aal(400, 300);
+    for (let i = 0; i < 20; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         blasen(x, y);
@@ -32,11 +32,6 @@ function init() {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         pinkerfisch(x, y);
-    }
-    for (let i = 0; i < 2; i++) {
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
-        aal(x, y);
     }
 }
 function wasser() {
@@ -101,9 +96,9 @@ function pinkerfisch(_x, _y) {
 }
 function gelberfisch(_x, _y) {
     let schwanz = new Path2D();
-    schwanz.moveTo(450, 180);
-    schwanz.lineTo(480, 100);
-    schwanz.lineTo(500, 250);
+    schwanz.moveTo(_x, _y);
+    schwanz.lineTo(_x + 80, _y - 100);
+    schwanz.lineTo(_x + 90, _y + 70);
     schwanz.closePath();
     crc.fillStyle = "#fbff21";
     crc.fill(schwanz);
@@ -188,21 +183,21 @@ function pflanze(_x, _y) {
 }
 function aal(_x, _y) {
     let aalkoerper = new Path2D();
-    aalkoerper.ellipse(100, 200, 170, 20, 0, 0, Math.PI * 2);
+    aalkoerper.ellipse(_x, _y, 120, 20, 0, 0, Math.PI * 2);
     aalkoerper.closePath();
     crc.fillStyle = "#938773";
     crc.fill(aalkoerper);
     crc.strokeStyle = "black";
     crc.stroke(aalkoerper);
     let auge3 = new Path2D();
-    auge3.arc(_x - 30, _y - 3, 8, 0, 2 * Math.PI);
+    auge3.arc(300, 300, 8, 0, Math.PI * 2);
     auge3.closePath();
     crc.fillStyle = "white";
     crc.fill(auge3);
     crc.strokeStyle = "black";
     crc.stroke(auge3);
     let iris3 = new Path2D();
-    iris3.arc(_x - 30, _y - 3, 5, 0, 2 * Math.PI);
+    iris3.arc(300, 300, 5, 0, 2 * Math.PI);
     iris3.closePath();
     crc.fillStyle = "black";
     crc.fill(iris3);
