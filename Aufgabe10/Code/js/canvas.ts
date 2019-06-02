@@ -89,13 +89,6 @@ function stein(_x: number, _y: number): void {
 }
 
 
-function pflanzen(_x: number, _y: number): void {
-	let pflanze1: Path2D = new Path2D();
-	pflanze1.moveTo(650, 800);
-	pflanze1.lineTo(300, 800);
-}
-
-
 function pinkerfisch(_x: number, _y: number): void {
 
 	let fisch1: Path2D = new Path2D();

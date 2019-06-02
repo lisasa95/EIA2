@@ -64,11 +64,6 @@ function stein(_x, _y) {
     crc.strokeStyle = "#5c5c8a";
     crc.stroke(stein);
 }
-function pflanzen(_x, _y) {
-    let pflanze1 = new Path2D();
-    pflanze1.moveTo(650, 800);
-    pflanze1.lineTo(300, 800);
-}
 function pinkerfisch(_x, _y) {
     let fisch1 = new Path2D();
     fisch1.quadraticCurveTo(_x + 70, _y - 70, _x + 30, _y - 10);
