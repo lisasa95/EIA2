@@ -10,43 +10,43 @@ let canvas;
 function init() {
     canvas = document.getElementsByTagName("canvas")[0];
     crc = canvas.getContext("2d");
-    wasser();
-    boden();
-    stein(900, 650);
-    blasen(500, 500);
-    pflanze(100, 600);
-    pinkerfisch(300, 400);
-    gelberfisch(400, 190);
-    aal(400, 300);
+    zeichneWasser();
+    zeichneBoden();
+    zeichneStein(900, 650);
+    zeichneBlasen(500, 500);
+    zeichnePflanzen(100, 600);
+    zeichnePinkerFisch(300, 400);
+    zeichneGelberFisch(400, 190);
+    zeichneAal(400, 300);
     for (let i = 0; i < 20; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        blasen(x, y);
+        zeichneBlasen(x, y);
     }
     for (let i = 0; i < 6; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        gelberfisch(x, y);
+        zeichneGelberFisch(x, y);
     }
     for (let i = 0; i < 8; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        pinkerfisch(x, y);
+        zeichnePinkerFisch(x, y);
     }
 }
-function wasser() {
+function zeichneWasser() {
     let wasser = new Path2D();
     wasser.rect(0, 0, 1000, 700);
     crc.fillStyle = "#e6f7ff";
     crc.fill(wasser);
 }
-function boden() {
+function zeichneBoden() {
     let boden = new Path2D();
     boden.rect(0, 600, 1000, 100);
     crc.fillStyle = "#CDBA96";
     crc.fill(boden);
 }
-function blasen(_x, _y) {
+function zeichneBlasen(_x, _y) {
     let blasen = new Path2D();
     blasen.arc(_x, _y, 20, 0, 2 * Math.PI);
     crc.strokeStyle = "#0033cc";
@@ -54,7 +54,7 @@ function blasen(_x, _y) {
     crc.fill(blasen);
     crc.stroke(blasen);
 }
-function stein(_x, _y) {
+function zeichneStein(_x, _y) {
     let stein = new Path2D();
     stein.moveTo(620, 620);
     stein.quadraticCurveTo(100, 300, 50, 620);
@@ -64,7 +64,7 @@ function stein(_x, _y) {
     crc.strokeStyle = "#5c5c8a";
     crc.stroke(stein);
 }
-function pinkerfisch(_x, _y) {
+function zeichnePinkerFisch(_x, _y) {
     let fisch1 = new Path2D();
     fisch1.quadraticCurveTo(_x + 70, _y - 70, _x + 30, _y - 10);
     fisch1.lineTo(_x + 150, _y - 40);
@@ -89,7 +89,7 @@ function pinkerfisch(_x, _y) {
     crc.fill(iris1);
     crc.stroke(iris1);
 }
-function gelberfisch(_x, _y) {
+function zeichneGelberFisch(_x, _y) {
     let schwanz = new Path2D();
     schwanz.moveTo(_x, _y);
     schwanz.lineTo(_x + 80, _y - 100);
@@ -120,7 +120,7 @@ function gelberfisch(_x, _y) {
     crc.fill(iris2);
     crc.stroke(iris2);
 }
-function pflanze(_x, _y) {
+function zeichnePflanzen(_x, _y) {
     let pflanze1 = new Path2D();
     pflanze1.moveTo(800, 630);
     pflanze1.lineTo(780, 630);
@@ -176,7 +176,7 @@ function pflanze(_x, _y) {
     crc.strokeStyle = "green";
     crc.stroke(pflanze6);
 }
-function aal(_x, _y) {
+function zeichneAal(_x, _y) {
     let aalkoerper = new Path2D();
     aalkoerper.ellipse(_x, _y, 120, 20, 0, 0, Math.PI * 2);
     aalkoerper.closePath();

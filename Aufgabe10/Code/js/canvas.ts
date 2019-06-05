@@ -17,14 +17,14 @@ function init(): void {
 	crc = canvas.getContext("2d");
 
 
-	wasser();
-	boden();
-	stein(900, 650);
-	blasen(500, 500);
-	pflanze(100, 600);
-	pinkerfisch(300, 400);
-	gelberfisch(400, 190);
-	aal(400,300);
+	zeichneWasser();
+	zeichneBoden();
+	zeichneStein(900, 650);
+	zeichneBlasen(500, 500);
+	zeichnePflanzen(100, 600);
+	zeichnePinkerFisch(300, 400);
+	zeichneGelberFisch(400, 190);
+	zeichneAal(400,300);
 
 
 
@@ -32,26 +32,26 @@ function init(): void {
 	for (let i: number = 0; i < 20; i++) {
 		let x: number = Math.random() * canvas.width;
 		let y: number = Math.random() * canvas.height;
-		blasen(x, y);
+		zeichneBlasen(x, y);
 	}
 
 	for (let i: number = 0; i < 6; i++) {
 		let x: number = Math.random() * canvas.width;
 		let y: number = Math.random() * canvas.height;
-		gelberfisch(x, y);
+		zeichneGelberFisch(x, y);
 	}
 
 	for (let i: number = 0; i < 8; i++) {
 		let x: number = Math.random() * canvas.width;
 		let y: number = Math.random() * canvas.height;
-		pinkerfisch(x, y);
+		zeichnePinkerFisch(x, y);
 	}
 
 }
 
 
 
-function wasser(): void {
+function zeichneWasser(): void {
 	let wasser: Path2D = new Path2D();
 	wasser.rect(0, 0, 1000, 700);
 	crc.fillStyle = "#e6f7ff";
@@ -59,7 +59,7 @@ function wasser(): void {
 }
 
 
-function boden(): void {
+function zeichneBoden(): void {
 	let boden: Path2D = new Path2D();
 	boden.rect(0, 600, 1000, 100);
 	crc.fillStyle = "#CDBA96";
@@ -67,7 +67,7 @@ function boden(): void {
 }
 
 
-function blasen(_x: number, _y: number): void {
+function zeichneBlasen(_x: number, _y: number): void {
 	let blasen: Path2D = new Path2D();
 	blasen.arc(_x, _y, 20, 0, 2 * Math.PI);
 	crc.strokeStyle = "#0033cc";
@@ -77,7 +77,7 @@ function blasen(_x: number, _y: number): void {
 }
 
 
-function stein(_x: number, _y: number): void {
+function zeichneStein(_x: number, _y: number): void {
 	let stein: Path2D = new Path2D();
 	stein.moveTo(620, 620);
 	stein.quadraticCurveTo(100, 300, 50, 620);
@@ -89,7 +89,7 @@ function stein(_x: number, _y: number): void {
 }
 
 
-function pinkerfisch(_x: number, _y: number): void {
+function zeichnePinkerFisch(_x: number, _y: number): void {
 
 	let fisch1: Path2D = new Path2D();
 	fisch1.quadraticCurveTo(_x + 70, _y - 70, _x + 30, _y - 10);
@@ -122,7 +122,7 @@ function pinkerfisch(_x: number, _y: number): void {
 
 
 
-function gelberfisch(_x: number, _y: number): void {
+function zeichneGelberFisch(_x: number, _y: number): void {
 
 	let schwanz: Path2D = new Path2D();
 	schwanz.moveTo(_x, _y);
@@ -163,7 +163,7 @@ function gelberfisch(_x: number, _y: number): void {
 
 
 
-function pflanze(_x: number, _y: number): void {
+function zeichnePflanzen(_x: number, _y: number): void {
 
 	let pflanze1: Path2D = new Path2D();
 	pflanze1.moveTo(800, 630);
@@ -229,7 +229,7 @@ function pflanze(_x: number, _y: number): void {
 
 
 
-function aal(_x: number, _y: number): void {
+function zeichneAal(_x: number, _y: number): void {
 
 	let aalkoerper: Path2D = new Path2D();
 	aalkoerper.ellipse(_x, _y, 120, 20, 0, 0, Math.PI * 2);
