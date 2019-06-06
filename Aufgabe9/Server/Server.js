@@ -38,11 +38,7 @@ function handleRequest(_request, _response) {
             Database.findAll(findCallback);
             break;
         case "search":
-            for (let key in query) {
-                if (key == "matrikel") {
-                    Database.sucheMatrikel(Number(matrikel), findCallback);
-                }
-            }
+            Database.sucheMatrikel(Number(matrikel), findCallback);
             break;
         default:
             respond(_response, "unknown command: " + command);

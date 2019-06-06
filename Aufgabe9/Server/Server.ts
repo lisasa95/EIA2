@@ -33,8 +33,10 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     let matrikel: string = query["matrikel"]; 
 
     switch (command) {
+        
         case "insert":
             let student: StudentData = {
+
                 name: query["name"],
                 firstname: query["firstname"],
                 matrikel: parseInt(query["matrikel"])
@@ -42,17 +44,15 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             Database.insert(student);
             respond(_response, "storing data");
             break;
+
         case "refresh":
             Database.findAll(findCallback);
             break;
 
             case "search":
-            for(let key in query){
-                if(key == "matrikel"){
-                    Database.sucheMatrikel(Number(matrikel), findCallback);
-                }
-            }
-                break;
+            Database.sucheMatrikel(Number(matrikel), findCallback);
+            break;
+            
         default:
             respond(_response, "unknown command: " + command);
             break;
