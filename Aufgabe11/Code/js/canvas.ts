@@ -13,8 +13,8 @@ namespace a11 {
 
 	export let crc: CanvasRenderingContext2D;
 	export let canvas: HTMLCanvasElement;
-	let pinkerFischArray: GelberFisch[] = [];
-	let gelberFischArray: PinkerFisch[] = [];
+	let gelberFischArray: GelberFisch[] = [];
+	let pinkerFischArray: PinkerFisch[] = [];
 	let blaseGrossArray: BlaseGross[] = [];
 	let blaseKleinArray: BlaseKlein[] = [];
 	let fps: number = 25;
@@ -42,7 +42,6 @@ namespace a11 {
 			pink.dx = dx;
 			pinkerFischArray.push(pink);
 			pink.draw();
-			console.log(pink);
 		}
 
 
@@ -58,7 +57,6 @@ namespace a11 {
 			gelb.dx = dx;
 			gelberFischArray.push(gelb);
 			gelb.draw();
-			console.log(gelb);
 		}
 
 		//Große Luftblasen
@@ -73,7 +71,6 @@ namespace a11 {
 			gross.dy = dy;
 			blaseGrossArray.push(gross);
 			gross.draw();
-			console.log(gross);
 		}
 
 		//Kleine Blase
@@ -88,7 +85,6 @@ namespace a11 {
 			klein.dy = dy;
 			blaseKleinArray.push(klein);
 			klein.draw();
-			console.log(klein);
 		}
 
 

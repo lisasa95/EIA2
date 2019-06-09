@@ -7,8 +7,8 @@ var a11;
     Datum: 16.06.2019
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
     document.addEventListener("DOMContentLoaded", init);
-    let pinkerFischArray = [];
     let gelberFischArray = [];
+    let pinkerFischArray = [];
     let blaseGrossArray = [];
     let blaseKleinArray = [];
     let fps = 25;
@@ -30,7 +30,6 @@ var a11;
             pink.dx = dx;
             pinkerFischArray.push(pink);
             pink.draw();
-            console.log(pink);
         }
         //Gelber Fisch
         for (let i = 0; i <= 13; i++) {
@@ -44,7 +43,6 @@ var a11;
             gelb.dx = dx;
             gelberFischArray.push(gelb);
             gelb.draw();
-            console.log(gelb);
         }
         //Große Luftblasen
         for (let i = 0; i <= 10; i++) {
@@ -58,7 +56,6 @@ var a11;
             gross.dy = dy;
             blaseGrossArray.push(gross);
             gross.draw();
-            console.log(gross);
         }
         //Kleine Blase
         for (let i = 0; i <= 70; i++) {
@@ -72,7 +69,6 @@ var a11;
             klein.dy = dy;
             blaseKleinArray.push(klein);
             klein.draw();
-            console.log(klein);
         }
         update();
     }
