@@ -1,3 +1,4 @@
+namespace a11 {
 
 	/*Aufgabe 11: /*
 	Aufgabe: Aufgabe Nummer 11 - Classes: OO Seaworld
@@ -16,7 +17,7 @@
 	let gelberFischArray: PinkerFisch[] = [];
 	let blaseGrossArray: BlaseGross[] = [];
 	let blaseKleinArray: BlaseKlein[] = [];
-	let fps: number = 20;
+	let fps: number = 25;
 	let imageData: ImageData;
 
 
@@ -33,14 +34,14 @@
 		for (let i: number = 0; i < 20; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 15;
+			let dx: number = Math.random() * 20;
 			let pink: PinkerFisch;
 			pink = new PinkerFisch();
 			pink.x = x;
 			pink.y = y;
 			pink.dx = dx;
-			pinkerFischArray.push(fisch);
-			pink.draw(pink);
+			pinkerFischArray.push(pink);
+			pink.draw();
 			console.log(pink);
 		}
 
@@ -49,7 +50,7 @@
 		for (let i: number = 0; i < 6; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 10 - 5;
+			let dx: number = Math.random() * 30;
 			let gelb: GelberFisch;
 			gelb = new GelberFisch();
 			gelb.x = x;
@@ -79,7 +80,7 @@
 		for (let i: number = 0; i <= 50; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dy: number = Math.random() * -3 - 1;
+			let dy: number = Math.random() * -8 - 1;
 			let klein: BlaseKlein;
 			klein = new BlaseKlein();
 			klein.x = x;
@@ -214,4 +215,4 @@ function zeichneHintergrund(): void {
 
 }
 
-
+}

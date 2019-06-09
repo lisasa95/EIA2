@@ -31,9 +31,9 @@ var a11;
             this.draw();
         }
         move() {
-            this.y += this.dy;
-            if (this.y < 0)
-                this.y = a11.canvas.height;
+            this.x += this.dx;
+            if (this.x < 0)
+                this.x = a11.canvas.height;
         }
     }
     a11.PinkerFisch = PinkerFisch;

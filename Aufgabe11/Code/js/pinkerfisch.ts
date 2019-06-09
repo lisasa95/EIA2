@@ -3,7 +3,7 @@ namespace a11 {
 export class PinkerFisch {
     x: number;
     y: number;
-    dy: number;
+    dx: number;
 
 
     draw(): void {
@@ -44,9 +44,9 @@ export class PinkerFisch {
     }
 
     move(): void {
-        this.y += this.dy;
-        if (this.y < 0)
-            this.y = canvas.height;
+        this.x += this.dx;
+        if (this.x < 0)
+            this.x = canvas.height;
     }
 
 }
