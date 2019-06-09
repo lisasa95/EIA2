@@ -54,7 +54,7 @@ namespace a11 {
 
         move(): void {
             this.x += this.dx;
-            if (this.x + 200 < 0 + 10)
+            if (this.x + 200 < 0 -30)
                 this.x = canvas.height;
         }
     }

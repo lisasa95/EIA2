@@ -38,7 +38,7 @@ var a11;
         }
         move() {
             this.x += this.dx;
-            if (this.x + 200 < 0 + 10)
+            if (this.x + 200 < 0 - 30)
                 this.x = a11.canvas.height;
         }
     }
