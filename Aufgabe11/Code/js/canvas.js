@@ -19,10 +19,10 @@ var a11;
         zeichneHintergrund();
         imageData = a11.crc.getImageData(0, 0, a11.canvas.width, a11.canvas.height);
         //Pinker Fisch
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i <= 10; i++) {
             let x = Math.random() * a11.canvas.width;
             let y = Math.random() * a11.canvas.height;
-            let dx = Math.random() * 20;
+            let dx = Math.random() * 23;
             let pink;
             pink = new a11.PinkerFisch();
             pink.x = x;
@@ -33,10 +33,10 @@ var a11;
             console.log(pink);
         }
         //Gelber Fisch
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i <= 13; i++) {
             let x = Math.random() * a11.canvas.width;
             let y = Math.random() * a11.canvas.height;
-            let dx = Math.random() * 30;
+            let dx = Math.random() * 5 - 15;
             let gelb;
             gelb = new a11.GelberFisch();
             gelb.x = x;
@@ -47,7 +47,7 @@ var a11;
             console.log(gelb);
         }
         //Große Luftblasen
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i <= 10; i++) {
             let x = Math.random() * a11.canvas.width;
             let y = Math.random() * a11.canvas.height;
             let dy = Math.random() * -2 - 1;
@@ -61,7 +61,7 @@ var a11;
             console.log(gross);
         }
         //Kleine Blase
-        for (let i = 0; i <= 50; i++) {
+        for (let i = 0; i <= 70; i++) {
             let x = Math.random() * a11.canvas.width;
             let y = Math.random() * a11.canvas.height;
             let dy = Math.random() * -8 - 1;

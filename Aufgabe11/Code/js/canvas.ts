@@ -31,10 +31,10 @@ namespace a11 {
 
 
 		//Pinker Fisch
-		for (let i: number = 0; i < 20; i++) {
+		for (let i: number = 0; i <= 10; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 20;
+			let dx: number = Math.random() * 23;
 			let pink: PinkerFisch;
 			pink = new PinkerFisch();
 			pink.x = x;
@@ -47,10 +47,10 @@ namespace a11 {
 
 
 		//Gelber Fisch
-		for (let i: number = 0; i < 6; i++) {
+		for (let i: number = 0; i <= 13; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 30;
+			let dx: number = Math.random() * 5-15;
 			let gelb: GelberFisch;
 			gelb = new GelberFisch();
 			gelb.x = x;
@@ -62,7 +62,7 @@ namespace a11 {
 		}
 
 		//Große Luftblasen
-		for (let i: number = 0; i < 8; i++) {
+		for (let i: number = 0; i <= 10; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
 			let dy: number = Math.random() * -2 - 1;
@@ -77,7 +77,7 @@ namespace a11 {
 		}
 
 		//Kleine Blase
-		for (let i: number = 0; i <= 50; i++) {
+		for (let i: number = 0; i <= 70; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
 			let dy: number = Math.random() * -8 - 1;

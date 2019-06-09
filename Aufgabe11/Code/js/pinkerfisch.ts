@@ -43,11 +43,12 @@ export class PinkerFisch {
         this.draw();
     }
 
-    move(): void {
-        this.x += this.dx;
-        if (this.x < 0)
-            this.x = canvas.height;
-    }
+	move(): void {
+		this.x += this.dx;
+		if (this.x + 100 > canvas.width + 80) {
+			this.x = 0;
+		}
 
+}
 }
 }
