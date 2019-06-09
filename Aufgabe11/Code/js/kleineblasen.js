@@ -1,9 +1,9 @@
 var a11;
 (function (a11) {
-    class BlaseGross {
+    class BlaseKlein {
         draw() {
             let blasen = new Path2D();
-            blasen.arc(this.x, this.y, 40, 0, 2 * Math.PI);
+            blasen.arc(this.x, this.y, 20, 0, 2 * Math.PI);
             a11.crc.strokeStyle = "#0033cc";
             a11.crc.fillStyle = "rgb(153, 221, 255)";
             a11.crc.fill(blasen);
@@ -19,6 +19,6 @@ var a11;
                 this.y = a11.canvas.height;
         }
     }
-    a11.BlaseGross = BlaseGross;
+    a11.BlaseKlein = BlaseKlein;
 })(a11 || (a11 = {}));
-//# sourceMappingURL=großeblasen.js.map
+//# sourceMappingURL=kleineblasen.js.map

@@ -1,4 +1,6 @@
-export class GelberFisch {
+namespace a11 {
+
+export class PinkerFisch {
     x: number;
     y: number;
     dy: number;
@@ -47,4 +49,5 @@ export class GelberFisch {
             this.y = canvas.height;
     }
 
+}
 }
