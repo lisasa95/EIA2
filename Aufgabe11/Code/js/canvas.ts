@@ -34,7 +34,7 @@ namespace a11 {
 		for (let i: number = 0; i <= 10; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 23;
+			let dx: number = Math.random() * 15+2;
 			let pink: PinkerFisch;
 			pink = new PinkerFisch();
 			pink.x = x;
@@ -49,7 +49,7 @@ namespace a11 {
 		for (let i: number = 0; i <= 13; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 5-15;
+			let dx: number = Math.random()  * 5-15;
 			let gelb: GelberFisch;
 			gelb = new GelberFisch();
 			gelb.x = x;
@@ -63,7 +63,7 @@ namespace a11 {
 		for (let i: number = 0; i <= 10; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dy: number = Math.random() * -2 - 1;
+			let dy: number = Math.random() * 5-15;
 			let gross: BlaseGross;
 			gross = new BlaseGross();
 			gross.x = x;

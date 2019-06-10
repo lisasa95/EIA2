@@ -44,7 +44,7 @@ namespace a11 {
             crc.fill(iris2);
             crc.stroke(iris2);
         }
-    
+
 
 
         update(): void {
@@ -52,10 +52,14 @@ namespace a11 {
             this.draw();
         }
 
+
+
         move(): void {
             this.x += this.dx;
-            if (this.x + 200 < 0 -30)
+            if (this.x + 200 < 0 - 30)
                 this.x = canvas.height;
         }
     }
+
 }
+

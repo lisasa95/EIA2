@@ -22,7 +22,7 @@ var a11;
         for (let i = 0; i <= 10; i++) {
             let x = Math.random() * a11.canvas.width;
             let y = Math.random() * a11.canvas.height;
-            let dx = Math.random() * 23;
+            let dx = Math.random() * 15 + 2;
             let pink;
             pink = new a11.PinkerFisch();
             pink.x = x;
@@ -48,7 +48,7 @@ var a11;
         for (let i = 0; i <= 10; i++) {
             let x = Math.random() * a11.canvas.width;
             let y = Math.random() * a11.canvas.height;
-            let dy = Math.random() * -2 - 1;
+            let dy = Math.random() * 5 - 15;
             let gross;
             gross = new a11.BlaseGross();
             gross.x = x;
