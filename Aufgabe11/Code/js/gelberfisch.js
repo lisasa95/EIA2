@@ -39,7 +39,7 @@ var a11;
         move() {
             this.x += this.dx;
             if (this.x + 200 < 0 - 30)
-                this.x = a11.canvas.height;
+                this.x = a11.canvas.width + 100;
         }
     }
     a11.GelberFisch = GelberFisch;

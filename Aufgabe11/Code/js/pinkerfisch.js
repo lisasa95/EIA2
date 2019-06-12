@@ -33,7 +33,7 @@ var a11;
         move() {
             this.x += this.dx;
             if (this.x + 100 > a11.canvas.width + 80) {
-                this.x = 0;
+                this.x = -50;
             }
         }
     }

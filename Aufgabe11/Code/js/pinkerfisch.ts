@@ -48,7 +48,7 @@ namespace a11 {
 		move(): void {
 			this.x += this.dx;
 			if (this.x + 100 > canvas.width + 80) {
-				this.x = 0;
+				this.x = -50;
 			}
 		}
 	}

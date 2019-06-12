@@ -3,7 +3,7 @@ var a11;
     class BlaseKlein {
         draw() {
             let blasen = new Path2D();
-            blasen.arc(this.x, this.y, 20, 0, 2 * Math.PI);
+            blasen.arc(this.x, this.y, 14, 0, 2 * Math.PI);
             a11.crc.strokeStyle = "#0033cc";
             a11.crc.fillStyle = "rgb(153, 221, 255)";
             a11.crc.fill(blasen);
@@ -15,8 +15,8 @@ var a11;
         }
         move() {
             this.y += this.dy;
-            if (this.y < 0)
-                this.y = a11.canvas.height;
+            if (this.y + 14 < 0)
+                this.y = 600;
         }
     }
     a11.BlaseKlein = BlaseKlein;
