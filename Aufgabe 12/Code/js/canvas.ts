@@ -13,6 +13,7 @@ namespace a12 {
 
 	export let crc: CanvasRenderingContext2D;
 	export let canvas: HTMLCanvasElement;
+	export let bewegteUnterwasserweltArray: BewegteUnterwasserwelt[] = [];
 	let gelberFischArray: GelberFisch[] = [];
 	let pinkerFischArray: PinkerFisch[] = [];
 	let blaseGrossArray: BlaseGross[] = [];
@@ -28,8 +29,9 @@ namespace a12 {
 		zeichneHintergrund();
 
 		imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
+		canvas.addEventListener("click", futterVerteilen);
 
-
+	
 		//Pinker Fisch
 		for (let i: number = 0; i <= 10; i++) {
 			let x: number = Math.random() * canvas.width;
@@ -213,9 +215,13 @@ function zeichneHintergrund(): void {
 
 
 function futterVerteilen(_event: MouseEvent): void {
-	let xPos: number = _event.clientX;
-	let yPos: number = _event.clientY;
+	let x: number = _event.clientX;
+        let y: number = _event.clientY;
+        if (x < canvas.width && y < canvas.height) {
+        let futter: Futter = new Futter(x, y);
+		bewegteUnterwasserweltArray.push(futter);
 
 	
+}
 }
 }
