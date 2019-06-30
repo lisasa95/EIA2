@@ -7,22 +7,15 @@ namespace a12 {
         dy: number;
 
 
-        constructor(_x: number) {
-            this.x = 200;
-            this.y = 200;
-            this.dx = _x * 4;
-            this.dy = Math.random() * -15;
+        constructor() {
+            this.x = 100;
+            this.y = 100;
+            this.dx = 2;
+            this.dy = Math.random() * 10;
         }
 
 
         draw(): void {
-            let futter: Path2D = new Path2D();
-            futter.arc(this.x, this.y, 10, 0, 2 * Math.PI);
-            crc.fillStyle = "cyan";
-            crc.strokeStyle = "blue";
-            crc.fill(futter);
-            crc.stroke(futter);
-
         }
 
         update(): void {
@@ -33,7 +26,7 @@ namespace a12 {
         move(): void {
             this.x += this.dx;
             this.y += this.dy;
-            if (this.x + 200 < 0 - 30)
+            if (this.x < 20)
                 this.x = canvas.width +100;
 
 

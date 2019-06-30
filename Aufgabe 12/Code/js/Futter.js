@@ -2,10 +2,9 @@ var a12;
 (function (a12) {
     class Futter extends a12.BewegteUnterwasserwelt {
         constructor(x, y) {
-            super(x);
-            this.x = x;
-            this.y = y;
-            this.dy = Math.random() * 10;
+            super();
+            this.dx = 0;
+            this.dy = 5;
         }
         draw() {
             let futter = new Path2D();
