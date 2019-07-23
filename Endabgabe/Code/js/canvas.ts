@@ -1,10 +1,10 @@
-namespace a12 {
+namespace endabgabe {
 
-	/*Aufgabe 12: /*
-	Aufgabe: Aufgabe Nummer 12 - Vererbung: Seaworld
+	/*<Endabgabe> /*
+	Aufgabe: Endabgabe - CANVAS
 	Name: Lisa Sanchez y Bittner
 	Matrikel: 260502 
-	Datum: 30.06.2019
+	Datum: 28.07.2019
 	Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 
@@ -14,8 +14,10 @@ namespace a12 {
 	export let crc: CanvasRenderingContext2D;
 	export let canvas: HTMLCanvasElement;
 	export let bewegteUnterwasserweltArray: BewegteUnterwasserwelt[] = [];
-	let gelberFischArray: GelberFisch[] = [];
-	let pinkerFischArray: PinkerFisch[] = [];
+	document.addEventListener('keydown', movefish);
+	let blauerFischArray: BlauerFisch[] = [];
+	let lilaFischArray: LilaFisch[] = [];
+	let gruenerFischArray: GruenerFisch[] = [];
 	let blaseGrossArray: BlaseGross[] = [];
 	let blaseKleinArray: BlaseKlein[] = [];
 	let fps: number = 25;
@@ -29,37 +31,50 @@ namespace a12 {
 		zeichneHintergrund();
 
 		imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
-		canvas.addEventListener("click", futterVerteilen);
 
 
-		//Pinker Fisch
-		for (let i: number = 0; i <= 10; i++) {
+		//Blauer Fisch
+		for (let i: number = 0; i <= 0; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 15 +
-			 2;
-			let pink: PinkerFisch;
-			pink = new PinkerFisch();
-			pink.x = x;
-			pink.y = y;
-			pink.dx = dx;
-			pinkerFischArray.push(pink);
-			pink.draw();
+			let dx: number = Math.random() * 15 +2;
+			let blau: BlauerFisch;
+			blau = new BlauerFisch();
+			blau.x = x;
+			blau.y = y;
+			blau.dx = dx;
+			blauerFischArray.push(blau);
+			blau.draw();
 		}
 
 
-		//Gelber Fisch
-		for (let i: number = 0; i <= 13; i++) {
+		//Grüner Fisch
+		for (let i: number = 0; i <= 5; i++) {
+			let x: number = Math.random() * canvas.width;
+			let y: number = Math.random() * canvas.height;
+			let dx: number = Math.random() * 15 +2;
+			let gruen: GruenerFisch;
+			gruen = new GruenerFisch();
+			gruen.x = x;
+			gruen.y = y;
+			gruen.dx = dx;
+			gruenerFischArray.push(gruen);
+			gruen.draw();
+		}
+
+
+		//Lila Fisch
+		for (let i: number = 0; i <= 5; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
 			let dx: number = Math.random() * 5 - 15;
-			let gelb: GelberFisch;
-			gelb = new GelberFisch();
-			gelb.x = x;
-			gelb.y = y;
-			gelb.dx = dx;
-			gelberFischArray.push(gelb);
-			gelb.draw();
+			let lila: LilaFisch;
+			lila = new LilaFisch();
+			lila.x = x;
+			lila.y = y;
+			lila.dx = dx;
+			lilaFischArray.push(lila);
+			lila.draw();
 		}
 
 		//Große Luftblasen
@@ -77,7 +92,7 @@ namespace a12 {
 		}
 
 		//Kleine Blase
-		for (let i: number = 0; i <= 70; i++) {
+		for (let i: number = 0; i <= 30; i++) {
 			let x: number = Math.random() * canvas.width;
 			let y: number = Math.random() * canvas.height;
 			let dy: number = Math.random() * -8 - 1;
@@ -102,12 +117,16 @@ namespace a12 {
 		crc.clearRect(0, 0, canvas.width, canvas.height);
 		crc.putImageData(imageData, 0, 0);
 
-		for (let i: number = 0; i < pinkerFischArray.length; i++) {
-			pinkerFischArray[i].update();
+		for (let i: number = 0; i < gruenerFischArray.length; i++) {
+			gruenerFischArray[i].update();
 		}
 
-		for (let i: number = 0; i < gelberFischArray.length; i++) {
-			gelberFischArray[i].update();
+		for (let i: number = 0; i < lilaFischArray.length; i++) {
+			lilaFischArray[i].update();
+		}
+
+		for (let i: number = 0; i < blauerFischArray.length; i++) {
+			blauerFischArray[i].update();
 		}
 
 		for (let i: number = 0; i < blaseGrossArray.length; i++) {
@@ -117,6 +136,7 @@ namespace a12 {
 		for (let i: number = 0; i < blaseKleinArray.length; i++) {
 			blaseKleinArray[i].update();
 		}
+
 	}
 
 
@@ -215,17 +235,17 @@ namespace a12 {
 	}
 
 
-	function futterVerteilen(_event: MouseEvent): void {
-
-		let x: number = _event.clientX;
-		let y: number = _event.clientY;
-
-
-		if (x < canvas.width && y < canvas.height) {
-			let futter: Futter = new Futter(x, y);
-			bewegteUnterwasserweltArray.push(futter);
-
-
+	function movefish (event: KeyboardEvent) {
+		
+		// Pfeiltaste nach oben
+		if (event.keyCode == 38) {
 		}
-	}
+
+		// Pfeiltaste nach unten
+		else if (event.keyCode == 40) {
+			
+
+	 }
+}
+
 }

@@ -14,7 +14,7 @@ var a12;
         }
         move() {
             this.y += this.dy;
-            if (this.y >= 900) {
+            if (this.y >= 200) {
                 this.dy = 700;
             }
         }
