@@ -1,16 +1,21 @@
 namespace endabgabe {
 
-    export class BlaseGross {
-        x: number;
-        y: number;
-        dy: number;
+    export class BlaseGross extends BewegteUnterwasserwelt{
+
+        constructor() {
+
+            super();
+			this.x = Math.random() * canvas.width;
+			this.y  = Math.random() * canvas.height;
+			this.dy = Math.random() * 5 - 15;
+ 
+        }
+ 
 
         draw(): void {
             let blasen: Path2D = new Path2D();
             blasen.arc(this.x, this.y, 25, 0, 2 * Math.PI);
             crc.strokeStyle = "#0033cc";
-            crc.fillStyle = "rgb(153, 221, 255)";
-            crc.fill(blasen);
             crc.stroke(blasen);
         }
 

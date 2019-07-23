@@ -1,12 +1,16 @@
 var endabgabe;
 (function (endabgabe) {
-    class BlaseGross {
+    class BlaseGross extends endabgabe.BewegteUnterwasserwelt {
+        constructor() {
+            super();
+            this.x = Math.random() * endabgabe.canvas.width;
+            this.y = Math.random() * endabgabe.canvas.height;
+            this.dy = Math.random() * 5 - 15;
+        }
         draw() {
             let blasen = new Path2D();
             blasen.arc(this.x, this.y, 25, 0, 2 * Math.PI);
             endabgabe.crc.strokeStyle = "#0033cc";
-            endabgabe.crc.fillStyle = "rgb(153, 221, 255)";
-            endabgabe.crc.fill(blasen);
             endabgabe.crc.stroke(blasen);
         }
         update() {

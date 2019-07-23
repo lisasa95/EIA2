@@ -1,0 +1,56 @@
+/*Endabgabe: 
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
+
+
+
+html { background-color:rgb(235, 245, 255);
+}
+   
+
+h1 { font-family: 'Londrina Shadow', cursive;
+     color:black;
+     font-size: 60px;
+     text-align: center;
+     text-transform: uppercase;
+     margin-top:100px;
+}
+
+main { font-family: 'Shadows Into Light Two', cursive;
+    text-align: center;
+    font-size:25px;
+    margin-top:85px;
+}
+
+
+button { background-color: rgb(221, 174, 207);
+         color:black;
+         border: 2px black solid;
+         width:200px;
+         height:70px;
+         font-family: 'Shadows Into Light Two', cursive;
+         font-size:18px;
+         margin-top:20px;
+}
+
+#gruen { color: #2EFE9A;
+        font-weight: bold;
+}
+
+#lila { color:#BE81F7;
+        font-weight: bold;
+}
+
+#gelb { color:#fbff21;
+    font-weight: bold;
+}
+
+#blau { color: #045FB4;
+    font-weight: bold;
+}
+

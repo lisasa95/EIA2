@@ -8,10 +8,7 @@ namespace endabgabe {
 
 
         constructor() {
-            this.x = 100;
-            this.y = 100;
-            this.dx = 2;
-            this.dy = Math.random() * 10;
+
         }
 
 
@@ -26,8 +23,6 @@ namespace endabgabe {
         move(): void {
             this.x += this.dx;
             this.y += this.dy;
-            if (this.x < 20)
-                this.x = canvas.width +100;
 
 
 

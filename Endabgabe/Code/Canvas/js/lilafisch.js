@@ -1,6 +1,12 @@
 var endabgabe;
 (function (endabgabe) {
-    class LilaFisch {
+    class LilaFisch extends endabgabe.BewegteUnterwasserwelt {
+        constructor() {
+            super();
+            this.x = Math.random() * endabgabe.canvas.width;
+            this.y = Math.random() * endabgabe.canvas.height;
+            this.dx = Math.random() * 5 - 11;
+        }
         draw() {
             let schwanz = new Path2D();
             schwanz.moveTo(this.x, this.y);

@@ -1,6 +1,6 @@
 namespace endabgabe {
 
-	/*<Endabgabe> /*
+	/*Endabgabe/*
 	Aufgabe: Endabgabe - CANVAS
 	Name: Lisa Sanchez y Bittner
 	Matrikel: 260502 
@@ -14,8 +14,7 @@ namespace endabgabe {
 	export let crc: CanvasRenderingContext2D;
 	export let canvas: HTMLCanvasElement;
 	export let bewegteUnterwasserweltArray: BewegteUnterwasserwelt[] = [];
-	document.addEventListener('keydown', movefish);
-	let blauerFischArray: BlauerFisch[] = [];
+	let spielerfisch: SpielerFisch;
 	let lilaFischArray: LilaFisch[] = [];
 	let gruenerFischArray: GruenerFisch[] = [];
 	let blaseGrossArray: BlaseGross[] = [];
@@ -32,75 +31,42 @@ namespace endabgabe {
 
 		imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
 
+		spielerfisch = new SpielerFisch();
+		spielerfisch.draw();
 
-		//Blauer Fisch
-		for (let i: number = 0; i <= 0; i++) {
-			let x: number = Math.random() * canvas.width;
-			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 15 +2;
-			let blau: BlauerFisch;
-			blau = new BlauerFisch();
-			blau.x = x;
-			blau.y = y;
-			blau.dx = dx;
-			blauerFischArray.push(blau);
-			blau.draw();
-		}
+		document.addEventListener("keydown", moveSpielerFisch);
+
 
 
 		//Grüner Fisch
 		for (let i: number = 0; i <= 5; i++) {
-			let x: number = Math.random() * canvas.width;
-			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 15 +2;
 			let gruen: GruenerFisch;
 			gruen = new GruenerFisch();
-			gruen.x = x;
-			gruen.y = y;
-			gruen.dx = dx;
 			gruenerFischArray.push(gruen);
 			gruen.draw();
 		}
 
 
 		//Lila Fisch
-		for (let i: number = 0; i <= 5; i++) {
-			let x: number = Math.random() * canvas.width;
-			let y: number = Math.random() * canvas.height;
-			let dx: number = Math.random() * 5 - 15;
+		for (let i: number = 0; i <= 3; i++) {
 			let lila: LilaFisch;
 			lila = new LilaFisch();
-			lila.x = x;
-			lila.y = y;
-			lila.dx = dx;
 			lilaFischArray.push(lila);
 			lila.draw();
 		}
 
 		//Große Luftblasen
 		for (let i: number = 0; i <= 10; i++) {
-			let x: number = Math.random() * canvas.width;
-			let y: number = Math.random() * canvas.height;
-			let dy: number = Math.random() * 5 - 15;
 			let gross: BlaseGross;
 			gross = new BlaseGross();
-			gross.x = x;
-			gross.y = y;
-			gross.dy = dy;
 			blaseGrossArray.push(gross);
 			gross.draw();
 		}
 
 		//Kleine Blase
-		for (let i: number = 0; i <= 30; i++) {
-			let x: number = Math.random() * canvas.width;
-			let y: number = Math.random() * canvas.height;
-			let dy: number = Math.random() * -8 - 1;
+		for (let i: number = 0; i <= 20; i++) {
 			let klein: BlaseKlein;
 			klein = new BlaseKlein();
-			klein.x = x;
-			klein.y = y;
-			klein.dy = dy;
 			blaseKleinArray.push(klein);
 			klein.draw();
 		}
@@ -117,6 +83,9 @@ namespace endabgabe {
 		crc.clearRect(0, 0, canvas.width, canvas.height);
 		crc.putImageData(imageData, 0, 0);
 
+		spielerfisch.update();
+		
+
 		for (let i: number = 0; i < gruenerFischArray.length; i++) {
 			gruenerFischArray[i].update();
 		}
@@ -125,9 +94,6 @@ namespace endabgabe {
 			lilaFischArray[i].update();
 		}
 
-		for (let i: number = 0; i < blauerFischArray.length; i++) {
-			blauerFischArray[i].update();
-		}
 
 		for (let i: number = 0; i < blaseGrossArray.length; i++) {
 			blaseGrossArray[i].update();
@@ -136,6 +102,7 @@ namespace endabgabe {
 		for (let i: number = 0; i < blaseKleinArray.length; i++) {
 			blaseKleinArray[i].update();
 		}
+
 
 	}
 
@@ -235,17 +202,26 @@ namespace endabgabe {
 	}
 
 
-	function movefish (event: KeyboardEvent) {
-		
-		// Pfeiltaste nach oben
-		if (event.keyCode == 38) {
+	function moveSpielerFisch (e: KeyboardEvent): void {
+
+		if (e.keyCode == 37) { // Linke Pfeiltaste
+
+			spielerfisch.x -= 15;
 		}
 
-		// Pfeiltaste nach unten
-		else if (event.keyCode == 40) {
-			
+		else if (e.keyCode == 38) { // Obere Pfeiltaste
 
-	 }
-}
+			spielerfisch.y -= 15;
+		}
 
+		else if (e.keyCode == 39) { // Rechte Pfeiltaste
+
+			spielerfisch.x += 15;
+		}
+
+		else if (e.keyCode == 40) { // Untere Pfeiltaste
+
+			spielerfisch.y += 15;
+		}
+	}
 }

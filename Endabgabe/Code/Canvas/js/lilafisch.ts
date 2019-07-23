@@ -1,9 +1,14 @@
 namespace endabgabe {
 
-    export class LilaFisch {
-        x: number;
-        y: number;
-        dx: number;
+    export class LilaFisch extends BewegteUnterwasserwelt {
+
+        constructor() {
+
+            super();
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.dx = Math.random() * 5 - 11;
+        }
 
 
         draw(): void {
@@ -57,7 +62,7 @@ namespace endabgabe {
         move(): void {
             this.x += this.dx;
             if (this.x + 200 < 0 - 30)
-                this.x = canvas.width +100;
+                this.x = canvas.width + 100;
         }
     }
 
