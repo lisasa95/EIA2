@@ -45,21 +45,20 @@ namespace endabgabe {
         let responseAsJson: JSON=JSON.parse(xhr.response);
         console.log(responseAsJson);
 
-        /* if (xhr.readyState == XMLHttpRequest.DONE) {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
             let allPlayersArray: Spieler[] = JSON.parse(xhr.response);
-
 
         }
 
         document.getElementById("NameID").innerHTML = "";
         document.getElementById("PunkteID").innerHTML = "";
 
-        for (let i: number = 0; i < 10; i++) {
+        for (let i: number = bewegteUnterwasserweltArray-8; i<bewegteUnterwasserweltArray; i++) {
+            document.getElementById("NameID").innerHTML += `<div>${allPlayersArray[i].NameID} : ${bewegteUnterwasserweltArray[i].PunkteID}<div>`;
+        }
+        }
            
-            document.getElementById("NameID").innerHTML +=;
-            newPlayer.setAttribute("id", i.toString());
-            newPlayer.innerHTML = `${allPlayersArray[i].name} : ${allPlayersArray[i].score}`;
-        } */
+        
 
         
     }
