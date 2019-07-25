@@ -96,28 +96,28 @@ namespace endabgabe {
 		for (let i: number = 0; i < bewegteUnterwasserweltArray.length; i++) {
 			bewegteUnterwasserweltArray[i].update();
 
-			if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == true) {
+			if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == "essen") {
 				bewegteUnterwasserweltArray.splice(i, 1);
 			}
 
-		} if (bewegteUnterwasserweltArray.length == 0) {
-			bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
-			document.getElementById("gameOver").style.display = "block";
-			console.log("Insert Hier MeinFish!");
-			Spielername = prompt("Your score: " + Punktestand, "Your Name");
-			insert();
-			refresh();
+			else if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == "tot") {
+				bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
+				Spielername = prompt("Deine Punkte: " + Punktestand, "Dein Name:");
+				insert();
+				refresh();
+			}
+			console.log("Du hast gewonnen!");
 		}
-		console.log("Du hast gewonnen!");
+
+
+		crc.fillStyle = "#8021a6";
+		crc.font = "20px Arial";
+		crc.fillText("Punktestand: " + Punktestand.toString(), 850, 30)
+
+
+
+
 	}
-
-	crc.fillStyle = "#8021a6";
-	crc.font = "20px Arial";
-	crc.fillText("Punktestand: " + Punktestand.toString(), 850, 30)
-
-
-
-
 
 	function zeichneHintergrund(): void { // FUNKTION zeichnet Hintergrund des Canvas
 

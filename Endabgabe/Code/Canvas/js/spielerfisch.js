@@ -70,20 +70,22 @@ var endabgabe;
             }
         }
         kollision(fisch) {
-            if (Math.sqrt(Math.pow(Math.abs(this.x - fisch.x), 2) + Math.pow(Math.abs(this.y - fisch.y), 2)) < 50 && fisch.groesse > 0) {
+            let xDistanz = Math.abs(this.x - fisch.x);
+            let yDistanz = Math.abs(this.y - fisch.y);
+            if (Math.sqrt(Math.pow(xDistanz, 2) + Math.pow(yDistanz, 2)) < 50) {
                 if (this.groesse > fisch.groesse) {
                     this.groesse++;
                     endabgabe.Punktestand += 5;
                     console.log(this.groesse);
-                    return true;
+                    return "essen";
                 }
                 else {
                     alert("Du bist gestorben!");
-                    return false;
+                    return "tot";
                 }
             }
             else
-                return false;
+                return "nichts";
         }
         move() {
             this.x += this.dx;
