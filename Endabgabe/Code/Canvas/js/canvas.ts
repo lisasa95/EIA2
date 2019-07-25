@@ -60,7 +60,7 @@ namespace endabgabe {
 			lila.draw();
 		}
 
-		/* //Große Luftblasen
+		/* 	Große Luftblasen
 		for (let i: number = 0; i <= 10; i++) {
 			let gross: BlaseGross;
 			gross = new BlaseGross();
@@ -68,7 +68,7 @@ namespace endabgabe {
 			gross.draw();
 		}
 
-		//Kleine Blase
+			Kleine Blase
 		for (let i: number = 0; i <= 20; i++) {
 			let klein: BlaseKlein;
 			klein = new BlaseKlein();

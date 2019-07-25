@@ -8,6 +8,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace endabgabe {
 
+    
+
 
     let serverAddress: string = "https://eia2lisa.herokuapp.com/";
     export function insert(): void {
@@ -39,7 +41,7 @@ namespace endabgabe {
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let SpielerArray: Spieler[] = JSON.parse(xhr.response);
+            let SpielerArray = JSON.parse(xhr.response);
             
 
             document.getElementById("nameID").innerHTML = "";
@@ -51,10 +53,7 @@ namespace endabgabe {
                 document.getElementById("nameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
             }
 
-            /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson: JSON = JSON.parse(xhr.response);
-            console.log(responseAsJson); */
+        
         }
     }
 }

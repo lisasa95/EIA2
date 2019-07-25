@@ -9,8 +9,8 @@ var endabgabe;
     let serverAddress = "https://eia2lisa.herokuapp.com/";
     function insert() {
         let query = "command=insert";
-        query += "&name=" + name;
-        query += "&score=" + punkte;
+        query += "&name=" + endabgabe.Spielername;
+        query += "&punktestand=" + endabgabe.Punktestand;
         sendRequest(query, handleInsertResponse);
     }
     endabgabe.insert = insert;
@@ -34,16 +34,12 @@ var endabgabe;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let fischSpielerArray = JSON.parse(xhr.response);
-            document.getElementById("NameID").innerHTML = "";
-            document.getElementById("PunkteID").innerHTML = "";
-            for (let i = fischSpielerArray.length - 5; i < fischSpielerArray.length; i++) {
-                document.getElementById("NameID").innerHTML += `<div>${fischSpielerArray[i].name} : ${fischSpielerArray[i].punkte} </div>`;
+            let SpielerArray = JSON.parse(xhr.response);
+            document.getElementById("nameID").innerHTML = "";
+            document.getElementById("punktestandID").innerHTML = "";
+            for (let i = SpielerArray.length - 5; i < SpielerArray.length; i++) {
+                document.getElementById("nameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
             }
-            /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson: JSON = JSON.parse(xhr.response);
-            console.log(responseAsJson); */
         }
     }
 })(endabgabe || (endabgabe = {}));

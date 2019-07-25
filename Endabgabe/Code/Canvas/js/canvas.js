@@ -35,7 +35,7 @@ var endabgabe;
             endabgabe.bewegteUnterwasserweltArray.push(lila);
             lila.draw();
         }
-        /* //Große Luftblasen
+        /* 	Große Luftblasen
         for (let i: number = 0; i <= 10; i++) {
             let gross: BlaseGross;
             gross = new BlaseGross();
@@ -43,7 +43,7 @@ var endabgabe;
             gross.draw();
         }
 
-        //Kleine Blase
+            Kleine Blase
         for (let i: number = 0; i <= 20; i++) {
             let klein: BlaseKlein;
             klein = new BlaseKlein();
