@@ -80,7 +80,6 @@ var endabgabe;
                     return "essen";
                 }
                 else {
-                    alert("Du bist gestorben!");
                     return "tot";
                 }
             }

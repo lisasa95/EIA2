@@ -112,7 +112,6 @@ namespace endabgabe {
                 }
 
                 else {
-                    alert("Du bist gestorben!");
                     return"tot";
                 }
             }

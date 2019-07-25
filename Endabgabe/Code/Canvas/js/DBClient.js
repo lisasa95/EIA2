@@ -10,7 +10,7 @@ var endabgabe;
     function insert() {
         let query = "command=insert";
         query += "&name=" + endabgabe.Spielername;
-        query += "&punktestand=" + endabgabe.Punktestand;
+        query += "&punkte=" + endabgabe.Punktestand;
         sendRequest(query, handleInsertResponse);
     }
     endabgabe.insert = insert;
@@ -35,12 +35,24 @@ var endabgabe;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let SpielerArray = JSON.parse(xhr.response);
-            document.getElementById("nameID").innerHTML = "";
-            document.getElementById("punktestandID").innerHTML = "";
-            for (let i = SpielerArray.length - 5; i < SpielerArray.length; i++) {
-                document.getElementById("nameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
+            for (let i = 0; i < SpielerArray.length; i++) {
+                SpielerArray.sort(Rangliste);
+            }
+            document.getElementById("NameID").innerHTML = "";
+            document.getElementById("PunkteID").innerHTML = "";
+            for (let i = 0; i < 10; i++) {
+                document.getElementById("NameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
             }
         }
+    }
+    function Rangliste(_1, _2) {
+        if (_1.punkte < _2.punkte) {
+            return 1;
+        }
+        if (_1.punkte > _2.punkte) {
+            return -1;
+        }
+        return 0;
     }
 })(endabgabe || (endabgabe = {}));
 //# sourceMappingURL=DBClient.js.map

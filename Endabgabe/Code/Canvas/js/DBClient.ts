@@ -8,14 +8,14 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace endabgabe {
 
-    
+
 
 
     let serverAddress: string = "https://eia2lisa.herokuapp.com/";
     export function insert(): void {
         let query: string = "command=insert";
         query += "&name=" + Spielername;
-        query +="&punktestand=" + Punktestand;
+        query += "&punkte=" + Punktestand;
         sendRequest(query, handleInsertResponse);
     }
 
@@ -42,19 +42,34 @@ namespace endabgabe {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let SpielerArray: Spieler[] = JSON.parse(xhr.response);
-            
 
-            document.getElementById("nameID").innerHTML = "";
-            document.getElementById("punktestandID").innerHTML = "";
-
-
-            for (let i: number = SpielerArray.length-5; i < SpielerArray.length; i++) {
-    
-                document.getElementById("nameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
+            for (let i: number = 0; i < SpielerArray.length; i++) {
+                SpielerArray.sort(Rangliste);
             }
 
-        
+            document.getElementById("NameID").innerHTML = "";
+            document.getElementById("PunkteID").innerHTML = "";
+
+
+            for (let i: number = 0; i < 10; i++) {
+
+                document.getElementById("NameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
+            }
+
+
         }
+
+    }
+
+    function Rangliste(_1: Spieler, _2: Spieler): number {
+
+        if (_1.punkte < _2.punkte) {
+            return 1;
+        }
+        if (_1.punkte > _2.punkte) {
+            return -1;
+        }
+        return 0;
     }
 }
 

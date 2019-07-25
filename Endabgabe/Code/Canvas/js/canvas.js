@@ -53,7 +53,7 @@ var endabgabe;
         update();
     }
     function update() {
-        window.setTimeout(update, 1000 / fps);
+        endabgabe.timer = window.setTimeout(update, 1000 / fps);
         endabgabe.crc.clearRect(0, 0, endabgabe.canvas.width, endabgabe.canvas.height);
         endabgabe.crc.putImageData(imageData, 0, 0);
         spielerfisch.update();
@@ -63,12 +63,20 @@ var endabgabe;
                 endabgabe.bewegteUnterwasserweltArray.splice(i, 1);
             }
             else if (spielerfisch.kollision(endabgabe.bewegteUnterwasserweltArray[i]) == "tot") {
-                endabgabe.bewegteUnterwasserweltArray.splice(0, endabgabe.bewegteUnterwasserweltArray.length);
+                window.clearTimeout(endabgabe.timer);
+                //bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
+                alert("Du bist gestorben!");
                 endabgabe.Spielername = prompt("Deine erreichte Punktzahl: " + endabgabe.Punktestand, "Bitte Name eingeben");
                 endabgabe.insert();
                 endabgabe.refresh();
             }
             console.log("Du hast gewonnen!");
+        }
+        if (endabgabe.bewegteUnterwasserweltArray.length == 0) {
+            window.clearTimeout(endabgabe.timer);
+            endabgabe.Spielername = prompt("Deine erreichte Punktzahl: " + endabgabe.Punktestand, "Bitte Name eingeben");
+            endabgabe.insert();
+            endabgabe.refresh();
         }
         endabgabe.crc.fillStyle = "#8021a6";
         endabgabe.crc.font = "20px Arial";

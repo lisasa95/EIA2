@@ -10,7 +10,7 @@ namespace endabgabe {
 
 
 	document.addEventListener("DOMContentLoaded", init);
-	
+
 
 
 	export let crc: CanvasRenderingContext2D;
@@ -19,6 +19,7 @@ namespace endabgabe {
 
 	export let Punktestand: number = 0;
 	export let Spielername: string;
+	export let timer: number;
 
 	let spielerfisch: SpielerFisch;
 
@@ -85,7 +86,7 @@ namespace endabgabe {
 
 
 	function update(): void { // FUNKTION Update die Fische 
-		window.setTimeout(update, 1000 / fps);
+		timer = window.setTimeout(update, 1000 / fps);
 		crc.clearRect(0, 0, canvas.width, canvas.height);
 		crc.putImageData(imageData, 0, 0);
 
@@ -101,12 +102,21 @@ namespace endabgabe {
 			}
 
 			else if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == "tot") {
-				bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
+				window.clearTimeout(timer);
+				//bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
+				alert("Du bist gestorben!");
 				Spielername = prompt("Deine erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 				insert();
 				refresh();
 			}
 			console.log("Du hast gewonnen!");
+		}
+
+		if (bewegteUnterwasserweltArray.length == 0) {
+			window.clearTimeout(timer);
+			Spielername = prompt("Deine erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
+			insert();
+			refresh();
 		}
 
 

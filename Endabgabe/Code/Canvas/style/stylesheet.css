@@ -8,52 +8,47 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 canvas { 
         border: 5px solid #00b1f2;
+        position:fixed;
+        left: 80px;
+        top: 20px;
         
 }
 
 html { background-color:#6CA1F0
-
-}
-
-button { background-color: rgb(64, 248, 190);
-        color:black;
-        border: 2px black solid;
-        width:130px;
-        height:40px;
-        font-family: 'Shadows Into Light Two', cursive;
-        font-size:10px;
-        position: absolute;
-        right:55px;
-        bottom:20px;
-       
 }
 
 #Punktesammlung { border: solid 2px rgb(255, 255, 255);
                  position: absolute;
-                 left: 1050px;
-                 height: 690px;
+                 left: 1150px;
+                 top:26px;
+                 height: 680px;
                  width: 250px;
                  color:white;
+                 line-height: 55px;
+                 background-image: linear-gradient(to right, #c6acde, #bcabe1, #b2aae3, #a6a9e5, #99a9e6, #84b1ef, #69baf5, #48c2f6, #00d4f1, #20e3de, #66eec3, #a2f6a6);
 
 
 }
 
-#NameID {font-family: Arial;
-        font-size:20px;
-        text-align: center;
-        color: white;
-
-}
-
-#PunkteID {font-family: Arial;
-        font-size:20px;
+#NameID {font-family: 'Amatic SC', cursive;
+        font-size:30px;
         text-align: center;
         color: white;
 }
 
-h2 { font-family: Arial;
-        font-size:25px;
-        text-align: center;
-        color: white;
 
+#PunkteID {font-family: 'Amatic SC', cursive;
+        font-size:30px;
+        text-align: center;
+        color: #f9b1fc;
+}
+
+
+h2 {    font-family: 'Amatic SC', cursive;
+        font-size:40px;
+        text-align: center;
+        color:  white;
+        margin-bottom:25px;
+        top:20px;
+        
 }
