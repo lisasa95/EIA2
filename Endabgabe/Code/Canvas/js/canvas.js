@@ -36,20 +36,21 @@ var endabgabe;
             endabgabe.bewegteUnterwasserweltArray.push(lila);
             lila.draw();
         }
-        //Große Luftblasen
-        for (let i = 0; i <= 10; i++) {
-            let gross;
-            gross = new endabgabe.BlaseGross();
-            endabgabe.bewegteUnterwasserweltArray.push(gross);
+        /* //Große Luftblasen
+        for (let i: number = 0; i <= 10; i++) {
+            let gross: BlaseGross;
+            gross = new BlaseGross();
+            bewegteUnterwasserweltArray.push(gross);
             gross.draw();
         }
+
         //Kleine Blase
-        for (let i = 0; i <= 20; i++) {
-            let klein;
-            klein = new endabgabe.BlaseKlein();
-            endabgabe.bewegteUnterwasserweltArray.push(klein);
+        for (let i: number = 0; i <= 20; i++) {
+            let klein: BlaseKlein;
+            klein = new BlaseKlein();
+            bewegteUnterwasserweltArray.push(klein);
             klein.draw();
-        }
+        } */
         update();
     }
     function update() {
@@ -64,7 +65,7 @@ var endabgabe;
             }
             else if (spielerfisch.kollision(endabgabe.bewegteUnterwasserweltArray[i]) == "tot") {
                 endabgabe.bewegteUnterwasserweltArray.splice(0, endabgabe.bewegteUnterwasserweltArray.length);
-                endabgabe.Spielername = prompt("Deine Punkte: " + endabgabe.Punktestand, "Dein Name:");
+                endabgabe.Spielername = prompt("Deine erreichte Punktzahl: " + endabgabe.Punktestand, "Bitte Name eingeben");
                 endabgabe.insert();
                 endabgabe.refresh();
             }

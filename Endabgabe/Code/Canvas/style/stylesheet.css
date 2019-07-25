@@ -6,11 +6,7 @@ Datum: 28.07.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 
-canvas { display: block;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: auto;
-        margin-right: auto;
+canvas { 
         border: 5px solid #00b1f2;
         
 }

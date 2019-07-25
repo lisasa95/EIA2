@@ -60,7 +60,7 @@ namespace endabgabe {
 			lila.draw();
 		}
 
-		//Große Luftblasen
+		/* //Große Luftblasen
 		for (let i: number = 0; i <= 10; i++) {
 			let gross: BlaseGross;
 			gross = new BlaseGross();
@@ -74,7 +74,7 @@ namespace endabgabe {
 			klein = new BlaseKlein();
 			bewegteUnterwasserweltArray.push(klein);
 			klein.draw();
-		}
+		} */
 
 
 		update();
@@ -102,7 +102,7 @@ namespace endabgabe {
 
 			else if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == "tot") {
 				bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
-				Spielername = prompt("Deine Punkte: " + Punktestand, "Dein Name:");
+				Spielername = prompt("Deine erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 				insert();
 				refresh();
 			}

@@ -17,7 +17,7 @@ let players: Mongo.Collection;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://spieler:<password>@cluster0-2bjva.mongodb.net/Punkteliste";
+    databaseURL = "mongodb+srv://spieler:<password>@cluster0-2bjva.mongodb.net/test?retryWrites=true&w=majority";
     databaseName = "Punkteliste";
 }
 
