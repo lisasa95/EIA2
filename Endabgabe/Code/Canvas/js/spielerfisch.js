@@ -73,7 +73,7 @@ var endabgabe;
             if (Math.sqrt(Math.pow(Math.abs(this.x - fisch.x), 2) + Math.pow(Math.abs(this.y - fisch.y), 2)) < 50 && fisch.groesse > 0) {
                 if (this.groesse > fisch.groesse) {
                     this.groesse++;
-                    endabgabe.punktezaehler += 5;
+                    endabgabe.Punktestand += 5;
                     console.log(this.groesse);
                     return true;
                 }

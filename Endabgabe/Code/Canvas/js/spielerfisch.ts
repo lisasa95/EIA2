@@ -1,4 +1,3 @@
-
 /*Endabgabe/*
 Aufgabe: Endabgabe - CANVAS
 Name: Lisa Sanchez y Bittner
@@ -104,7 +103,7 @@ namespace endabgabe {
             if (Math.sqrt(Math.pow(Math.abs(this.x - fisch.x), 2) + Math.pow(Math.abs(this.y - fisch.y), 2)) < 50 && fisch.groesse > 0) {
                 if (this.groesse > fisch.groesse) {
                     this.groesse++;
-                    punktezaehler += 5;
+                    Punktestand += 5;
                     console.log(this.groesse);
                     return true;
                 }

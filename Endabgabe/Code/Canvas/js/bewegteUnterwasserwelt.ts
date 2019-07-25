@@ -1,4 +1,3 @@
-
 /*Endabgabe/*
 Aufgabe: Endabgabe - CANVAS
 Name: Lisa Sanchez y Bittner

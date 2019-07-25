@@ -1,3 +1,10 @@
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
 
 import * as Http from "http";
 import * as Url from "url";
@@ -23,31 +30,25 @@ function handleListen(): void {
 function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
     console.log("Request received");
 
-    let query: AssocStringString = <AssocStringString> Url.parse(_request.url, true).query;
+    let query: Punkteliste = <Punkteliste>Url.parse(_request.url, true).query;
     let command: string = query["command"];
-    let matrikel: string = query["matrikel"]; 
 
     switch (command) {
-        
         case "insert":
-            let student: StudentData = {
-
+            let player: Spieler = {
                 name: query["name"],
-                firstname: query["firstname"],
-                matrikel: parseInt(query["matrikel"])
+                punkte: parseInt(query["punkte"])
             };
-            Database.insert(student);
+            Database.insert(player);
             respond(_response, "storing data");
             break;
-
+        /* case "finde":
+            let suche: string = query["finde"];
+            Database.searchMatrikel(findCallback, suche);
+            break; */
         case "refresh":
             Database.findAll(findCallback);
             break;
-
-            case "search":
-            Database.sucheMatrikel(Number(matrikel), findCallback);
-            break;
-            
         default:
             respond(_response, "unknown command: " + command);
             break;

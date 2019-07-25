@@ -1,36 +1,25 @@
-var DBClient;
-(function (DBClient) {
-    window.addEventListener("load", init);
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+var endabgabe;
+(function (endabgabe) {
     let serverAddress = "https://eia2lisa.herokuapp.com/";
-    // let serverAddress: string = "https://eia2-testserver.herokuapp.com/";
-    function init(_event) {
-        console.log("Init");
-        let insertButton = document.getElementById("insert");
-        let refreshButton = document.getElementById("refresh");
-        insertButton.addEventListener("click", insert);
-        refreshButton.addEventListener("click", refresh);
-        document.getElementById("SucheMatrikel").addEventListener("click", search);
-    }
-    function search(_event) {
-        let inputs = document.getElementsByTagName("input");
-        let query = "command=search";
-        query += "&matrikel=" + inputs[3].value;
-        console.log(query);
-        sendRequest(query, handleFindResponse);
-    }
-    function insert(_event) {
-        let inputs = document.getElementsByTagName("input");
+    function insert() {
         let query = "command=insert";
-        query += "&name=" + inputs[0].value;
-        query += "&firstname=" + inputs[1].value;
-        query += "&matrikel=" + inputs[2].value;
+        query += "&name=" + endabgabe.Spielername;
+        query += "&score=" + endabgabe.Punktestand;
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
-    function refresh(_event) {
+    endabgabe.insert = insert;
+    function refresh() {
         let query = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
+    endabgabe.refresh = refresh;
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", serverAddress + "?" + _query, true);
@@ -45,12 +34,25 @@ var DBClient;
     }
     function handleFindResponse(_event) {
         let xhr = _event.target;
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            let output = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson = JSON.parse(xhr.response);
-            console.log(responseAsJson);
+        let output = document.getElementsByTagName("textarea")[0];
+        output.value = xhr.response;
+        let responseAsJson = JSON.parse(xhr.response);
+        console.log(responseAsJson);
+        /* if (xhr.readyState == XMLHttpRequest.DONE) {
+            let allPlayersArray: Spieler[] = JSON.parse(xhr.response);
+
+
         }
+
+        document.getElementById("NameID").innerHTML = "";
+        document.getElementById("PunkteID").innerHTML = "";
+
+        for (let i: number = 0; i < 10; i++) {
+           
+            document.getElementById("NameID").innerHTML +=;
+            newPlayer.setAttribute("id", i.toString());
+            newPlayer.innerHTML = `${allPlayersArray[i].name} : ${allPlayersArray[i].score}`;
+        } */
     }
-})(DBClient || (DBClient = {}));
+})(endabgabe || (endabgabe = {}));
 //# sourceMappingURL=DBClient.js.map

@@ -1,4 +1,3 @@
-
 /*Endabgabe/*
 Aufgabe: Endabgabe - CANVAS
 Name: Lisa Sanchez y Bittner
@@ -17,7 +16,8 @@ namespace endabgabe {
 	export let canvas: HTMLCanvasElement;
 	export let bewegteUnterwasserweltArray: BewegteUnterwasserwelt[] = [];
 
-	export let punktezaehler: number = 0;
+	export let Punktestand: number = 0;
+	export let Spielername: string;
 
 	let spielerfisch: SpielerFisch;
 
@@ -28,6 +28,9 @@ namespace endabgabe {
 	function init(): void {
 		canvas = document.getElementsByTagName("canvas")[0];
 		crc = canvas.getContext("2d");
+
+		insert();
+		refresh();
 
 		zeichneHintergrund();
 
@@ -89,6 +92,7 @@ namespace endabgabe {
 		spielerfisch.update();
 
 
+
 		for (let i: number = 0; i < bewegteUnterwasserweltArray.length; i++) {
 			bewegteUnterwasserweltArray[i].update();
 
@@ -97,13 +101,21 @@ namespace endabgabe {
 			}
 
 		} if (bewegteUnterwasserweltArray.length == 0) {
-			console.log("Du hast gewonnen!");
+			bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
+			document.getElementById("gameOver").style.display = "block";
+			console.log("Insert Hier MeinFish!");
+			Spielername = prompt("Your score: " + Punktestand, "Your Name");
+			insert();
+			refresh();
 		}
-
-		crc.fillStyle = "#8021a6";
-		crc.font = "20px Arial";
-		crc.fillText ("Punktestand: " + punktezaehler.toString(), 850, 30)
+		console.log("Du hast gewonnen!");
 	}
+
+	crc.fillStyle = "#8021a6";
+	crc.font = "20px Arial";
+	crc.fillText("Punktestand: " + Punktestand.toString(), 850, 30)
+
+
 
 
 

@@ -8,13 +8,15 @@ var endabgabe;
 (function (endabgabe) {
     document.addEventListener("DOMContentLoaded", init);
     endabgabe.bewegteUnterwasserweltArray = [];
-    endabgabe.punktezaehler = 0;
+    endabgabe.Punktestand = 0;
     let spielerfisch;
     let fps = 25;
     let imageData;
     function init() {
         endabgabe.canvas = document.getElementsByTagName("canvas")[0];
         endabgabe.crc = endabgabe.canvas.getContext("2d");
+        endabgabe.insert();
+        endabgabe.refresh();
         zeichneHintergrund();
         imageData = endabgabe.crc.getImageData(0, 0, endabgabe.canvas.width, endabgabe.canvas.height);
         spielerfisch = new endabgabe.SpielerFisch();
@@ -62,12 +64,18 @@ var endabgabe;
             }
         }
         if (endabgabe.bewegteUnterwasserweltArray.length == 0) {
-            console.log("Du hast gewonnen!");
+            endabgabe.bewegteUnterwasserweltArray.splice(0, endabgabe.bewegteUnterwasserweltArray.length);
+            document.getElementById("gameOver").style.display = "block";
+            console.log("Insert Hier MeinFish!");
+            endabgabe.Spielername = prompt("Your score: " + endabgabe.Punktestand, "Your Name");
+            endabgabe.insert();
+            endabgabe.refresh();
         }
-        endabgabe.crc.fillStyle = "#8021a6";
-        endabgabe.crc.font = "20px Arial";
-        endabgabe.crc.fillText("Punktestand: " + endabgabe.punktezaehler.toString(), 850, 30);
+        console.log("Du hast gewonnen!");
     }
+    endabgabe.crc.fillStyle = "#8021a6";
+    endabgabe.crc.font = "20px Arial";
+    endabgabe.crc.fillText("Punktestand: " + endabgabe.Punktestand.toString(), 850, 30);
     function zeichneHintergrund() {
         let wasser = new Path2D();
         wasser.rect(0, 0, 1000, 700);
