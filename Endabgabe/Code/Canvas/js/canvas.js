@@ -1,18 +1,15 @@
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var endabgabe;
 (function (endabgabe) {
-    /*Endabgabe/*
-    Aufgabe: Endabgabe - CANVAS
-    Name: Lisa Sanchez y Bittner
-    Matrikel: 260502
-    Datum: 28.07.2019
-    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
     document.addEventListener("DOMContentLoaded", init);
     endabgabe.bewegteUnterwasserweltArray = [];
+    endabgabe.punktezaehler = 0;
     let spielerfisch;
-    let lilaFischArray = [];
-    let gruenerFischArray = [];
-    let blaseGrossArray = [];
-    let blaseKleinArray = [];
     let fps = 25;
     let imageData;
     function init() {
@@ -24,31 +21,31 @@ var endabgabe;
         spielerfisch.draw();
         document.addEventListener("keydown", moveSpielerFisch);
         //Grüner Fisch
-        for (let i = 0; i <= 5; i++) {
+        for (let i = 0; i <= 7; i++) {
             let gruen;
             gruen = new endabgabe.GruenerFisch();
-            gruenerFischArray.push(gruen);
+            endabgabe.bewegteUnterwasserweltArray.push(gruen);
             gruen.draw();
         }
         //Lila Fisch
-        for (let i = 0; i <= 3; i++) {
+        for (let i = 0; i <= 7; i++) {
             let lila;
             lila = new endabgabe.LilaFisch();
-            lilaFischArray.push(lila);
+            endabgabe.bewegteUnterwasserweltArray.push(lila);
             lila.draw();
         }
         //Große Luftblasen
         for (let i = 0; i <= 10; i++) {
             let gross;
             gross = new endabgabe.BlaseGross();
-            blaseGrossArray.push(gross);
+            endabgabe.bewegteUnterwasserweltArray.push(gross);
             gross.draw();
         }
         //Kleine Blase
         for (let i = 0; i <= 20; i++) {
             let klein;
             klein = new endabgabe.BlaseKlein();
-            blaseKleinArray.push(klein);
+            endabgabe.bewegteUnterwasserweltArray.push(klein);
             klein.draw();
         }
         update();
@@ -58,23 +55,23 @@ var endabgabe;
         endabgabe.crc.clearRect(0, 0, endabgabe.canvas.width, endabgabe.canvas.height);
         endabgabe.crc.putImageData(imageData, 0, 0);
         spielerfisch.update();
-        for (let i = 0; i < gruenerFischArray.length; i++) {
-            gruenerFischArray[i].update();
+        for (let i = 0; i < endabgabe.bewegteUnterwasserweltArray.length; i++) {
+            endabgabe.bewegteUnterwasserweltArray[i].update();
+            if (spielerfisch.kollision(endabgabe.bewegteUnterwasserweltArray[i]) == true) {
+                endabgabe.bewegteUnterwasserweltArray.splice(i, 1);
+            }
         }
-        for (let i = 0; i < lilaFischArray.length; i++) {
-            lilaFischArray[i].update();
+        if (endabgabe.bewegteUnterwasserweltArray.length == 0) {
+            console.log("Du hast gewonnen!");
         }
-        for (let i = 0; i < blaseGrossArray.length; i++) {
-            blaseGrossArray[i].update();
-        }
-        for (let i = 0; i < blaseKleinArray.length; i++) {
-            blaseKleinArray[i].update();
-        }
+        endabgabe.crc.fillStyle = "#8021a6";
+        endabgabe.crc.font = "20px Arial";
+        endabgabe.crc.fillText("Punktestand: " + endabgabe.punktezaehler.toString(), 850, 30);
     }
     function zeichneHintergrund() {
         let wasser = new Path2D();
         wasser.rect(0, 0, 1000, 700);
-        endabgabe.crc.fillStyle = "#e6f7ff";
+        endabgabe.crc.fillStyle = "#86A8E7";
         endabgabe.crc.fill(wasser);
         let boden = new Path2D();
         boden.rect(0, 600, 1000, 100);
@@ -146,12 +143,14 @@ var endabgabe;
     function moveSpielerFisch(e) {
         if (e.keyCode == 37) { // Linke Pfeiltaste
             spielerfisch.x -= 15;
+            spielerfisch.schwimmrichtung = "links";
         }
         else if (e.keyCode == 38) { // Obere Pfeiltaste
             spielerfisch.y -= 15;
         }
         else if (e.keyCode == 39) { // Rechte Pfeiltaste
             spielerfisch.x += 15;
+            spielerfisch.schwimmrichtung = "rechts";
         }
         else if (e.keyCode == 40) { // Untere Pfeiltaste
             spielerfisch.y += 15;

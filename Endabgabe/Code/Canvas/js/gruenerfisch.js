@@ -1,11 +1,18 @@
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var endabgabe;
 (function (endabgabe) {
     class GruenerFisch extends endabgabe.BewegteUnterwasserwelt {
         constructor() {
             super();
-            this.x = Math.random() * endabgabe.canvas.width;
+            this.x = Math.floor(Math.random() * endabgabe.canvas.width) + 600;
             this.y = Math.random() * endabgabe.canvas.height;
             this.dx = Math.random() * 15 + 2;
+            this.groesse = 10;
         }
         draw() {
             let fisch1 = new Path2D();

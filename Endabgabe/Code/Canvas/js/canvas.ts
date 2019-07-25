@@ -1,11 +1,13 @@
-namespace endabgabe {
 
-	/*Endabgabe/*
-	Aufgabe: Endabgabe - CANVAS
-	Name: Lisa Sanchez y Bittner
-	Matrikel: 260502 
-	Datum: 28.07.2019
-	Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
+namespace endabgabe {
 
 
 	document.addEventListener("DOMContentLoaded", init);
@@ -14,11 +16,11 @@ namespace endabgabe {
 	export let crc: CanvasRenderingContext2D;
 	export let canvas: HTMLCanvasElement;
 	export let bewegteUnterwasserweltArray: BewegteUnterwasserwelt[] = [];
+
+	export let punktezaehler: number = 0;
+
 	let spielerfisch: SpielerFisch;
-	let lilaFischArray: LilaFisch[] = [];
-	let gruenerFischArray: GruenerFisch[] = [];
-	let blaseGrossArray: BlaseGross[] = [];
-	let blaseKleinArray: BlaseKlein[] = [];
+
 	let fps: number = 25;
 	let imageData: ImageData;
 
@@ -39,19 +41,19 @@ namespace endabgabe {
 
 
 		//Grüner Fisch
-		for (let i: number = 0; i <= 5; i++) {
+		for (let i: number = 0; i <= 7; i++) {
 			let gruen: GruenerFisch;
 			gruen = new GruenerFisch();
-			gruenerFischArray.push(gruen);
+			bewegteUnterwasserweltArray.push(gruen);
 			gruen.draw();
 		}
 
 
 		//Lila Fisch
-		for (let i: number = 0; i <= 3; i++) {
+		for (let i: number = 0; i <= 7; i++) {
 			let lila: LilaFisch;
 			lila = new LilaFisch();
-			lilaFischArray.push(lila);
+			bewegteUnterwasserweltArray.push(lila);
 			lila.draw();
 		}
 
@@ -59,7 +61,7 @@ namespace endabgabe {
 		for (let i: number = 0; i <= 10; i++) {
 			let gross: BlaseGross;
 			gross = new BlaseGross();
-			blaseGrossArray.push(gross);
+			bewegteUnterwasserweltArray.push(gross);
 			gross.draw();
 		}
 
@@ -67,52 +69,49 @@ namespace endabgabe {
 		for (let i: number = 0; i <= 20; i++) {
 			let klein: BlaseKlein;
 			klein = new BlaseKlein();
-			blaseKleinArray.push(klein);
+			bewegteUnterwasserweltArray.push(klein);
 			klein.draw();
 		}
 
 
 		update();
+
 	}
 
 
 
 
-	function update(): void {
+	function update(): void { // FUNKTION Update die Fische 
 		window.setTimeout(update, 1000 / fps);
 		crc.clearRect(0, 0, canvas.width, canvas.height);
 		crc.putImageData(imageData, 0, 0);
 
 		spielerfisch.update();
-		
 
-		for (let i: number = 0; i < gruenerFischArray.length; i++) {
-			gruenerFischArray[i].update();
+
+		for (let i: number = 0; i < bewegteUnterwasserweltArray.length; i++) {
+			bewegteUnterwasserweltArray[i].update();
+
+			if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == true) {
+				bewegteUnterwasserweltArray.splice(i, 1);
+			}
+
+		} if (bewegteUnterwasserweltArray.length == 0) {
+			console.log("Du hast gewonnen!");
 		}
 
-		for (let i: number = 0; i < lilaFischArray.length; i++) {
-			lilaFischArray[i].update();
-		}
-
-
-		for (let i: number = 0; i < blaseGrossArray.length; i++) {
-			blaseGrossArray[i].update();
-		}
-
-		for (let i: number = 0; i < blaseKleinArray.length; i++) {
-			blaseKleinArray[i].update();
-		}
-
-
+		crc.fillStyle = "#8021a6";
+		crc.font = "20px Arial";
+		crc.fillText ("Punktestand: " + punktezaehler.toString(), 850, 30)
 	}
 
 
 
-	function zeichneHintergrund(): void {
+	function zeichneHintergrund(): void { // FUNKTION zeichnet Hintergrund des Canvas
 
 		let wasser: Path2D = new Path2D();
 		wasser.rect(0, 0, 1000, 700);
-		crc.fillStyle = "#e6f7ff";
+		crc.fillStyle = "#86A8E7";
 		crc.fill(wasser);
 
 
@@ -202,11 +201,12 @@ namespace endabgabe {
 	}
 
 
-	function moveSpielerFisch (e: KeyboardEvent): void {
+	function moveSpielerFisch(e: KeyboardEvent): void { // Funktion um Spielerfisch zu bewegen
 
 		if (e.keyCode == 37) { // Linke Pfeiltaste
 
 			spielerfisch.x -= 15;
+			spielerfisch.schwimmrichtung = "links";
 		}
 
 		else if (e.keyCode == 38) { // Obere Pfeiltaste
@@ -217,6 +217,7 @@ namespace endabgabe {
 		else if (e.keyCode == 39) { // Rechte Pfeiltaste
 
 			spielerfisch.x += 15;
+			spielerfisch.schwimmrichtung = "rechts";
 		}
 
 		else if (e.keyCode == 40) { // Untere Pfeiltaste
@@ -224,4 +225,5 @@ namespace endabgabe {
 			spielerfisch.y += 15;
 		}
 	}
+
 }

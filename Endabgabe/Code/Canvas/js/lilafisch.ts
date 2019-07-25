@@ -1,3 +1,12 @@
+
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
 namespace endabgabe {
 
     export class LilaFisch extends BewegteUnterwasserwelt {
@@ -5,9 +14,10 @@ namespace endabgabe {
         constructor() {
 
             super();
-            this.x = Math.random() * canvas.width;
+            this.x = Math.floor(Math.random() * canvas.width) + 600;
             this.y = Math.random() * canvas.height;
             this.dx = Math.random() * 5 - 11;
+            this.groesse = 22;
         }
 
 

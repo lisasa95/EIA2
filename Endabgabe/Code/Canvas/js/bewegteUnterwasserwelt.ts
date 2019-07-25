@@ -1,3 +1,12 @@
+
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502 
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+
 namespace endabgabe {
 
     export class BewegteUnterwasserwelt {
@@ -5,7 +14,7 @@ namespace endabgabe {
         y: number;
         dx: number;
         dy: number;
-
+        groesse: number;
 
         constructor() {
 
@@ -27,6 +36,6 @@ namespace endabgabe {
 
 
 
-            }
         }
     }
+}

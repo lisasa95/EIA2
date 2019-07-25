@@ -9,26 +9,29 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 
 
-html { background-color:rgb(235, 245, 255);
+html {  background-image: linear-gradient(to right bottom, #c6acde, #bcabe1, #b2aae3, #a6a9e5, #99a9e6, #8bb0ee, #7bb8f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    height: 100%;
+    background-size: cover;
 }
-   
+
+
 
 h1 { font-family: 'Londrina Shadow', cursive;
      color:black;
      font-size: 60px;
      text-align: center;
      text-transform: uppercase;
-     margin-top:100px;
+     margin-top:80px;
 }
 
 main { font-family: 'Shadows Into Light Two', cursive;
     text-align: center;
-    font-size:25px;
-    margin-top:85px;
+    font-size:22px;
+    margin-top:40px;
 }
 
 
-button { background-color: rgb(221, 174, 207);
+button { background-color: rgb(64, 248, 190);
          color:black;
          border: 2px black solid;
          width:200px;
