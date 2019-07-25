@@ -1,9 +1,10 @@
 "use strict";
-/**
- * Simple server managing between client and database
- * @author: Jirka Dell'Oro-Friedl
- * @adapted: Lukas Scheuerle
- */
+/*Endabgabe/*
+Aufgabe: Endabgabe - CANVAS
+Name: Lisa Sanchez y Bittner
+Matrikel: 260502
+Datum: 28.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
@@ -23,22 +24,21 @@ function handleRequest(_request, _response) {
     console.log("Request received");
     let query = Url.parse(_request.url, true).query;
     let command = query["command"];
-    let matrikel = query["matrikel"];
     switch (command) {
         case "insert":
-            let student = {
+            let player = {
                 name: query["name"],
-                firstname: query["firstname"],
-                matrikel: parseInt(query["matrikel"])
+                punkte: parseInt(query["punkte"])
             };
-            Database.insert(student);
+            Database.insert(player);
             respond(_response, "storing data");
             break;
+        /* case "finde":
+            let suche: string = query["finde"];
+            Database.searchMatrikel(findCallback, suche);
+            break; */
         case "refresh":
             Database.findAll(findCallback);
-            break;
-        case "search":
-            Database.sucheMatrikel(Number(matrikel), findCallback);
             break;
         default:
             respond(_response, "unknown command: " + command);

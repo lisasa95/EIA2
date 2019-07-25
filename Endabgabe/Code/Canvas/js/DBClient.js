@@ -9,9 +9,8 @@ var endabgabe;
     let serverAddress = "https://eia2lisa.herokuapp.com/";
     function insert() {
         let query = "command=insert";
-        query += "&name=" + endabgabe.Spielername;
-        query += "&score=" + endabgabe.Punktestand;
-        console.log(query);
+        query += "&name=" + name;
+        query += "&score=" + punkte;
         sendRequest(query, handleInsertResponse);
     }
     endabgabe.insert = insert;
@@ -34,25 +33,18 @@ var endabgabe;
     }
     function handleFindResponse(_event) {
         let xhr = _event.target;
-        let output = document.getElementsByTagName("textarea")[0];
-        output.value = xhr.response;
-        let responseAsJson = JSON.parse(xhr.response);
-        console.log(responseAsJson);
-        /* if (xhr.readyState == XMLHttpRequest.DONE) {
-            let allPlayersArray: Spieler[] = JSON.parse(xhr.response);
-
-
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            let fischSpielerArray = JSON.parse(xhr.response);
+            document.getElementById("NameID").innerHTML = "";
+            document.getElementById("PunkteID").innerHTML = "";
+            for (let i = fischSpielerArray.length - 5; i < fischSpielerArray.length; i++) {
+                document.getElementById("NameID").innerHTML += `<div>${fischSpielerArray[i].name} : ${fischSpielerArray[i].punkte} </div>`;
+            }
+            /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
+            output.value = xhr.response;
+            let responseAsJson: JSON = JSON.parse(xhr.response);
+            console.log(responseAsJson); */
         }
-
-        document.getElementById("NameID").innerHTML = "";
-        document.getElementById("PunkteID").innerHTML = "";
-
-        for (let i: number = 0; i < 10; i++) {
-           
-            document.getElementById("NameID").innerHTML +=;
-            newPlayer.setAttribute("id", i.toString());
-            newPlayer.innerHTML = `${allPlayersArray[i].name} : ${allPlayersArray[i].score}`;
-        } */
     }
 })(endabgabe || (endabgabe = {}));
 //# sourceMappingURL=DBClient.js.map

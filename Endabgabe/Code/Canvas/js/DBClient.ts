@@ -8,14 +8,12 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace endabgabe {
 
-  
-    let serverAddress: string = "https://eia2lisa.herokuapp.com/";
 
+    let serverAddress: string = "https://eia2lisa.herokuapp.com/";
     export function insert(): void {
         let query: string = "command=insert";
         query += "&name=" + Spielername;
-        query += "&score=" + Punktestand;
-        console.log(query);
+        query +="&punktestand=" + Punktestand;
         sendRequest(query, handleInsertResponse);
     }
 
@@ -40,28 +38,25 @@ namespace endabgabe {
 
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
-        let output: HTMLTextAreaElement = document.getElementsByTagName ("textarea") [0];
-        output.value = xhr.response;
-        let responseAsJson: JSON=JSON.parse(xhr.response);
-        console.log(responseAsJson);
-
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let allPlayersArray: Spieler[] = JSON.parse(xhr.response);
+            let SpielerArray: Spieler[] = JSON.parse(xhr.response);
+            
 
-        }
+            document.getElementById("nameID").innerHTML = "";
+            document.getElementById("punktestandID").innerHTML = "";
 
-        document.getElementById("NameID").innerHTML = "";
-        document.getElementById("PunkteID").innerHTML = "";
 
-        for (let i: number = bewegteUnterwasserweltArray-8; i < bewegteUnterwasserweltArray; i++) {
-            document.getElementById("NameID").innerHTML += `<div>${allPlayersArray[i].NameID} : ${bewegteUnterwasserweltArray[i].PunkteID}<div>`;
+            for (let i: number = SpielerArray.length-5; i < SpielerArray.length; i++) {
     
+                document.getElementById("nameID").innerHTML += `<div>${SpielerArray[i].name} : ${SpielerArray[i].punkte} </div>`;
+            }
+
+            /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
+            output.value = xhr.response;
+            let responseAsJson: JSON = JSON.parse(xhr.response);
+            console.log(responseAsJson); */
         }
-           
-        
-
-        
     }
-
-
 }
+
+
