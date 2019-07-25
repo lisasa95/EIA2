@@ -10,6 +10,7 @@ namespace endabgabe {
 
 
 	document.addEventListener("DOMContentLoaded", init);
+	
 
 
 	export let crc: CanvasRenderingContext2D;
@@ -236,5 +237,6 @@ namespace endabgabe {
 			spielerfisch.y += 15;
 		}
 	}
+
 
 }

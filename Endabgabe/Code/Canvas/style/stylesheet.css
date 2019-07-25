@@ -22,8 +22,38 @@ button { background-color: rgb(64, 248, 190);
         height:40px;
         font-family: 'Shadows Into Light Two', cursive;
         font-size:10px;
-        margin-top:20px;
-        padding-left: 0px;
-        padding-bottom:0px;
+        position: absolute;
+        right:55px;
+        bottom:20px;
+       
+}
+
+#Punktesammlung { border: solid 2px rgb(255, 255, 255);
+                 position: absolute;
+                 left: 1050px;
+                 height: 690px;
+                 width: 250px;
+                 color:white;
+
+
+}
+
+#NameID {font-family: Arial;
+        font-size:20px;
+        text-align: center;
+        color: white;
+
+}
+
+#PunkteID {font-family: Arial;
+        font-size:20px;
+        text-align: center;
+        color: white;
+}
+
+h2 { font-family: Arial;
+        font-size:25px;
+        text-align: center;
+        color: white;
 
 }

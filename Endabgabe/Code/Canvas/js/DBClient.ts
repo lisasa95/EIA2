@@ -53,15 +53,15 @@ namespace endabgabe {
         document.getElementById("NameID").innerHTML = "";
         document.getElementById("PunkteID").innerHTML = "";
 
-        for (let i: number = bewegteUnterwasserweltArray-8; i<bewegteUnterwasserweltArray; i++) {
+        for (let i: number = bewegteUnterwasserweltArray-8; i < bewegteUnterwasserweltArray; i++) {
             document.getElementById("NameID").innerHTML += `<div>${allPlayersArray[i].NameID} : ${bewegteUnterwasserweltArray[i].PunkteID}<div>`;
-        }
+    
         }
            
         
 
         
     }
-}
 
-   
+
+}
