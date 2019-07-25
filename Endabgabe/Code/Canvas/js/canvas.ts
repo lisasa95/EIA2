@@ -29,7 +29,6 @@ namespace endabgabe {
 		canvas = document.getElementsByTagName("canvas")[0];
 		crc = canvas.getContext("2d");
 
-		insert();
 		refresh();
 
 		zeichneHintergrund();

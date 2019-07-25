@@ -15,7 +15,6 @@ var endabgabe;
     function init() {
         endabgabe.canvas = document.getElementsByTagName("canvas")[0];
         endabgabe.crc = endabgabe.canvas.getContext("2d");
-        endabgabe.insert();
         endabgabe.refresh();
         zeichneHintergrund();
         imageData = endabgabe.crc.getImageData(0, 0, endabgabe.canvas.width, endabgabe.canvas.height);
