@@ -70,17 +70,19 @@ var abschlussaufgabe;
             }
         }
         kollision(fisch) {
-            let xDistanz = Math.abs(this.x - fisch.x);
-            let yDistanz = Math.abs(this.y - fisch.y);
-            if (Math.sqrt(Math.pow(xDistanz, 2) + Math.pow(yDistanz, 2)) < 50) {
-                if (this.groesse > fisch.groesse) {
-                    this.groesse++;
-                    abschlussaufgabe.Punktestand += 5;
-                    console.log(this.groesse);
-                    return "essen";
-                }
-                else {
-                    return "tot";
+            if (!(fisch instanceof abschlussaufgabe.BlaseKlein) && !(fisch instanceof abschlussaufgabe.BlaseGross)) {
+                let xDistanz = Math.abs(this.x - fisch.x);
+                let yDistanz = Math.abs(this.y - fisch.y);
+                if (Math.sqrt(Math.pow(xDistanz, 2) + Math.pow(yDistanz, 2)) < 50) {
+                    if (this.groesse > fisch.groesse) {
+                        this.groesse++;
+                        abschlussaufgabe.Punktestand += 5;
+                        console.log(this.groesse);
+                        return "essen";
+                    }
+                    else {
+                        return "tot";
+                    }
                 }
             }
             else

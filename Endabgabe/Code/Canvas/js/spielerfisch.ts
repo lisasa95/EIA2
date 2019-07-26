@@ -100,19 +100,21 @@ namespace abschlussaufgabe {
         }
 
         kollision(fisch: BewegteUnterwasserwelt): string {
-            let xDistanz: number = Math.abs(this.x - fisch.x);
-            let yDistanz: number = Math.abs(this.y - fisch.y);
+            if(!(fisch instanceof BlaseKlein) && !(fisch instanceof BlaseGross)) {
+                let xDistanz: number = Math.abs(this.x - fisch.x);
+                let yDistanz: number = Math.abs(this.y - fisch.y);
 
-            if (Math.sqrt(Math.pow(xDistanz, 2) + Math.pow(yDistanz, 2)) < 50) {
-                if (this.groesse > fisch.groesse) {
-                    this.groesse++;
-                    Punktestand += 5;
-                    console.log(this.groesse);
-                    return "essen";
-                }
+                if (Math.sqrt(Math.pow(xDistanz, 2) + Math.pow(yDistanz, 2)) < 50) {
+                    if (this.groesse > fisch.groesse) {
+                        this.groesse++;
+                        Punktestand += 5;
+                        console.log(this.groesse);
+                        return "essen";
+                    }
 
-                else {
-                    return "tot";
+                    else {
+                        return "tot";
+                    }
                 }
             }
 

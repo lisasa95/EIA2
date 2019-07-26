@@ -61,7 +61,7 @@ namespace abschlussaufgabe {
 			lila.draw();
 		}
 
-		/* 	// Große Luftblasen
+		//Große Luftblasen
 		for (let i: number = 0; i <= 10; i++) {
 			let gross: BlaseGross;
 			gross = new BlaseGross();
@@ -75,7 +75,7 @@ namespace abschlussaufgabe {
 			klein = new BlaseKlein();
 			bewegteUnterwasserweltArray.push(klein);
 			klein.draw();
-		} */
+		} 
 
 
 		update();

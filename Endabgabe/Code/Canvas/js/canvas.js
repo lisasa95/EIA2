@@ -35,21 +35,20 @@ var abschlussaufgabe;
             abschlussaufgabe.bewegteUnterwasserweltArray.push(lila);
             lila.draw();
         }
-        /* 	// Große Luftblasen
-        for (let i: number = 0; i <= 10; i++) {
-            let gross: BlaseGross;
-            gross = new BlaseGross();
-            bewegteUnterwasserweltArray.push(gross);
+        //Große Luftblasen
+        for (let i = 0; i <= 10; i++) {
+            let gross;
+            gross = new abschlussaufgabe.BlaseGross();
+            abschlussaufgabe.bewegteUnterwasserweltArray.push(gross);
             gross.draw();
         }
-
-            // Kleine Blase
-        for (let i: number = 0; i <= 20; i++) {
-            let klein: BlaseKlein;
-            klein = new BlaseKlein();
-            bewegteUnterwasserweltArray.push(klein);
+        // Kleine Blase
+        for (let i = 0; i <= 20; i++) {
+            let klein;
+            klein = new abschlussaufgabe.BlaseKlein();
+            abschlussaufgabe.bewegteUnterwasserweltArray.push(klein);
             klein.draw();
-        } */
+        }
         update();
     }
     function update() {
