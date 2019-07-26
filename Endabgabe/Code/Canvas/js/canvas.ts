@@ -20,7 +20,7 @@ namespace abschlussaufgabe {
 	export let Punktestand: number = 0;
 	export let Spielername: string;
 	export let timer: number;
-	export let alleFischeGefressen: boolean = true;
+	
 
 	let spielerfisch: SpielerFisch;
 	let fps: number = 25;
@@ -107,7 +107,7 @@ namespace abschlussaufgabe {
 				Spielername = prompt("Erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 				insert();
 				refresh();
-				alleFischeGefressen=false;
+				
 			}
 			
 		}

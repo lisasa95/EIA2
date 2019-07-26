@@ -9,7 +9,6 @@ var abschlussaufgabe;
     document.addEventListener("DOMContentLoaded", init);
     abschlussaufgabe.bewegteUnterwasserweltArray = [];
     abschlussaufgabe.Punktestand = 0;
-    abschlussaufgabe.alleFischeGefressen = true;
     let spielerfisch;
     let fps = 25;
     let imageData;
@@ -68,7 +67,6 @@ var abschlussaufgabe;
                 abschlussaufgabe.Spielername = prompt("Erreichte Punktzahl: " + abschlussaufgabe.Punktestand, "Bitte Name eingeben");
                 abschlussaufgabe.insert();
                 abschlussaufgabe.refresh();
-                abschlussaufgabe.alleFischeGefressen = false;
             }
         }
         if (abschlussaufgabe.Punktestand == 80) {
