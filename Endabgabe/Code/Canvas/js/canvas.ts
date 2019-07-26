@@ -20,6 +20,7 @@ namespace abschlussaufgabe {
 	export let Punktestand: number = 0;
 	export let Spielername: string;
 	export let timer: number;
+	export let alleFischeGefressen: boolean = true;
 
 	let spielerfisch: SpielerFisch;
 	let fps: number = 25;
@@ -68,13 +69,13 @@ namespace abschlussaufgabe {
 			gross.draw();
 		}
 
-			// Kleine Blase
+		// Kleine Blase
 		for (let i: number = 0; i <= 20; i++) {
 			let klein: BlaseKlein;
 			klein = new BlaseKlein();
 			bewegteUnterwasserweltArray.push(klein);
 			klein.draw();
-		} 
+		}
 
 
 		update();
@@ -106,11 +107,12 @@ namespace abschlussaufgabe {
 				Spielername = prompt("Erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 				insert();
 				refresh();
+				alleFischeGefressen=false;
 			}
-			console.log("Du hast gewonnen!");
+			
 		}
 
-		if (bewegteUnterwasserweltArray.length == 0) {
+		if (Punktestand == 80) {
 			window.clearTimeout(timer);
 			Spielername = prompt("Erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 			insert();
