@@ -6,7 +6,7 @@ Datum: 28.07.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 
-namespace endabgabe {
+namespace abschlussaufgabe {
 
     export class LilaFisch extends BewegteUnterwasserwelt {
 

@@ -4,21 +4,21 @@ Name: Lisa Sanchez y Bittner
 Matrikel: 260502
 Datum: 28.07.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
-var endabgabe;
-(function (endabgabe) {
+var abschlussaufgabe;
+(function (abschlussaufgabe) {
     let serverAddress = "https://eia2lisa.herokuapp.com/";
     function insert() {
         let query = "command=insert";
-        query += "&name=" + endabgabe.Spielername;
-        query += "&punkte=" + endabgabe.Punktestand;
+        query += "&name=" + abschlussaufgabe.Spielername;
+        query += "&punkte=" + abschlussaufgabe.Punktestand;
         sendRequest(query, handleInsertResponse);
     }
-    endabgabe.insert = insert;
+    abschlussaufgabe.insert = insert;
     function refresh() {
         let query = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    endabgabe.refresh = refresh;
+    abschlussaufgabe.refresh = refresh;
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", serverAddress + "?" + _query, true);
@@ -54,5 +54,5 @@ var endabgabe;
         }
         return 0;
     }
-})(endabgabe || (endabgabe = {}));
+})(abschlussaufgabe || (abschlussaufgabe = {}));
 //# sourceMappingURL=DBClient.js.map

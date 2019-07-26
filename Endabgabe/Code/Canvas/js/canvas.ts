@@ -6,7 +6,7 @@ Datum: 28.07.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 
-namespace endabgabe {
+namespace abschlussaufgabe {
 
 
 	document.addEventListener("DOMContentLoaded", init);
@@ -27,7 +27,7 @@ namespace endabgabe {
 	let imageData: ImageData;
 
 
-	function init(): void {
+	function init(): void { // FUNKTION zeichnet Fische und definiert Variablen und Funktionen
 		canvas = document.getElementsByTagName("canvas")[0];
 		crc = canvas.getContext("2d");
 
@@ -61,7 +61,7 @@ namespace endabgabe {
 			lila.draw();
 		}
 
-		/* 	Große Luftblasen
+		/* 	// Große Luftblasen
 		for (let i: number = 0; i <= 10; i++) {
 			let gross: BlaseGross;
 			gross = new BlaseGross();
@@ -69,7 +69,7 @@ namespace endabgabe {
 			gross.draw();
 		}
 
-			Kleine Blase
+			// Kleine Blase
 		for (let i: number = 0; i <= 20; i++) {
 			let klein: BlaseKlein;
 			klein = new BlaseKlein();
@@ -85,7 +85,7 @@ namespace endabgabe {
 
 
 
-	function update(): void { // FUNKTION Update die Fische 
+	function update(): void { // FUNKTION Updatet die Fische und Alert
 		timer = window.setTimeout(update, 1000 / fps);
 		crc.clearRect(0, 0, canvas.width, canvas.height);
 		crc.putImageData(imageData, 0, 0);
@@ -103,9 +103,8 @@ namespace endabgabe {
 
 			else if (spielerfisch.kollision(bewegteUnterwasserweltArray[i]) == "tot") {
 				window.clearTimeout(timer);
-				//bewegteUnterwasserweltArray.splice(0, bewegteUnterwasserweltArray.length);
 				alert("Du bist gestorben!");
-				Spielername = prompt("Deine erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
+				Spielername = prompt("Erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 				insert();
 				refresh();
 			}
@@ -114,7 +113,7 @@ namespace endabgabe {
 
 		if (bewegteUnterwasserweltArray.length == 0) {
 			window.clearTimeout(timer);
-			Spielername = prompt("Deine erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
+			Spielername = prompt("Erreichte Punktzahl: " + Punktestand, "Bitte Name eingeben");
 			insert();
 			refresh();
 		}
@@ -223,7 +222,7 @@ namespace endabgabe {
 	}
 
 
-	function moveSpielerFisch(e: KeyboardEvent): void { // Funktion um Spielerfisch zu bewegen
+	function moveSpielerFisch(e: KeyboardEvent): void { // FUNKTION um Spielerfisch zu bewegen
 
 		if (e.keyCode == 37) { // Linke Pfeiltaste
 
