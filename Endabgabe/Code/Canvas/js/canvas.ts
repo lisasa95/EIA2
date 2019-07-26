@@ -22,7 +22,6 @@ namespace abschlussaufgabe {
 	export let timer: number;
 
 	let spielerfisch: SpielerFisch;
-
 	let fps: number = 25;
 	let imageData: ImageData;
 

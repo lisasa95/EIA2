@@ -12,6 +12,7 @@ namespace abschlussaufgabe {
 
 
     let serverAddress: string = "https://eia2lisa.herokuapp.com/";
+    
     export function insert(): void {
         let query: string = "command=insert";
         query += "&name=" + Spielername;
