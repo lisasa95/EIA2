@@ -77,7 +77,6 @@ var abschlussaufgabe;
                     if (this.groesse > fisch.groesse) {
                         this.groesse++;
                         abschlussaufgabe.Punktestand += 5;
-                        console.log(this.groesse);
                         return "essen";
                     }
                     else {

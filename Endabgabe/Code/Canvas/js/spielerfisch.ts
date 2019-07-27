@@ -108,7 +108,6 @@ namespace abschlussaufgabe {
                     if (this.groesse > fisch.groesse) {
                         this.groesse++;
                         Punktestand += 5;
-                        console.log(this.groesse);
                         return "essen";
                     }
 
